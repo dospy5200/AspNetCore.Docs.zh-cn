@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 0f069b049889f7caade493e238ac7a23db5e79af
-ms.sourcegitcommit: a49c47d5a573379effee5c6b6e36f5c302aa756b
+ms.openlocfilehash: 24b4d5fc11d21dce4d9e0fd2f8f0dd2d45e82baa
+ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100536275"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102110074"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -91,6 +91,8 @@ appsettings.`Environment`.json 值将替代 appsettings.json 中的键  。 例�
 
 * 在开发环境中，appsettings.Development.json 配置会覆盖在 appsettings.json 中找到的值。
 * 在生产环境中，appsettings.Production.json 配置会覆盖在 appsettings.json 中找到的值。 例如，在将应用部署到 Azure 时。
+
+如果必须保证配置值，请参阅 [GetValue](#getvalue)。 前面的示例只读取字符串，不支持默认值
 
 <a name="optpat"></a>
 
@@ -1201,7 +1203,7 @@ public static readonly Dictionary<string, string> _switchMappings =
 
 创建交换映射字典后，它将包含下表所示的数据。
 
-| 密钥       | “值”             |
+| 键       | 值             |
 | --------- | ----------------- |
 | `-CLKey1` | `CommandLineKey1` |
 | `-CLKey2` | `CommandLineKey2` |
@@ -1778,7 +1780,7 @@ config.AddJsonFile(
 
 将表中所示的键值对加载到配置中。
 
-| 密钥             | “值”  |
+| 键             | 值  |
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
@@ -1801,7 +1803,7 @@ config.AddJsonFile(
 
 JSON 配置提供程序将配置数据读入以下键值对：
 
-| 键                     | “值”  |
+| 键                     | 值  |
 | ----------------------- | :----: |
 | json_array:key          | valueA |
 | json_array:subsection:0 | valueB |

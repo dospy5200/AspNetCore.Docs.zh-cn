@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: blazor/components/index
-ms.openlocfilehash: 7b4438b4003916488c17d389b9817b5e09d1086c
-ms.sourcegitcommit: a49c47d5a573379effee5c6b6e36f5c302aa756b
+ms.openlocfilehash: a308d11ba80090a2a34880f04bc339aa90550946
+ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100536215"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109827"
 ---
 # <a name="create-and-use-aspnet-core-razor-components"></a>创建和使用 ASP.NET Core Razor 组件
 
@@ -230,9 +230,19 @@ namespace BlazorSample
 <HeadingComponent />
 ```
 
-`Components/HeadingComponent.razor`:
+`Shared/HeadingComponent.razor`:
 
-[!code-razor[](index/samples_snapshot/HeadingComponent.razor)]
+::: moniker range=">= aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/Pages/components-index/HeadingComponent.razor)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/Pages/components-index/HeadingComponent.razor)]
+
+::: moniker-end
 
 如果某个组件包含一个 HTML 元素，该元素的大写首字母与组件名称不匹配，则会发出警告，指示该元素名称异常。 为组件的命名空间添加 [`@using`][2] 指令使组件可用，从而解决此警告。
 
@@ -248,7 +258,7 @@ namespace BlazorSample
 
 `Pages/RouteParameter.razor`:
 
-[!code-razor[](index/samples_snapshot/RouteParameter-5x.razor?highlight=1,6-7)]
+[!code-razor[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/Pages/components-index/RouteParameter.razor?highlight=1,6-7)]
 
 ::: moniker-end
 
@@ -256,7 +266,7 @@ namespace BlazorSample
 
 `Pages/RouteParameter.razor`:
 
-[!code-razor[](index/samples_snapshot/RouteParameter-3x.razor?highlight=2,7-8)]
+[!code-razor[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/Pages/components-index/RouteParameter.razor?highlight=2,7-8)]
 
 不支持可选参数，因此在前面的示例中应用了两个 [`@page`][9] 指令。 第一个指令允许导航到没有参数的组件。 第二个 [`@page`][9] 指令会接收 `{text}` 路由参数，并将值赋予 `Text` 属性。
 
@@ -268,9 +278,29 @@ namespace BlazorSample
 
 组件可以有组件参数，这些参数是使用带有 [`[Parameter]` 特性](xref:Microsoft.AspNetCore.Components.ParameterAttribute)的组件类上的简单或复杂公共属性定义的。 使用这些属性在标记中为组件指定参数。
 
-`Components/ChildComponent.razor`:
+`Shared/ChildComponent.razor`:
 
-[!code-razor[](../common/samples/5.x/BlazorWebAssemblySample/Components/ChildComponent.razor?highlight=2,11-12)]
+```razor
+<div class="panel panel-default">
+    <div class="panel-heading">@Title</div>
+    <div class="panel-body">@ChildContent</div>
+
+    <button class="btn btn-primary" @onclick="OnClickCallback">
+        Trigger a Parent component method
+    </button>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}
+```
 
 可为组件参数分配默认值：
 
@@ -283,7 +313,17 @@ public string Title { get; set; } = "Panel Title from Child";
 
 `Pages/ParentComponent.razor`:
 
-[!code-razor[](index/samples_snapshot/ParentComponent.razor?highlight=5-6)]
+```razor
+@page "/ParentComponent"
+
+<h1>Parent-child example</h1>
+
+<ChildComponent Title="Panel Title from Parent"
+                OnClickCallback="@ShowMessage">
+    Content of the child component is supplied
+    by the parent component.
+</ChildComponent>
+```
 
 使用 [Razor 的保留 `@` 符号](xref:mvc/views/razor#razor-syntax)将 C# 字段、属性和方法作为 HTML 属性值分配给组件参数：
 
@@ -454,9 +494,29 @@ public DateTime StartData { get; set; }
 
 在下面的示例中，`ChildComponent` 具有一个表示 <xref:Microsoft.AspNetCore.Components.RenderFragment>（表示要呈现的 UI 段）的 `ChildContent` 属性。 `ChildContent` 的值放置在应呈现内容的组件标记中。 `ChildContent` 的值是从父组件接收的，并呈现在启动面板的 `panel-body` 中。
 
-`Components/ChildComponent.razor`:
+`Shared/ChildComponent.razor`:
 
-[!code-razor[](../common/samples/5.x/BlazorWebAssemblySample/Components/ChildComponent.razor?highlight=3,14-15)]
+```razor
+<div class="panel panel-default">
+    <div class="panel-heading">@Title</div>
+    <div class="panel-body">@ChildContent</div>
+
+    <button class="btn btn-primary" @onclick="OnClickCallback">
+        Trigger a Parent component method
+    </button>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}
+```
 
 > [!NOTE]
 > 必须按约定将接收 <xref:Microsoft.AspNetCore.Components.RenderFragment> 内容的属性命名为 `ChildContent`。
@@ -465,7 +525,17 @@ public DateTime StartData { get; set; }
 
 `Pages/ParentComponent.razor`:
 
-[!code-razor[](index/samples_snapshot/ParentComponent.razor?highlight=7-8)]
+```razor
+@page "/ParentComponent"
+
+<h1>Parent-child example</h1>
+
+<ChildComponent Title="Panel Title from Parent"
+                OnClickCallback="@ShowMessage">
+    Content of the child component is supplied
+    by the parent component.
+</ChildComponent>
+```
 
 由于 Blazor 呈现子内容的方式，如果在子组件的内容中使用递增循环变量，则在 `for` 循环内呈现组件需要本地索引变量：
 >
@@ -820,13 +890,13 @@ Blazor 框架通常会施加安全的父级到子级参数的赋值：
 * 不会意外覆盖参数。
 * 最大程度地减少副作用。 例如，可避免附加的呈现，因为它们可能会创建无限的呈现循环。
 
-当父组件重新呈现时，子组件会接收可能覆盖现有值的新参数值。 当使用一个或多个数据绑定参数开发组件并且开发人员直接写入子组件中的参数时，通常会发生意外覆盖子组件中的参数值：
+当父组件重新呈现时，子组件会接收可能覆盖现有值的新参数值。 当开发带有一个或多个数据绑定参数的组件，并且开发人员直接写入子组件中的参数时，经常会发生意外覆盖子组件中的参数值：
 
 * 子组件通过父组件中的一个或多个参数值呈现。
 * 子级直接写入参数的值。
 * 父组件重新呈现并覆盖子参数的值。
 
-覆盖参数值的可能性也会扩展到子组件的属性资源库中。
+覆盖参数值的可能性也会延伸到子组件的属性资源库中。
 
 我们的通用指南不是创建直接写入其自身参数的组件。
 
