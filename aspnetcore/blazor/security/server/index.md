@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: blazor/security/server/index
-ms.openlocfilehash: 41b588acdef3eedd9fc081f50040d160147bab4b
-ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
+ms.openlocfilehash: 147ebbeb84e1755307d627ef428d92d1b0248c74
+ms.sourcegitcommit: 1436bd4d70937d6ec3140da56d96caab33c4320b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102109645"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102394858"
 ---
 # <a name="secure-aspnet-core-blazor-server-apps"></a>保护 ASP.NET Core Blazor Server应用
 
@@ -32,7 +32,7 @@ Blazor Server应用的安全配置方式与 ASP.NET Core 应用相同。 有关�
 
 ## <a name="blazor-server-project-template"></a>Blazor Server项目模板
 
-创建项目后，可配置 Blazor Server项目模板来进行身份验证。
+创建项目后，可配置 [Blazor Server 项目模板](xref:blazor/project-structure)来进行身份验证。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
