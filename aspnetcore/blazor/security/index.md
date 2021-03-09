@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: blazor/security/index
-ms.openlocfilehash: 9a14a8e16d8e50b47c479cf4d973459fbf61cec7
-ms.sourcegitcommit: 1166b0ff3828418559510c661e8240e5c5717bb7
+ms.openlocfilehash: a840e5d54d48441e10c2a58af591a530c8fd7de9
+ms.sourcegitcommit: 1436bd4d70937d6ec3140da56d96caab33c4320b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100280362"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102394884"
 ---
 # <a name="aspnet-core-blazor-authentication-and-authorization"></a>ASP.NET Core Blazor 身份验证和授权
 
@@ -299,7 +299,7 @@ builder.Services.AddAuthorizationCore();
 
 可以在 `NavMenu` 组件 (`Shared/NavMenu.razor`) 中使用 <xref:Microsoft.AspNetCore.Components.Authorization.AuthorizeView> 组件来显示 [`NavLink` 组件](xref:blazor/fundamentals/routing#navlink-and-navmenu-components) (<xref:Microsoft.AspNetCore.Components.Routing.NavLink>) 的列表项 (`<li>...</li>`)，但请注意，此方法仅从呈现的输出中删除列表项。 它不会阻止用户导航到该组件。
 
-从包含身份验证的 Blazor 项目模板创建的应用将使用依赖于 `AuthorizeView` 组件的 `LoginDisplay` 组件。 `AuthorizeView` 组件会选择性地向用户显示与 Identity 相关的工作内容。 下面的示例来自 Blazor WebAssembly 项目模板。
+从包含身份验证的 [Blazor 项目模板](xref:blazor/project-structure)创建的应用将使用依赖于 `AuthorizeView` 组件的 `LoginDisplay` 组件。 `AuthorizeView` 组件会选择性地向用户显示与 Identity 相关的工作内容。 下面的示例来自 [Blazor WebAssembly 项目模板](xref:blazor/project-structure)。
 
 `Shared/LoginDisplay.razor`:
 
@@ -329,7 +329,7 @@ builder.Services.AddAuthorizationCore();
 }
 ```
 
-下面的示例来自 Blazor Server 项目模板，并使用应用 `Identity` 区域中的 ASP.NET Core Identity 终结点来处理 Identity 相关的工作。
+下面的示例来自 [Blazor Server 项目模板](xref:blazor/project-structure)，并使用应用 `Identity` 区域中的 ASP.NET Core Identity 终结点来处理 Identity 相关的工作。
 
 `Shared/LoginDisplay.razor`:
 
@@ -442,7 +442,7 @@ You can only see this if you're signed in.
 * 异步授权正在进行中，这通常表示对用户进行身份验证的过程正在进行中。 显示 [`<Authorizing>`](xref:Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView.Authorizing?displayProperty=nameWithType) 元素的标记。
 * 找不到内容。 显示 [`<NotFound>`](xref:Microsoft.AspNetCore.Components.Routing.Router.NotFound?displayProperty=nameWithType) 元素的标记。
 
-在默认的 Blazor Server项目模板中，`App` 组件 (`App.razor`) 展示了如何设置自定义内容：
+在默认的 [Blazor Server 项目模板](xref:blazor/project-structure)中，`App` 组件 (`App.razor`) 展示了如何设置自定义内容：
 
 ```razor
 <CascadingAuthenticationState>
