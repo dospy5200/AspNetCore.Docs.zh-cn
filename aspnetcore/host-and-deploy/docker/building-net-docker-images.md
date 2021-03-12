@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: host-and-deploy/docker/building-net-docker-images
-ms.openlocfilehash: 2cd21722082af88e536bc1001b606ee96e7cf59b
-ms.sourcegitcommit: b64c44ba5e3abb4ad4d50de93b7e282bf0f251e4
+ms.openlocfilehash: b29ce03366e5c0e815de0874f5b96efb9ba5326c
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972049"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585950"
 ---
 # <a name="docker-images-for-aspnet-core"></a>ASP.NET Core 的 Docker 映像
 
@@ -341,7 +341,7 @@ ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 
 ## <a name="next-steps"></a>后续步骤
 
-包含示例应用的 Git 存储库还包括文档。 有关存储库中可用资源的概述，请参阅[自述文件](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/README.md)。 特别是，了解如何实现 HTTPS：
+包含示例应用的 Git 存储库还包括文档。 有关存储库中可用资源的概述，请参阅[自述文件](https://github.com/dotnet/dotnet-docker/blob/main/samples/aspnetapp/README.md)。 特别是，了解如何实现 HTTPS：
 
 > [!div class="nextstepaction"]
-> [使用 Docker over HTTPS 开发 ASP.NET Core 应用程序](https://github.com/dotnet/dotnet-docker/blob/master/samples/run-aspnetcore-https-development.md)
+> [使用 Docker over HTTPS 开发 ASP.NET Core 应用程序](https://github.com/dotnet/dotnet-docker/blob/main/samples/run-aspnetcore-https-development.md)

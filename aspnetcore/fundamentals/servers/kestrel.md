@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: d53cafb605939fd85bdbb71b2fbf13e7bd7a9b7b
-ms.sourcegitcommit: cb984e0d7dc23a88c3a4121f23acfaea0acbfe1e
+ms.openlocfilehash: 54d7304430c2a77347b6e3279f638cf6d7add77e
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570998"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589033"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 中的 Kestrel Web 服务器实现
 
@@ -45,7 +45,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples/5.x)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/servers/kestrel/samples/5.x)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="get-started"></a>入门
 
@@ -93,7 +93,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples/3.x)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/servers/kestrel/samples/3.x)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="http2-support"></a>HTTP/2 支持
 
@@ -1092,7 +1092,7 @@ macOS 的未来版本将支持 &dagger;HTTP/2。
 
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples/2.x)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/servers/kestrel/samples/2.x)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="http2-support"></a>HTTP/2 支持
 
@@ -2078,7 +2078,7 @@ Kestrel 支持以下方案：
 
 .NET Core 支持的所有平台和版本均支持 Kestrel。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/samples/2.x)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/servers/kestrel/samples/2.x)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="when-to-use-kestrel-with-a-reverse-proxy"></a>何时结合使用 Kestrel 和反向代理
 

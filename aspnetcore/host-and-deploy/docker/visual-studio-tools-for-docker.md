@@ -18,18 +18,18 @@ no-loc:
 - Razor
 - SignalR
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 2cfd200c44290a0931cdeb2f68e99b90c11aa612
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: c11261fef84234a9caaf872ae9871932d02617fa
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93059814"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585989"
 ---
 # <a name="visual-studio-container-tools-with-aspnet-core"></a>带有 ASP.NET Core 的 Visual Studio 容器工具
 
 Visual Studio 2017 及更高版本支持构建、调试和运行面向 .NET Core 且已容器化的 ASP.NET Core 应用。 Windows 和 Linux 容器均受支持。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/host-and-deploy/docker/visual-studio-tools-for-docker/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/host-and-deploy/docker/visual-studio-tools-for-docker/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -40,7 +40,7 @@ Visual Studio 2017 及更高版本支持构建、调试和运行面向 .NET Core
 
 如需安装 Docker，请先通过[用于 Windows 的 Docker：安装须知](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install)了解相关信息。 然后安装[用于 Windows 的 Docker](https://docs.docker.com/docker-for-windows/install/)。
 
-Docker for Windows 中的[共享驱动器](https://docs.docker.com/docker-for-windows/#shared-drives)必须配置为支持卷映射和调试。 右键单击系统托盘中的 Docker 图标，单击“设置”，然后选择“共享驱动器”。 选择 Docker 存储文件的驱动器。 单击“应用”  。
+Docker for Windows 中的[共享驱动器](https://docs.docker.com/docker-for-windows/#shared-drives)必须配置为支持卷映射和调试。 右键单击系统托盘中的 Docker 图标，单击“设置”，然后选择“共享驱动器”。 选择 Docker 存储文件的驱动器。 单击“应用”。
 
 ![为容器选择本地驱动器 C 作为共享驱动器的对话框](visual-studio-tools-for-docker/_static/settings-shared-drives-win.png)
 

@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/samesite/mvc21
-ms.openlocfilehash: 8f819d283e136a63ad9f82d6432a93866210b36b
-ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
+ms.openlocfilehash: a7b7ce0d0fff2953097f29a2b6d2c5a539cac3a5
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102110100"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586522"
 ---
 # <a name="aspnet-core-21-mvc-samesite-cookie-sample"></a>ASP.NET Core 2.1 MVC SameSite cookie 示例
 
@@ -154,7 +154,7 @@ Helper 函数 `CheckSameSite(HttpContext, CookieOptions)` ：
 
 * 当 cookie 向请求追加或从请求中删除时，将调用。
 * 检查 `SameSite` 属性是否设置为 `None` 。
-* 如果将 `SameSite` 设置为 `None` ，并且已知当前用户代理不支持 none 特性值，则为。 使用 [SameSiteSupport](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/samesite/sample/snippets/SameSiteSupport.cs) 类完成检查：
+* 如果将 `SameSite` 设置为 `None` ，并且已知当前用户代理不支持 none 特性值，则为。 使用 [SameSiteSupport](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/samesite/sample/snippets/SameSiteSupport.cs) 类完成检查：
   * 设置 `SameSite` 为不通过将属性设置为来发出该值 `(SameSiteMode)(-1)`
 
 ## <a name="targeting-net-framework"></a>目标 .NET Framework

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/change-tokens
-ms.openlocfilehash: f20d44c7767b284f727ce19a46224dae0cf6a5e1
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: df2be1b89ad9681ff70dd71cb3026786f59c8b2a
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93053769"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589382"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>使用 ASP.NET Core 中的更改令牌检测更改
 
@@ -31,7 +31,7 @@ ms.locfileid: "93053769"
 
 更改令牌是用于跟踪状态更改的通用、低级别构建基块。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/change-tokens/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/change-tokens/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="ichangetoken-interface"></a>IChangeToken 接口
 
@@ -229,7 +229,7 @@ var compositeChangeToken =
 
 更改令牌是用于跟踪状态更改的通用、低级别构建基块。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/change-tokens/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/change-tokens/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="ichangetoken-interface"></a>IChangeToken 接口
 

@@ -18,14 +18,14 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authentication/cookie
-ms.openlocfilehash: 04469e0e75c433b40b364873a7e72e30421936f4
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 5b1f1bb3de7126c401a81b89b99a45c7e45f8f8d
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061348"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586288"
 ---
-# <a name="use-no-loccookie-authentication-without-no-locaspnet-core-identity"></a>cookie不使用身份验证ASP.NET Core Identity
+# <a name="use-cookie-authentication-without-aspnet-core-identity"></a>cookie不使用身份验证ASP.NET Core Identity
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -33,11 +33,11 @@ ms.locfileid: "93061348"
 
 ASP.NET Core Identity 是一个完整的全功能身份验证提供程序，用于创建和维护登录名。 但是， cookie 不能使用基于的身份验证提供程序 ASP.NET Core Identity 。 有关详细信息，请参阅 <xref:security/authentication/identity>。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authentication/cookie/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authentication/cookie/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 出于演示目的，在示例应用程序中，假设用户（Maria Rodriguez）的用户帐户已硬编码到应用中。 使用 **电子邮件** 地址 `maria.rodriguez@contoso.com` 和任何密码来登录用户。 用户通过 `AuthenticateUser` *页面/帐户/登录名. .cs* 文件中的方法进行身份验证。 在实际的示例中，用户将对数据库进行身份验证。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 在 `Startup.ConfigureServices` 方法中，创建具有和方法的身份验证中间件服务 <xref:Microsoft.Extensions.DependencyInjection.AuthenticationServiceCollectionExtensions.AddAuthentication*> <xref:Microsoft.Extensions.DependencyInjection.CookieExtensions.AddCookie*> ：
 
@@ -65,7 +65,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-## <a name="no-loccookie-policy-middleware"></a>Cookie 策略中间件
+## <a name="cookie-policy-middleware"></a>Cookie 策略中间件
 
 [ Cookie 策略中间件](xref:Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware)启用 cookie 策略功能。 将中间件添加到应用处理管道是区分顺序的， &mdash; 它仅影响在管道中注册的下游组件。
 
@@ -92,7 +92,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 | SameSiteMode      | SameSiteMode<br>SameSiteMode<br>SameSiteMode | SameSiteMode<br>SameSiteMode<br>SameSiteMode |
 | SameSiteMode   | SameSiteMode<br>SameSiteMode<br>SameSiteMode | SameSiteMode<br>SameSiteMode<br>SameSiteMode |
 
-## <a name="create-an-authentication-no-loccookie"></a>创建身份验证 cookie
+## <a name="create-an-authentication-cookie"></a>创建身份验证 cookie
 
 若要创建 cookie 保存用户信息，请构造 <xref:System.Security.Claims.ClaimsPrincipal> 。 将序列化用户信息并将其存储在中 cookie 。 
 
@@ -209,7 +209,7 @@ services.AddScoped<CustomCookieAuthenticationEvents>();
 > [!WARNING]
 > 此处所述的方法在每个请求时触发。 验证 cookie 每个请求的所有用户的身份验证可能会导致应用程序的性能下降。
 
-## <a name="persistent-no-loccookies"></a>持久性 cookie
+## <a name="persistent-cookies"></a>持久性 cookie
 
 你可能希望在 cookie 浏览器会话之间保持。 仅当登录或类似机制上出现 "记住我" 复选框时，才应启用此持久性。 
 
@@ -229,7 +229,7 @@ await HttpContext.SignInAsync(
     });
 ```
 
-## <a name="absolute-no-loccookie-expiration"></a>绝对 cookie 过期
+## <a name="absolute-cookie-expiration"></a>绝对 cookie 过期
 
 绝对过期时间可以设置为 <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties.ExpiresUtc> 。 若要创建持久 cookie ， `IsPersistent` 还必须设置。 否则， cookie 创建时使用基于会话的生存期，并且可能会在它所包含的身份验证票证之前或之后过期。 设置后， `ExpiresUtc` 它将覆盖的 <xref:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions.ExpireTimeSpan> 选项的值 <xref:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions> （如果已设置）。
 
@@ -254,11 +254,11 @@ await HttpContext.SignInAsync(
 
 ASP.NET Core Identity 是一个完整的全功能身份验证提供程序，用于创建和维护登录名。 但是， cookie 不能使用基于的身份验证提供程序 ASP.NET Core Identity 。 有关详细信息，请参阅 <xref:security/authentication/identity>。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authentication/cookie/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authentication/cookie/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 出于演示目的，在示例应用程序中，假设用户（Maria Rodriguez）的用户帐户已硬编码到应用中。 使用 **电子邮件** 地址 `maria.rodriguez@contoso.com` 和任何密码来登录用户。 用户通过 `AuthenticateUser` *页面/帐户/登录名. .cs* 文件中的方法进行身份验证。 在实际的示例中，用户将对数据库进行身份验证。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 如果应用程序不使用 [AspNetCore 元包](xref:fundamentals/metapackage-app)，请在项目文件中为 AspNetCore 创建包引用 [。 Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) 包。
 
@@ -288,7 +288,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     });
 ```
 
-## <a name="no-loccookie-policy-middleware"></a>Cookie 策略中间件
+## <a name="cookie-policy-middleware"></a>Cookie 策略中间件
 
 [ Cookie 策略中间件](xref:Microsoft.AspNetCore.CookiePolicy.CookiePolicyMiddleware)启用 cookie 策略功能。 将中间件添加到应用处理管道是区分顺序的， &mdash; 它仅影响在管道中注册的下游组件。
 
@@ -315,7 +315,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 | SameSiteMode      | SameSiteMode<br>SameSiteMode<br>SameSiteMode | SameSiteMode<br>SameSiteMode<br>SameSiteMode |
 | SameSiteMode   | SameSiteMode<br>SameSiteMode<br>SameSiteMode | SameSiteMode<br>SameSiteMode<br>SameSiteMode |
 
-## <a name="create-an-authentication-no-loccookie"></a>创建身份验证 cookie
+## <a name="create-an-authentication-cookie"></a>创建身份验证 cookie
 
 若要创建 cookie 保存用户信息，请构造 <xref:System.Security.Claims.ClaimsPrincipal> 。 将序列化用户信息并将其存储在中 cookie 。 
 
@@ -426,7 +426,7 @@ services.AddScoped<CustomCookieAuthenticationEvents>();
 > [!WARNING]
 > 此处所述的方法在每个请求时触发。 验证 cookie 每个请求的所有用户的身份验证可能会导致应用程序的性能下降。
 
-## <a name="persistent-no-loccookies"></a>持久性 cookie
+## <a name="persistent-cookies"></a>持久性 cookie
 
 你可能希望在 cookie 浏览器会话之间保持。 仅当登录或类似机制上出现 "记住我" 复选框时，才应启用此持久性。 
 
@@ -446,7 +446,7 @@ await HttpContext.SignInAsync(
     });
 ```
 
-## <a name="absolute-no-loccookie-expiration"></a>绝对 cookie 过期
+## <a name="absolute-cookie-expiration"></a>绝对 cookie 过期
 
 绝对过期时间可以设置为 <xref:Microsoft.AspNetCore.Authentication.AuthenticationProperties.ExpiresUtc> 。 若要创建持久 cookie ， `IsPersistent` 还必须设置。 否则， cookie 创建时使用基于会话的生存期，并且可能会在它所包含的身份验证票证之前或之后过期。 设置后， `ExpiresUtc` 它将覆盖的 <xref:Microsoft.AspNetCore.Builder.CookieAuthenticationOptions.ExpireTimeSpan> 选项的值 <xref:Microsoft.AspNetCore.Builder.CookieAuthenticationOptions> （如果已设置）。
 

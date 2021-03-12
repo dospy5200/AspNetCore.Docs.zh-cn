@@ -19,14 +19,14 @@ no-loc:
 - Razor
 - SignalR
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 2947bf0b697ca01f17d260b9f31aa3cc79d457b6
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: c75e2f1de522f80f4d8e13cf3f60c99cc6b7196a
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93059866"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589408"
 ---
-# <a name="no-locrazor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core 中的 Razor Pages 路由和应用约定
+# <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core 中的 Razor Pages 路由和应用约定
 
 ::: moniker range=">= aspnetcore-3.0"
 
@@ -38,7 +38,7 @@ ms.locfileid: "93059866"
 
 有些保留字不能用作路由段或参数名称。 有关详细信息，请参阅[路由：保留的路由名称](xref:mvc/controllers/routing#reserved-routing-names)。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 | 方案 | 示例演示... |
 | -------- | --------------------------- |
@@ -110,7 +110,7 @@ Razor Pages 路由和 MVC 控制器路由共享一个实现。 有关 MVC 主题
 
 尽可能不要将 `Order` 设置为 `Order = 0`。 依赖路由选择正确的路由。
 
-将 Razor Pages 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
+将 Razor Pages 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
 
 [!code-csharp[](razor-pages-conventions/samples/3.x/SampleApp/Startup.cs?name=snippet1)]
 
@@ -319,7 +319,7 @@ Razor Pages 会忽略 MVC [操作筛选器](xref:mvc/controllers/filters#action-
 
 有些保留字不能用作路由段或参数名称。 有关详细信息，请参阅[路由：保留的路由名称](xref:fundamentals/routing#reserved-routing-names)。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 | 方案 | 示例演示... |
 | -------- | --------------------------- |
@@ -392,7 +392,7 @@ Razor Pages 路由和 MVC 控制器路由共享一个实现。 有关 MVC 主题
 
 尽可能不要将 `Order` 设置为 `Order = 0`。 依赖路由选择正确的路由。
 
-将 MVC 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
+将 MVC 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
 
 [!code-csharp[](razor-pages-conventions/samples/2.x/SampleApp/Startup.cs?name=snippet1)]
 
@@ -609,7 +609,7 @@ Razor Pages 会忽略 MVC [操作筛选器](xref:mvc/controllers/filters#action-
 
 有些保留字不能用作路由段或参数名称。 有关详细信息，请参阅[路由：保留的路由名称](xref:fundamentals/routing#reserved-routing-names)。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 | 方案 | 示例演示... |
 | -------- | --------------------------- |
@@ -682,7 +682,7 @@ Razor Pages 路由和 MVC 控制器路由共享一个实现。 有关 MVC 主题
 
 尽可能不要将 `Order` 设置为 `Order = 0`。 依赖路由选择正确的路由。
 
-将 MVC 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
+将 MVC 添加到 `Startup.ConfigureServices` 中的服务集合时，会添加 Razor Pages 选项，例如添加 <xref:Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions.Conventions>。 有关示例，请参阅[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/razor-pages-conventions/samples/)。
 
 [!code-csharp[](razor-pages-conventions/samples/2.x/SampleApp/Startup.cs?name=snippet1)]
 

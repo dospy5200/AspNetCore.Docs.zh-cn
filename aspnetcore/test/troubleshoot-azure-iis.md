@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: test/troubleshoot-azure-iis
-ms.openlocfilehash: a8bb659a72e8370c31cc9c213689399e74f11b5c
-ms.sourcegitcommit: f77a7467651bab61b24261da9dc5c1dd75fc1fa9
+ms.openlocfilehash: 3f6b74ee9621529943d9f685d803837e7df10cfc
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100564065"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589564"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service-and-iis"></a>对 Azure 应用服务和 IIS 上的 ASP.NET Core 进行故障排除
 
@@ -513,7 +513,7 @@ ASP.NET Core 模块调试日志从 ASP.NET Core 模块提供了更多、更详�
 从 [Windows 错误报告 (WER)](/windows/desktop/wer/windows-error-reporting) 中获取转储并进行分析：
 
 1. 创建文件夹，将崩溃转储文件保存在 `c:\dumps`。 应用池必须对该文件夹具有写权限。
-1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
+1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console
@@ -527,7 +527,7 @@ ASP.NET Core 模块调试日志从 ASP.NET Core 模块提供了更多、更详�
      ```
 
 1. 在造成崩溃的条件下运行应用。
-1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
+1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console
@@ -1006,7 +1006,7 @@ ASP.NET Core 模块调试日志从 ASP.NET Core 模块提供了更多、更详�
 从 [Windows 错误报告 (WER)](/windows/desktop/wer/windows-error-reporting) 中获取转储并进行分析：
 
 1. 创建文件夹，将崩溃转储文件保存在 `c:\dumps`。 应用池必须对该文件夹具有写权限。
-1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
+1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console
@@ -1020,7 +1020,7 @@ ASP.NET Core 模块调试日志从 ASP.NET Core 模块提供了更多、更详�
      ```
 
 1. 在造成崩溃的条件下运行应用。
-1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
+1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console
@@ -1437,7 +1437,7 @@ ASP.NET Core 模块 stdout 日志通常记录应用程序事件日志中找不�
 从 [Windows 错误报告 (WER)](/windows/desktop/wer/windows-error-reporting) 中获取转储并进行分析：
 
 1. 创建文件夹，将崩溃转储文件保存在 `c:\dumps`。 应用池必须对该文件夹具有写权限。
-1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
+1. 运行 [EnableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/EnableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console
@@ -1451,7 +1451,7 @@ ASP.NET Core 模块 stdout 日志通常记录应用程序事件日志中找不�
      ```
 
 1. 在造成崩溃的条件下运行应用。
-1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
+1. 出现崩溃后，运行 [DisableDumps PowerShell 脚本](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/test/troubleshoot-azure-iis/scripts/DisableDumps.ps1)：
    * 如果应用使用[进程内托管模型](xref:host-and-deploy/iis/index#in-process-hosting-model)，则请为 w3wp.exe 运行脚本：
 
      ```console

@@ -16,12 +16,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/static-files
-ms.openlocfilehash: fad569ab06735600299d8051a258651e329db8ce
-ms.sourcegitcommit: 04ad9cd26fcaa8bd11e261d3661f375f5f343cdc
+ms.openlocfilehash: 807cffb2f9b3bf89ff06c62e76d51d4040b8d91a
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100107176"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589005"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core 中的静态文件
 
@@ -31,7 +31,7 @@ ms.locfileid: "100107176"
 
 默认情况下，静态文件（如 HTML、CSS、图像和 JavaScript）是 ASP.NET Core 应用直接提供给客户端的资产。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/static-files/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/static-files/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="serve-static-files"></a>提供静态文件
 
@@ -123,7 +123,7 @@ ASP.NET Core 模板在调用 <xref:Microsoft.AspNetCore.Builder.AuthorizationApp
 
   <xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireAuthenticatedUser%2A> 将 <xref:Microsoft.AspNetCore.Authorization.Infrastructure.DenyAnonymousAuthorizationRequirement> 添加到当前实例，这将强制对当前用户进行身份验证。
 
-  `wwwroot` 下的静态资产是可公开访问的，因为在 `UseAuthentication` 之前会调用默认静态文件中间件 (`app.UseStaticFiles();`)。 MyStaticFiles 文件夹中的静态资产需要身份验证。 [示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/static-files/samples)对此进行了演示。
+  `wwwroot` 下的静态资产是可公开访问的，因为在 `UseAuthentication` 之前会调用默认静态文件中间件 (`app.UseStaticFiles();`)。 MyStaticFiles 文件夹中的静态资产需要身份验证。 [示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/static-files/samples)对此进行了演示。
 
 还有一种根据授权提供文件的方法是：
 
@@ -289,7 +289,7 @@ app.UseFileServer(enableDirectoryBrowsing: true);
 
 静态文件（如 HTML、CSS、图像和 JavaScript）是 ASP.NET Core 应用直接提供给客户端的资产。 需要进行一些配置才能提供这些文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/static-files/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/static-files/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="serve-static-files"></a>提供静态文件
 

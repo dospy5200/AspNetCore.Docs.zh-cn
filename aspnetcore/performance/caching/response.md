@@ -18,18 +18,18 @@ no-loc:
 - Razor
 - SignalR
 uid: performance/caching/response
-ms.openlocfilehash: 2864de5b9931ed255569cb087c67c71004c4df92
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 539ddb118279adb3a53394cdb0c2e5169092ebc0
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93059008"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589226"
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core 中的响应缓存
 
 作者： [John Luo](https://github.com/JunTaoLuo)、 [Rick Anderson](https://twitter.com/RickAndMSFT)和 [Steve Smith](https://ardalis.com/)
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/caching/response/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/caching/response/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 响应缓存可减少客户端或代理对 web 服务器发出的请求数。 响应缓存还减少了 web 服务器生成响应所需的工作量。 响应缓存由指定你希望客户端、代理和中间件缓存响应的方式的标头控制。
 
@@ -39,7 +39,7 @@ ms.locfileid: "93059008"
 
 ## <a name="http-based-response-caching"></a>基于 HTTP 的响应缓存
 
-[HTTP 1.1 缓存规范](https://tools.ietf.org/html/rfc7234)描述了 Internet 缓存的行为方式。 用于缓存的主 HTTP 标头是 [缓存控制](https://tools.ietf.org/html/rfc7234#section-5.2)，它用于指定缓存 *指令* 。 指令控制缓存行为作为请求从客户端发送到服务器，而作为响应，使其从服务器到客户端的方式。 请求和响应在代理服务器之间移动，并且代理服务器还必须符合 HTTP 1.1 缓存规范。
+[HTTP 1.1 缓存规范](https://tools.ietf.org/html/rfc7234)描述了 Internet 缓存的行为方式。 用于缓存的主 HTTP 标头是 [缓存控制](https://tools.ietf.org/html/rfc7234#section-5.2)，它用于指定缓存 *指令*。 指令控制缓存行为作为请求从客户端发送到服务器，而作为响应，使其从服务器到客户端的方式。 请求和响应在代理服务器之间移动，并且代理服务器还必须符合 HTTP 1.1 缓存规范。
 
 `Cache-Control`下表显示了常见的指令。
 
@@ -48,8 +48,8 @@ ms.locfileid: "93059008"
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 缓存可以存储响应。 |
 | [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 共享缓存不能存储响应。 专用缓存可以存储和重用响应。 |
 | [最大期限](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 客户端不接受其期限大于指定秒数的响应。 示例： `max-age=60` (60 秒) ， `max-age=2592000` (1 个月)  |
-| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **请求时** ：缓存不能使用存储的响应来满足请求。 源服务器重新生成客户端的响应，中间件更新其缓存中存储的响应。<br><br>**响应：在** 源服务器上没有验证的后续请求不得使用响应。 |
-| [无-商店](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **请求时** ：缓存不能存储请求。<br><br>**响应** ：缓存不能存储响应的任何部分。 |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **请求时**：缓存不能使用存储的响应来满足请求。 源服务器重新生成客户端的响应，中间件更新其缓存中存储的响应。<br><br>**响应：在** 源服务器上没有验证的后续请求不得使用响应。 |
+| [无-商店](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **请求时**：缓存不能存储请求。<br><br>**响应**：缓存不能存储响应的任何部分。 |
 
 下表显示了在缓存中扮演角色的其他缓存标头。
 
@@ -211,7 +211,7 @@ Cache-Control: public,max-age=30
 ## <a name="additional-resources"></a>其他资源
 
 * [在缓存中存储响应](https://tools.ietf.org/html/rfc7234#section-3)
-* [缓存-控制](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 * <xref:performance/caching/memory>
 * <xref:performance/caching/distributed>
 * <xref:fundamentals/change-tokens>

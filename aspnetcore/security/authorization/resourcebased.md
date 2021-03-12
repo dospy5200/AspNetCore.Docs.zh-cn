@@ -18,29 +18,29 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 202ca681a66ddf7f729d8835e2f77da846583df1
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 61c97be03709f63f57a6383ab0c51ca9a511fbbb
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060165"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585768"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core 中基于资源的授权
 
 授权策略取决于要访问的资源。 假设有一个具有 author 属性的文档。 仅允许作者更新文档。 因此，在进行授权评估之前，必须从数据存储中检索文档。
 
-在数据绑定之前和在执行加载文档的页面处理程序或操作之前，会发生属性评估。 由于这些原因，具有属性的声明性授权 `[Authorize]` 无法满足要求。 相反，你可以调用自定义授权方法， &mdash; 这种方法称为 *命令式 authorization* 。
+在数据绑定之前和在执行加载文档的页面处理程序或操作之前，会发生属性评估。 由于这些原因，具有属性的声明性授权 `[Authorize]` 无法满足要求。 相反，你可以调用自定义授权方法， &mdash; 这种方法称为 *命令式 authorization*。
 
 ::: moniker range=">= aspnetcore-3.0"
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples/3_0)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/resourcebased/samples/3_0)（[如何下载](xref:index#how-to-download-a-sample)）。
 ::: moniker-end
 
  ::: moniker range=">= aspnetcore-2.0 < aspnetcore-3.0"
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples/2_2)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/resourcebased/samples/2_2)（[如何下载](xref:index#how-to-download-a-sample)）。
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-1.1"
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples/1_1)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/resourcebased/samples/1_1)（[如何下载](xref:index#how-to-download-a-sample)）。
 ::: moniker-end
 
 使用[由授权保护的用户数据创建 ASP.NET Core 应用](xref:security/authorization/secure-data)包含使用基于资源的授权的示例应用。

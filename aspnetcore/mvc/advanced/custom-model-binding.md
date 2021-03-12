@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: 7675e95c43b9ee428ee5fda86ea3ead9815ed645
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: b674d3a034124a26e2e76f2a7f0220e3f0ecea56
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93058462"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588765"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core 中的自定义模型绑定
 
@@ -32,7 +32,7 @@ ms.locfileid: "93058462"
 
 通过模型绑定，控制器操作可直接使用模型类型（作为方法参数传入）而不是 HTTP 请求。 由模型绑定器处理传入的请求数据和应用程序模型之间的映射。 开发人员可以通过实现自定义模型绑定器来扩展内置的模型绑定功能（尽管通常不需要编写自己的提供程序）。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/advanced/custom-model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/advanced/custom-model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="default-model-binder-limitations"></a>默认模型绑定器限制
 
@@ -40,13 +40,13 @@ ms.locfileid: "93058462"
 
 ## <a name="model-binding-review"></a>模型绑定查看
 
-模型绑定为其操作对象的类型使用特定定义。 简单类型  转换自输入中的单个字符串。 复杂类型  转换自多个输入值。 框架基于是否存在 `TypeConverter` 来确定差异。 如果简单 `string` -> `SomeType` 映射不需要外部资源，建议创建类型转换器。
+模型绑定为其操作对象的类型使用特定定义。 简单类型转换自输入中的单个字符串。 复杂类型转换自多个输入值。 框架基于是否存在 `TypeConverter` 来确定差异。 如果简单 `string` -> `SomeType` 映射不需要外部资源，建议创建类型转换器。
 
 创建自己的自定义模型绑定器之前，有必要查看现有模型绑定器的实现方式。 考虑使用 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinder>，它可将 base64 编码的字符串转换为字节数组。 字节数组通常存储为文件或数据库 BLOB 字段。
 
 ### <a name="working-with-the-bytearraymodelbinder"></a>使用 ByteArrayModelBinder
 
-Base64 编码的字符串可用来表示二进制数据。 例如，可将图像编码为一个字符串。 示例包括作为使用 [Base64String.txt](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/samples/3.x/CustomModelBindingSample/Base64String.txt) 的 base64 编码字符串的图像。
+Base64 编码的字符串可用来表示二进制数据。 例如，可将图像编码为一个字符串。 示例包括作为使用 [Base64String.txt](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/advanced/custom-model-binding/samples/3.x/CustomModelBindingSample/Base64String.txt) 的 base64 编码字符串的图像。
 
 ASP.NET Core MVC 可以采用 base64 编码的字符串，并使用 `ByteArrayModelBinder` 将其转换为字节数组。 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider> 将 `byte[]` 参数映射到 `ByteArrayModelBinder`：
 
@@ -118,7 +118,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 ### <a name="implementing-a-modelbinderprovider"></a>实现 ModelBinderProvider
 
-可以实现 `IModelBinderProvider`，而不是应用属性。 这就是内置框架绑定器的实现方式。 指定绑定器所操作的类型时，指定它生成的参数的类型，而不是  绑定器接受的输入。 以下绑定器提供程序适用于 `AuthorEntityBinder`。 将其添加到 MVC 提供程序的集合中时，无需在 `Author` 或 `Author` 类型参数上使用 `ModelBinder` 属性。
+可以实现 `IModelBinderProvider`，而不是应用属性。 这就是内置框架绑定器的实现方式。 指定绑定器所操作的类型时，指定它生成的参数的类型，而不是绑定器接受的输入。 以下绑定器提供程序适用于 `AuthorEntityBinder`。 将其添加到 MVC 提供程序的集合中时，无需在 `Author` 或 `Author` 类型参数上使用 `ModelBinder` 属性。
 
 [!code-csharp[](custom-model-binding/samples/3.x/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 
@@ -156,7 +156,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 通过模型绑定，控制器操作可直接使用模型类型（作为方法参数传入）而不是 HTTP 请求。 由模型绑定器处理传入的请求数据和应用程序模型之间的映射。 开发人员可以通过实现自定义模型绑定器来扩展内置的模型绑定功能（尽管通常不需要编写自己的提供程序）。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/advanced/custom-model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/advanced/custom-model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="default-model-binder-limitations"></a>默认模型绑定器限制
 
@@ -164,13 +164,13 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 ## <a name="model-binding-review"></a>模型绑定查看
 
-模型绑定为其操作对象的类型使用特定定义。 简单类型  转换自输入中的单个字符串。 复杂类型  转换自多个输入值。 框架基于是否存在 `TypeConverter` 来确定差异。 如果简单 `string` -> `SomeType` 映射不需要外部资源，建议创建类型转换器。
+模型绑定为其操作对象的类型使用特定定义。 简单类型转换自输入中的单个字符串。 复杂类型转换自多个输入值。 框架基于是否存在 `TypeConverter` 来确定差异。 如果简单 `string` -> `SomeType` 映射不需要外部资源，建议创建类型转换器。
 
 创建自己的自定义模型绑定器之前，有必要查看现有模型绑定器的实现方式。 考虑使用 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinder>，它可将 base64 编码的字符串转换为字节数组。 字节数组通常存储为文件或数据库 BLOB 字段。
 
 ### <a name="working-with-the-bytearraymodelbinder"></a>使用 ByteArrayModelBinder
 
-Base64 编码的字符串可用来表示二进制数据。 例如，可将图像编码为一个字符串。 示例包括作为使用 [Base64String.txt](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/samples/2.x/CustomModelBindingSample/Base64String.txt) 的 base64 编码字符串的图像。
+Base64 编码的字符串可用来表示二进制数据。 例如，可将图像编码为一个字符串。 示例包括作为使用 [Base64String.txt](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/advanced/custom-model-binding/samples/2.x/CustomModelBindingSample/Base64String.txt) 的 base64 编码字符串的图像。
 
 ASP.NET Core MVC 可以采用 base64 编码的字符串，并使用 `ByteArrayModelBinder` 将其转换为字节数组。 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider> 将 `byte[]` 参数映射到 `ByteArrayModelBinder`：
 
@@ -240,7 +240,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 ### <a name="implementing-a-modelbinderprovider"></a>实现 ModelBinderProvider
 
-可以实现 `IModelBinderProvider`，而不是应用属性。 这就是内置框架绑定器的实现方式。 指定绑定器所操作的类型时，指定它生成的参数的类型，而不是  绑定器接受的输入。 以下绑定器提供程序适用于 `AuthorEntityBinder`。 将其添加到 MVC 提供程序的集合中时，无需在 `Author` 或 `Author` 类型参数上使用 `ModelBinder` 属性。
+可以实现 `IModelBinderProvider`，而不是应用属性。 这就是内置框架绑定器的实现方式。 指定绑定器所操作的类型时，指定它生成的参数的类型，而不是绑定器接受的输入。 以下绑定器提供程序适用于 `AuthorEntityBinder`。 将其添加到 MVC 提供程序的集合中时，无需在 `Author` 或 `Author` 类型参数上使用 `ModelBinder` 属性。
 
 [!code-csharp[](custom-model-binding/samples/2.x/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 

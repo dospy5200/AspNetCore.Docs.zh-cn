@@ -18,18 +18,18 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/view-components
-ms.openlocfilehash: 61fcc07aeb30db15014fb716194328d366f27859
-ms.sourcegitcommit: 97243663fd46c721660e77ef652fe2190a461f81
+ms.openlocfilehash: 1d0e0da3a5d047d7457e7ca7587c81029e33cb69
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98058332"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586002"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core 中的视图组件
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/view-components/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/view-components/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="view-components"></a>视图组件
 
@@ -167,7 +167,7 @@ ms.locfileid: "98058332"
 
 ## <a name="walkthrough-creating-a-simple-view-component"></a>演练：创建简单的视图组件
 
-[下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/view-components/sample)、生成和测试起始代码。 它是一个带有 `ToDo` 控制器的简单项目，该控制器显示 ToDo 项的列表。
+[下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/view-components/sample)、生成和测试起始代码。 它是一个带有 `ToDo` 控制器的简单项目，该控制器显示 ToDo 项的列表。
 
 ![ToDo 列表](view-components/_static/2dos.png)
 
@@ -193,7 +193,7 @@ ms.locfileid: "98058332"
 * `InvokeAsync` 公开可以从视图调用的方法，且可以采用任意数量的参数。
 * `InvokeAsync` 方法返回满足 `isDone` 和 `maxPriority` 参数的 `ToDo` 项集。
 
-### <a name="create-the-view-component-no-locrazor-view"></a>创建视图组件 Razor 视图
+### <a name="create-the-view-component-razor-view"></a>创建视图组件 Razor 视图
 
 * 创建 Views/Shared/Components 文件夹。 此文件夹 **必须** 命名为 *Components*。
 

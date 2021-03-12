@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 24b4d5fc11d21dce4d9e0fd2f8f0dd2d45e82baa
-ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
+ms.openlocfilehash: fa7fbf1ae88b28cd36c5aece626240d849669a96
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102110074"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586340"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core 中的配置
 
@@ -45,7 +45,7 @@ ASP.NET Core 中的配置是使用一个或多个[配置提供程序](#cp)执行
 
 本主题介绍 ASP.NET Core 中的配置。 若要了解如何使用控制台应用中的配置，请参阅 [.NET 配置](/dotnet/core/extensions/configuration)。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 <a name="default"></a>
 
@@ -78,7 +78,7 @@ ASP.NET Core 中的配置是使用一个或多个[配置提供程序](#cp)执行
 
 [!code-json[](index/samples/3.x/ConfigSample/appsettings.json)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -138,7 +138,7 @@ appsettings.`Environment`.json 值将替代 appsettings.json 中的键  。 例�
 以下 `set` 命令：
 
 * 在 Windows 上设置[上述示例](#appsettingsjson)的环境键和值。
-* 在使用[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)时测试设置。 `dotnet run` 命令必须在项目目录中运行。
+* 在使用[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)时测试设置。 `dotnet run` 命令必须在项目目录中运行。
 
 ```dotnetcli
 set MyKey="My key from Environment"
@@ -329,11 +329,11 @@ dotnet run -k1 value1 -k2 value2 --alt3=value2 /alt4=value3 --alt5 value5 /alt6 
 
 配置 API 在配置键中使用分隔符来展平分层数据，以此来读取分层配置数据。
 
-[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 appsettings.json 文件：
+[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 appsettings.json 文件：
 
 [!code-json[](index/samples/3.x/ConfigSample/appsettings.json)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了一些配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了一些配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -442,11 +442,11 @@ dotnet run -k1 value1 -k2 value2 --alt3=value2 /alt4=value3 --alt5 value5 /alt6 
 * [环境变量配置提供程序](#evcp)
 * [命令行配置提供程序](#clcp)。
 
-[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyIniConfig.ini 文件：
+[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyIniConfig.ini 文件：
 
 [!code-ini[](index/samples/3.x/ConfigSample/MyIniConfig.ini)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -483,11 +483,11 @@ dotnet run -k1 value1 -k2 value2 --alt3=value2 /alt4=value3 --alt5 value5 /alt6 
 * 会替代 appsettings.json 和 appsettings.`Environment`.json 文件中的设置  。
 * 会被[环境变量配置提供程序](#evcp)和[命令行配置提供程序](#clcp)中的设置所替代。
 
-[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyConfig.json 文件：
+[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyConfig.json 文件：
 
 [!code-json[](index/samples/3.x/ConfigSample/MyConfig.json)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -504,11 +504,11 @@ dotnet run -k1 value1 -k2 value2 --alt3=value2 /alt4=value3 --alt5 value5 /alt6 
 * [环境变量配置提供程序](#evcp)
 * [命令行配置提供程序](#clcp)。
 
-[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyXMLFile.xml 文件：
+[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)包含以下 MyXMLFile.xml 文件：
 
 [!code-xml[](index/samples/3.x/ConfigSample/MyXMLFile.xml)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述的一些配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -571,7 +571,7 @@ dotnet run -k1 value1 -k2 value2 --alt3=value2 /alt4=value3 --alt5 value5 /alt6 
 
 [!code-csharp[](index/samples/3.x/ConfigSample/ProgramArray.cs?name=snippet6)]
 
-以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述配置设置：
+以下来自[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)的代码显示了上述配置设置：
 
 [!code-csharp[](index/samples/3.x/ConfigSample/Pages/Test.cshtml.cs?name=snippet)]
 
@@ -659,7 +659,7 @@ Kestrel 将绑定到专门针对 appsettings.json 文件中的 Kestrel 配置的
 
 [ConfigurationBinder.Bind](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*) 支持使用配置键中的数组索引将数组绑定到对象。 公开数值键段的任何数组格式都能够与 [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) 类数组进行数组绑定。
 
-请考虑[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)中的 MyArray.json：
+请考虑[示例下载](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples/3.x/ConfigSample)中的 MyArray.json：
 
 [!code-json[](index/samples/3.x/ConfigSample/MyArray.json)]
 
@@ -860,7 +860,7 @@ Extensions/EntityFrameworkExtensions.cs：
 
 ## <a name="additional-resources"></a>其他资源
 
-* [配置源代码](https://github.com/dotnet/runtime/tree/master/src/libraries/Microsoft.Extensions.Configuration)
+* [配置源代码](https://github.com/dotnet/runtime/tree/main/src/libraries/Microsoft.Extensions.Configuration)
 * <xref:fundamentals/configuration/options>
 * <xref:blazor/fundamentals/configuration>
 
@@ -889,7 +889,7 @@ using Microsoft.Extensions.Configuration;
 
 选项模式是本主题中描述的配置概念的扩展。 选项使用类来表示相关设置的组。 有关详细信息，请参阅 <xref:fundamentals/configuration/options>。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/index/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="host-versus-app-configuration"></a>主机与应用配置
 
@@ -1203,7 +1203,7 @@ public static readonly Dictionary<string, string> _switchMappings =
 
 创建交换映射字典后，它将包含下表所示的数据。
 
-| 键       | 值             |
+| 密钥       | “值”             |
 | --------- | ----------------- |
 | `-CLKey1` | `CommandLineKey1` |
 | `-CLKey2` | `CommandLineKey2` |
@@ -1780,7 +1780,7 @@ config.AddJsonFile(
 
 将表中所示的键值对加载到配置中。
 
-| 键             | 值  |
+| 密钥             | “值”  |
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
@@ -1803,7 +1803,7 @@ config.AddJsonFile(
 
 JSON 配置提供程序将配置数据读入以下键值对：
 
-| 键                     | 值  |
+| 键                     | “值”  |
 | ----------------------- | :----: |
 | json_array:key          | valueA |
 | json_array:subsection:0 | valueB |

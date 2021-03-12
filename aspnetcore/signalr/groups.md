@@ -19,22 +19,22 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/groups
-ms.openlocfilehash: a86408eaae8d3df32faef79453d9db0cdbd64a78
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 8f9e91f34386bb5b4cf79bee429a39ae27c03c5e
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93050948"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589213"
 ---
-# <a name="manage-users-and-groups-in-no-locsignalr"></a>在中管理用户和组 SignalR
+# <a name="manage-users-and-groups-in-signalr"></a>在中管理用户和组 SignalR
 
 作者： [Brennan Conroy](https://github.com/BrennanConroy)
 
 SignalR 允许将消息发送到与特定用户关联的所有连接以及命名连接组。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/groups/sample/)[（如何下载）](xref:index#how-to-download-a-sample)
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/groups/sample/)[（如何下载）](xref:index#how-to-download-a-sample)
 
-## <a name="users-in-no-locsignalr"></a>用户 SignalR
+## <a name="users-in-signalr"></a>用户 SignalR
 
 中的单个用户 SignalR 可以有多个到应用的连接。 例如，用户可以连接到其桌面以及他们的手机上。 每个设备都有一个单独的 SignalR 连接，但它们都与同一用户关联。 如果向用户发送一条消息，则所有与该用户关联的连接都将收到该消息。 中心中的属性可以访问连接的用户标识符 `Context.UserIdentifier` 。
 
@@ -47,7 +47,7 @@ SignalR 允许将消息发送到与特定用户关联的所有连接以及命名
 
 [!code-csharp[Configure service](groups/sample/Hubs/ChatHub.cs?range=29-32)]
 
-## <a name="groups-in-no-locsignalr"></a>组 SignalR
+## <a name="groups-in-signalr"></a>组 SignalR
 
 组是与某个名称关联的连接的集合。 可以将消息发送到组中的所有连接。 建议将组发送到一个或多个连接，因为这些组由应用程序管理。 连接可以是多个组的成员。 组是类似聊天应用程序的理想之选，其中每个会议室都可以表示为一个组。 通过和方法将连接添加到组或从组中删除连接 `AddToGroupAsync` `RemoveFromGroupAsync` 。
 

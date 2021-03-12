@@ -18,14 +18,14 @@ no-loc:
 - Razor
 - SignalR
 uid: razor-pages/filter
-ms.openlocfilehash: a6d25c1b88e09560c1aad9aefd9148f7fe293909
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 178e6348d2d50dae34feea6a0ed261de01037136
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93056824"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586132"
 ---
-# <a name="filter-methods-for-no-locrazor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor Pages 的筛选方法
+# <a name="filter-methods-for-razor-pages-in-aspnet-core"></a>ASP.NET Core 中的 Razor Pages 的筛选方法
 
 ::: moniker range=">= aspnetcore-3.0"
 
@@ -44,7 +44,7 @@ Razor 页面筛选器：
 
 虽然页构造函数和中间件允许在处理程序方法执行之前执行自定义代码，但只有 Razor 页面筛选器允许访问 <xref:Microsoft.AspNetCore.Mvc.RazorPages.PageModel.HttpContext> 和页面。 中间件可以访问 `HttpContext`，但不能访问“页面上下文”。 筛选器具有 <xref:Microsoft.AspNetCore.Mvc.Filters.FilterContext> 派生参数，该参数提供对 `HttpContext` 的访问权限。 下面是页面筛选器的示例：[实现筛选器属性](#ifa)，该属性将标头添加到响应中，而使用构造函数或中间件则无法做到这点。 对页面上下文的访问（包括对页面实例及其模型的访问）仅在执行筛选器、处理程序或 Razor 页面的正文时适用。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/filter/3.1sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/filter/3.1sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 
@@ -61,7 +61,7 @@ Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 
 筛选器接口的同步和异步版本任意实现一个，而不是同时实现 。 该框架会先查看筛选器是否实现了异步接口，如果是，则调用该接口。 如果不是，则调用同步接口的方法。 如果两个接口都已实现，则只会调用异步方法。 对页面中的替代应用相同的规则，同步替代或异步替代只能任选其一实现，不可二者皆选。
 
-## <a name="implement-no-locrazor-page-filters-globally"></a>全局实现 Razor 页面筛选器
+## <a name="implement-razor-page-filters-globally"></a>全局实现 Razor 页面筛选器
 
 以下代码实现了 `IAsyncPageFilter`：
 
@@ -85,7 +85,7 @@ Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 
 [!code-csharp[Main](filter/3.1sample/PageFilter/StartupSync.cs?name=snippet2)]
 
-## <a name="implement-no-locrazor-page-filters-by-overriding-filter-methods"></a>通过重写筛选器方法实现 Razor 页面筛选器
+## <a name="implement-razor-page-filters-by-overriding-filter-methods"></a>通过重写筛选器方法实现 Razor 页面筛选器
 
 以下代码替代异步 Razor 页面筛选器：
 
@@ -135,7 +135,7 @@ Razor 页面筛选器：
 
 代码可在使用页面构造函数或中间件执行处理程序方法前运行，但仅 Razor 页面筛选器可访问 [HttpContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.httpcontext?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_HttpContext)。 筛选器具有 [FilterContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.filtercontext?view=aspnetcore-2.0) 派生参数，可用于访问 `HttpContext`。 例如，[实现筛选器属性](#ifa)示例将标头添加到响应中，而使用构造函数或中间件则无法做到这点。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/filter/sample/PageFilter)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/filter/sample/PageFilter)（[如何下载](xref:index#how-to-download-a-sample)）
 
 Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 
@@ -153,7 +153,7 @@ Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 > [!NOTE]
 > 筛选器接口的同步和异步版本 **任意** 实现一个，而不是同时实现。 该框架会先查看筛选器是否实现了异步接口，如果是，则调用该接口。 如果不是，则调用同步接口的方法。 如果两个接口都已实现，则只会调用异步方法。 对页面中的替代应用相同的规则，同步替代或异步替代只能任选其一实现，不可二者皆选。
 
-## <a name="implement-no-locrazor-page-filters-globally"></a>全局实现 Razor 页面筛选器
+## <a name="implement-razor-page-filters-globally"></a>全局实现 Razor 页面筛选器
 
 以下代码实现了 `IAsyncPageFilter`：
 
@@ -181,7 +181,7 @@ Razor 页面筛选器提供的以下方法可在全局或页面级应用：
 
 [!code-csharp[Main](filter/sample/PageFilter/StartupSync.cs?name=snippet2&highlight=11)]
 
-## <a name="implement-no-locrazor-page-filters-by-overriding-filter-methods"></a>通过重写筛选器方法实现 Razor 页面筛选器
+## <a name="implement-razor-page-filters-by-overriding-filter-methods"></a>通过重写筛选器方法实现 Razor 页面筛选器
 
 以下代码替代同步 Razor 页面筛选器：
 

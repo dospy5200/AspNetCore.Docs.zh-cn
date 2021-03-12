@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/docker-compose-https
-ms.openlocfilehash: 37a0142dac1e26afd26dbf2aad46bee20693652e
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 69c449527a64ec928d436245e9e971ec49303489
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93051637"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588752"
 ---
 # <a name="hosting-aspnet-core-images-with-docker-compose-over-https"></a>通过 HTTPS Docker Compose 宿主 ASP.NET Core 映像
 
@@ -33,11 +33,11 @@ ms.locfileid: "93051637"
 
 本文档介绍如何通过 HTTPS 运行预生成的容器映像。
 
-若要开发方案，请参阅 [通过 HTTPS 上的 Docker 开发 ASP.NET Core 应用程序](https://github.com/dotnet/dotnet-docker/blob/master/samples/run-aspnetcore-https-development.md) 。
+若要开发方案，请参阅 [通过 HTTPS 上的 Docker 开发 ASP.NET Core 应用程序](https://github.com/dotnet/dotnet-docker/blob/main/samples/run-aspnetcore-https-development.md) 。
 
-此示例需要 docker [17.06](https://docs.docker.com/release-notes/docker-ce) 或更高版本的 [docker 客户端](https://www.docker.com/products/docker)。
+此示例需要 [Docker 17.06](https://docs.docker.com/release-notes/docker-ce) 或更高版本的 [Docker 客户端](https://www.docker.com/products/docker)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本文档中的某些说明需要 [.Net Core 2.2 SDK](https://dotnet.microsoft.com/download) 或更高版本。
 
@@ -52,7 +52,7 @@ ms.locfileid: "93051637"
 * 此 `dotnet dev-certs` 工具不是必需的。
 * 无需将证书存储在说明中使用的位置。 将证书存储在站点目录之外的任何位置。
 
-以下部分中包含的说明使用 `volumes` *docker-compose.yml. docker-compose.override.yml* 中的属性将证书装载到容器中。 可以使用 Dockerfile 中的命令将证书添加到容器映像 `COPY` 中，但不建议这样做。 *Dockerfile* 由于以下原因，不建议将证书复制到映像：
+以下部分中包含的说明使用 `volumes` *docker-compose.yml. docker-compose.override.yml* 中的属性将证书装载到容器中。 可以使用 Dockerfile 中的命令将证书添加到容器映像 `COPY` 中，但不建议这样做。  由于以下原因，不建议将证书复制到映像：
 
 * 这使得使用开发人员证书进行测试变得困难。
 * 这使得难以使用同一个映像来托管生产证书。

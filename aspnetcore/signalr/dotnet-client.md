@@ -19,22 +19,22 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/dotnet-client
-ms.openlocfilehash: 7849322e50aeceda0850d94f9c9bcda79a6051c8
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: db2bfa6d3aa440615c5a9c17ae843dbe22755c97
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061218"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589239"
 ---
-# <a name="aspnet-core-no-locsignalr-net-client"></a>ASP.NET Core SignalR .Net 客户端
+# <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR .Net 客户端
 
 通过 ASP.NET Core SignalR .net 客户端库，你可以 SignalR 从 .net 应用程序与中心进行通信。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/dotnet-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/dotnet-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 本文中的代码示例是使用 .Net 客户端 ASP.NET Core 的 WPF 应用程序 SignalR 。
 
-## <a name="install-the-no-locsignalr-net-client-package"></a>安装 SignalR .net 客户端包
+## <a name="install-the-signalr-net-client-package"></a>安装 SignalR .net 客户端包
 
 [AspNetCore. SignalR](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR.Client)若要连接到集线器，.net 客户端需要客户端包 SignalR 。
 

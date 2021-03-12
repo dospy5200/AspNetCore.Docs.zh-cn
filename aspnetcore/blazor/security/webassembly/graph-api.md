@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: blazor/security/webassembly/graph-api
-ms.openlocfilehash: 997d4dec05ddb6b9d0acb5ed36a6510c0836a4fb
-ms.sourcegitcommit: 1166b0ff3828418559510c661e8240e5c5717bb7
+ms.openlocfilehash: b9e95afc2ccff95c6acd215a70c8b0f92fb1b8c0
+ms.sourcegitcommit: 1436bd4d70937d6ec3140da56d96caab33c4320b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100280495"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102394728"
 ---
 # <a name="use-graph-api-with-aspnet-core-blazor-webassembly"></a>将 Graph API 和 ASP.NET Core Blazor WebAssembly 结合使用
 

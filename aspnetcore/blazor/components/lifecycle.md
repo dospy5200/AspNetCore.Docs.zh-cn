@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: blazor/components/lifecycle
-ms.openlocfilehash: 03a49c827a1f70e6b721adf293857bb33475ed36
-ms.sourcegitcommit: 04ad9cd26fcaa8bd11e261d3661f375f5f343cdc
+ms.openlocfilehash: 6e9d2c3180fb9e4c3e5ccc0b6d8e17183f78d698
+ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100107072"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109840"
 ---
 # <a name="aspnet-core-blazor-lifecycle"></a>ASP.NET Core Blazor 生命周期
 
@@ -253,11 +253,21 @@ protected override bool ShouldRender()
 
 Blazor Server 模板中的 `Pages/FetchData.razor`：
 
-[!code-razor[](lifecycle/samples_snapshot/FetchData.razor?highlight=9,21,25)]
+::: moniker range=">= aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/5.x/BlazorSample_Server/Pages/components-lifecycle/FetchData.razor?name=snippet&highlight=9,21,25)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/3.x/BlazorSample_Server/Pages/components-lifecycle/FetchData.razor?name=snippet&highlight=9,21,25)]
+
+::: moniker-end
 
 ## <a name="handle-errors"></a>处理错误
 
-有关在生命周期方法执行期间处理错误的信息，请参阅 <xref:blazor/fundamentals/handle-errors#lifecycle-methods>。
+有关在生命周期方法执行期间处理错误的信息，请参阅 <xref:blazor/fundamentals/handle-errors>。
 
 ## <a name="stateful-reconnection-after-prerendering"></a>预呈现后的有状态重新连接
 
@@ -395,11 +405,31 @@ public async ValueTask DisposeAsync()
 
 * 专用字段和 Lambda 方法
 
-  [!code-razor[](lifecycle/samples_snapshot/event-handler-disposal-1.razor?highlight=23,28)]
+  ::: moniker range=">= aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/Pages/components-lifecycle/EventHandlerDisposal1.razor?name=snippet&highlight=24,29)]
+
+  ::: moniker-end
+
+  ::: moniker range="< aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/Pages/components-lifecycle/EventHandlerDisposal1.razor?name=snippet&highlight=24,29)]
+
+  ::: moniker-end
 
 * 专用方法
 
-  [!code-razor[](lifecycle/samples_snapshot/event-handler-disposal-2.razor?highlight=16,26)]
+  ::: moniker range=">= aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/Pages/components-lifecycle/EventHandlerDisposal2.razor?name=snippet&highlight=16,26)]
+
+  ::: moniker-end
+
+  ::: moniker range="< aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/Pages/components-lifecycle/EventHandlerDisposal2.razor?name=snippet&highlight=16,26)]
+
+  ::: moniker-end
 
 使用[匿名函数](/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-functions)、方法或表达式时，无需实现 <xref:System.IDisposable> 和取消订阅委托。 但是，当公开事件的对象的生存期长于注册委托的组件的生存期时，不能取消订阅委托是一个问题。 发生这种情况时，会导致内存泄漏，因为已注册的委托使原始对象保持活动状态。 因此，仅当你知道事件委托可快速释放时，才使用以下方法。 当不确定需要释放的对象的生存期时，请订阅委托方法并正确地释放委托，如前面的示例所示。
 

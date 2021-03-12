@@ -18,14 +18,14 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authentication/add-user-data
-ms.openlocfilehash: a4e1fd780947cfa5f09fb1e03964595fa09f0f18
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 2d921a0c72fb7c03cd88966077e2d33e4b19ffa1
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061413"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585911"
 ---
-# <a name="add-download-and-delete-custom-user-data-to-no-locidentity-in-an-aspnet-core-project"></a>在 ASP.NET Core 项目中添加、下载和删除自定义用户数据 Identity
+# <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>在 ASP.NET Core 项目中添加、下载和删除自定义用户数据 Identity
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -36,7 +36,7 @@ ms.locfileid: "93061413"
 
 项目示例是从 Razor 页面 web 应用创建的，但 ASP.NET CORE MVC web 应用的说明类似。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authentication/add-user-data)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authentication/add-user-data)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -52,13 +52,13 @@ ms.locfileid: "93061413"
 
 ::: moniker-end
 
-## <a name="create-a-no-locrazor-web-app"></a>创建 Razor web 应用
+## <a name="create-a-razor-web-app"></a>创建 Razor web 应用
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ::: moniker range=">= aspnetcore-3.0"
 
-* 从 Visual Studio“文件”菜单中选择“新建” > “项目”  。 将项目命名为 " **WebApp1** " （如果你希望它与 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/live/aspnetcore/security/authentication/add-user-data) 代码的命名空间相匹配）。
+* 从 Visual Studio“文件”菜单中选择“新建” > “项目”。 将项目命名为 " **WebApp1** " （如果你希望它与 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/live/aspnetcore/security/authentication/add-user-data) 代码的命名空间相匹配）。
 * 选择 **ASP.NET Core Web 应用程序** > **正常**
 * 在下拉列表中选择 **ASP.NET Core 3.0**
 * 选择 **Web 应用程序** > **正常**
@@ -68,7 +68,7 @@ ms.locfileid: "93061413"
 
 ::: moniker range="< aspnetcore-3.0"
 
-* 从 Visual Studio“文件”菜单中选择“新建” > “项目”  。 将项目命名为 " **WebApp1** " （如果你希望它与 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/live/aspnetcore/security/authentication/add-user-data) 代码的命名空间相匹配）。
+* 从 Visual Studio“文件”菜单中选择“新建” > “项目”。 将项目命名为 " **WebApp1** " （如果你希望它与 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/live/aspnetcore/security/authentication/add-user-data) 代码的命名空间相匹配）。
 * 选择 **ASP.NET Core Web 应用程序** > **正常**
 * 在下拉列表中选择 **ASP.NET Core 2.2**
 * 选择 **Web 应用程序** > **正常**
@@ -85,19 +85,19 @@ dotnet new webapp -o WebApp1
 
 ---
 
-## <a name="run-the-no-locidentity-scaffolder"></a>运行 Identity scaffolder
+## <a name="run-the-identity-scaffolder"></a>运行 Identity scaffolder
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* 在 **解决方案资源管理器** 中，右键单击项目 > " **添加**  >  **新的基架项** "。
-* 在 " **添加基架** " 对话框的左窗格中，选择 " **Identity**  >  **添加** "。
-* 在 " **添加 Identity** " 对话框中，选择以下选项：
+* 在 **解决方案资源管理器** 中，右键单击项目 > "**添加**  >  **新的基架项**"。
+* 在 "**添加基架**" 对话框的左窗格中，选择 " **Identity**  >  **添加**"。
+* 在 "**添加 Identity** " 对话框中，选择以下选项：
   * 选择现有的布局文件  *~/Pages/Shared/_Layout cshtml*
   * 选择以下要重写的文件：
     * **帐户/注册**
     * **帐户/管理/索引**
-  * 选择 **+** 按钮以创建新的 **数据上下文类** 。 如果项目命名为 **WebApp1** ) ，则接受类型 ( **WebApp1. WebApp1Context** 。
-  * 选择 **+** 按钮以创建新的 **用户类** 。 如果项目命名为 **WebApp1** ) > " **添加** "，则接受 " **WebApp1User** " (类型。
+  * 选择 **+** 按钮以创建新的 **数据上下文类**。 如果项目命名为 **WebApp1**) ，则接受类型 (**WebApp1. WebApp1Context** 。
+  * 选择 **+** 按钮以创建新的 **用户类**。 如果项目命名为 **WebApp1**) > "**添加**"，则接受 " **WebApp1User** " (类型。
 * 选择 **添加** 。
 
 # <a name="net-core-cli"></a>[.NET Core CLI](#tab/netcore-cli)
@@ -141,9 +141,9 @@ dotnet aspnet-codegenerator identity -u WebApp1User -fi Account.Register;Account
   * 选择 " **下载** " 按钮，并检查文件 *上的PersonalData.js* 。
   * 测试 **删除** 按钮，该按钮将删除已登录的用户。
 
-## <a name="add-custom-user-data-to-the-no-locidentity-db"></a>向数据库添加自定义用户数据 Identity
+## <a name="add-custom-user-data-to-the-identity-db"></a>向数据库添加自定义用户数据 Identity
 
-`IdentityUser`用自定义属性更新派生类。 如果已将项目命名为 WebApp1，则该文件将命名为 *Areas/ Identity /Data/WebApp1User.cs* 。 用以下代码更新文件：
+`IdentityUser`用自定义属性更新派生类。 如果已将项目命名为 WebApp1，则该文件将命名为 *Areas/ Identity /Data/WebApp1User.cs*。 用以下代码更新文件：
 
 ::: moniker range=">= aspnetcore-3.0"
 
@@ -241,7 +241,7 @@ dotnet ef database update
 * 在页面上查看自定义用户数据 `/Identity/Account/Manage` 。
 * 从页面下载并查看用户的个人数据 `/Identity/Account/Manage/PersonalData` 。
 
-## <a name="add-claims-to-no-locidentity-using-iuserclaimsprincipalfactoryapplicationuser"></a>Identity使用 IUserClaimsPrincipalFactory 添加声明<ApplicationUser>
+## <a name="add-claims-to-identity-using-iuserclaimsprincipalfactoryapplicationuser"></a>Identity使用 IUserClaimsPrincipalFactory 添加声明<ApplicationUser>
 
 > [!NOTE]
 > 本部分不是上一教程的扩展。 若要将以下步骤应用到使用本教程构建的应用，请参阅 [此 GitHub 问题](https://github.com/dotnet/AspNetCore.Docs/issues/18797)。

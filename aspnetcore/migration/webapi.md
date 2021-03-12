@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: migration/webapi
-ms.openlocfilehash: 320805c0d40bf06cee384e6d98caea5c420d45bc
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 3bd34f677271ddfc00e6e65ddf3a5e3c10eec863
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061465"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588778"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>从 ASP.NET Web API 迁移到 ASP.NET Core
 
@@ -31,7 +31,7 @@ ms.locfileid: "93061465"
 
 ASP.NET 4.x Web API 是一种 HTTP 服务，它可达到各种客户端，包括浏览器和移动设备。 ASP.NET Core 将 ASP.NET 4.x 的 MVC 和 Web API 应用模型组合到称为 ASP.NET Core MVC 的单一编程模型中。 本文演示从 ASP.NET 4.x Web API 迁移到 ASP.NET Core MVC 所需的步骤。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/migration/webapi/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/migration/webapi/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ::: moniker range=">= aspnetcore-3.0"
 
@@ -64,14 +64,14 @@ ASP.NET 4.x Web API 是一种 HTTP 服务，它可达到各种客户端，包括
 在 Visual Studio 中创建新的空白解决方案并添加 ASP.NET 4.x Web API 项目以进行迁移：
 
 1. 从“文件”菜单中选择“新建”>“项目”  。
-1. 选择 " **空白解决方案** " 模板，然后选择 " **下一步** "。
-1. 将解决方案命名为 *WebAPIMigration* 。 选择“创建”。
+1. 选择 " **空白解决方案** " 模板，然后选择 " **下一步**"。
+1. 将解决方案命名为 *WebAPIMigration*。 选择“创建”。
 1. 将现有的 *ProductsApp* 项目添加到解决方案。
 
 添加要迁移到的新 API 项目：
 
 1. 向解决方案添加新的 **ASP.NET Core Web 应用程序** 项目。
-1. 在 " **配置新项目** " 对话框中，将项目命名为 *ProductsCore* ，然后选择 " **创建** "。
+1. 在 " **配置新项目** " 对话框中，将项目命名为 *ProductsCore*，然后选择 " **创建**"。
 1. 在“创建新的 ASP.NET Core Web 应用程序”对话框中，确认选择“.NET Core”和“ASP.NET Core 3.1”  。 选择“API”项目模板，然后选择“创建” 。
 1. 从新的 *ProductsCore* 项目中删除 *WeatherForecast.cs* 和 controller */WeatherForecastController* 示例文件。
 
@@ -83,7 +83,7 @@ ASP.NET Core 不使用 *App_Start* 文件夹或 *global.asax* 文件。 此外�
 
 `Startup` 类：
 
-* 替换 *global.asax* 。
+* 替换 *global.asax*。
 * 处理所有应用启动任务。
 
 有关详细信息，请参阅 <xref:fundamentals/startup>。
@@ -157,7 +157,7 @@ ASP.NET Core *API* 项目模板在生成的代码中包含终结点路由配置�
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.2"
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [!INCLUDE [prerequisites](../includes/net-core-prereqs-vs2019-2.2.md)]
 
@@ -181,9 +181,9 @@ ASP.NET Core *API* 项目模板在生成的代码中包含终结点路由配置�
 
 在 Visual Studio 中完成以下步骤：
 
-* 中转到 " **文件** " "  >  **新建**  >  **项目** " "  >  **其他项目类型** " "  >  **Visual Studio 解决方案** "。 选择 " **空白解决方案** "，并将解决方案命名为 " *WebAPIMigration* "。 单击“确定”按钮。
+* 中转到 "**文件**" "  >  **新建**  >  **项目**" "  >  **其他项目类型**" "  >  **Visual Studio 解决方案**"。 选择 " **空白解决方案**"，并将解决方案命名为 " *WebAPIMigration*"。 单击“确定”按钮。
 * 将现有的 *ProductsApp* 项目添加到解决方案。
-* 向解决方案添加新的 **ASP.NET Core Web 应用程序** 项目。 从下拉选择 " **.Net Core** 目标框架"，然后选择 " **API** 项目" 模板。 将项目命名为 " *ProductsCore* "，然后单击 **"确定"** 按钮。
+* 向解决方案添加新的 **ASP.NET Core Web 应用程序** 项目。 从下拉选择 " **.Net Core** 目标框架"，然后选择 " **API** 项目" 模板。 将项目命名为 " *ProductsCore*"，然后单击 **"确定"** 按钮。
 
 解决方案现在包含两个项目。 以下各节介绍了如何将 *ProductsApp* 项目的内容迁移到 *ProductsCore* 项目。
 
@@ -196,7 +196,7 @@ ASP.NET Core 不使用：
 
 `Startup` 类：
 
-* 替换 *global.asax* 。
+* 替换 *global.asax*。
 * 处理所有应用启动任务。
 
 有关详细信息，请参阅 <xref:fundamentals/startup>。

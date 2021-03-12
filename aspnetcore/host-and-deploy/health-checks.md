@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: host-and-deploy/health-checks
-ms.openlocfilehash: 32b7a4c6722ba45ba998f9430f5d6da6ddca53f9
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 272f1f098ca90434f26d6c057859a00b5519602e
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93058657"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588901"
 ---
 # <a name="health-checks-in-aspnet-core"></a>ASP.NET Core 中的运行状况检查
 
@@ -40,7 +40,7 @@ ASP.NET Core 提供运行状况检查中间件和库，以用于报告应用基�
 * 可以监视内存、磁盘和其他物理服务器资源的使用情况来了解是否处于正常状态。
 * 运行状况检查可以测试应用的依赖项（如数据库和外部服务终结点）以确认是否可用和正常工作。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/host-and-deploy/health-checks/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/host-and-deploy/health-checks/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 示例应用包含本主题中所述的方案示例。 若要运行给定方案的示例应用，请在命令行界面中从项目文件夹中使用 [dotnet run](/dotnet/core/tools/dotnet-run) 命令。 请参阅示例应用的 README.md 文件和本主题中的方案说明，以了解有关如何使用示例应用的详细信息。
 
@@ -809,7 +809,7 @@ ASP.NET Core 提供运行状况检查中间件和库，以用于报告应用基�
 * 可以监视内存、磁盘和其他物理服务器资源的使用情况来了解是否处于正常状态。
 * 运行状况检查可以测试应用的依赖项（如数据库和外部服务终结点）以确认是否可用和正常工作。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/host-and-deploy/health-checks/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/host-and-deploy/health-checks/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 示例应用包含本主题中所述的方案示例。 若要运行给定方案的示例应用，请在命令行界面中从项目文件夹中使用 [dotnet run](/dotnet/core/tools/dotnet-run) 命令。 请参阅示例应用的 README.md 文件和本主题中的方案说明，以了解有关如何使用示例应用的详细信息。
 

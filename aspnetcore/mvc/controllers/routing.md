@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/controllers/routing
-ms.openlocfilehash: 0863b5758f33b720636f3b927fcb9014cd106c21
-ms.sourcegitcommit: 7e394a8527c9818caebb940f692ae4fcf2f1b277
+ms.openlocfilehash: c90ac92cf0866b78bcdb11663e76c116d714ca5d
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99217539"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589057"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>在 ASP.NET Core 中路由到控制器操作
 
@@ -430,7 +430,7 @@ REST Api 应使用属性路由将应用功能建模为一组资源，其中的�
 
 下表说明了 `[Route]` 上述代码中的属性：
 
-| Attribute               | 结合 `[Route("Home")]` | 定义路由模板 |
+| 属性               | 结合 `[Route("Home")]` | 定义路由模板 |
 | ----------------- | ------------ | --------- |
 | `[Route("")]` | 是 | `"Home"` |
 | `[Route("Index")]` | 是 | `"Home/Index"` |
@@ -757,7 +757,7 @@ result: /UrlGeneration/Destination
 
 <a name="routing-gen-urls-html-ref-label"></a>
 
-### <a name="generate-urls-in-html-and-no-locrazor"></a>在 HTML 和中生成 Url Razor
+### <a name="generate-urls-in-html-and-razor"></a>在 HTML 和中生成 Url Razor
 
 <xref:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper> 提供 <xref:Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper> 方法 [Html.beginform](xref:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper.BeginForm*) 和 [html.actionlink](xref:Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper.ActionLink*) 分别生成 `<form>` 和元素的方法 `<a>` 。 这些方法使用 [Url 操作](xref:Microsoft.AspNetCore.Mvc.IUrlHelper.Action*) 方法来生成 url，并接受类似参数。 `HtmlHelper` 的配套 `Url.RouteUrl` 为 `Html.BeginRouteForm` 和 `Html.RouteLink`，两者具有相似的功能。
 
@@ -850,10 +850,10 @@ TagHelper 通过 `form` TagHelper 和 `<a>` TagHelper 生成 URL。 两者均通
 
 控制器上的公共方法（具有 [NonAction](xref:Microsoft.AspNetCore.Mvc.NonActionAttribute) 特性的方法除外）是操作。
 
-## <a name="sample-code"></a>代码示例
+## <a name="sample-code"></a>示例代码
 
 * [!INCLUDE[](~/includes/MyDisplayRouteInfo.md)]
-* [查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/routing/samples/3.x)（[如何下载](xref:index#how-to-download-a-sample)）
+* [查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/routing/samples/3.x)（[如何下载](xref:index#how-to-download-a-sample)）
 
 [!INCLUDE[](~/includes/dbg-route.md)]
 

@@ -19,18 +19,18 @@ no-loc:
 - Razor
 - SignalR
 uid: web-api/handle-errors
-ms.openlocfilehash: 92e9350a7892f8f38f64d4ebd68d54a97ec7e994
-ms.sourcegitcommit: 97243663fd46c721660e77ef652fe2190a461f81
+ms.openlocfilehash: f9cc38f444bd3db826595b7de64db05792915a23
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98058371"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585716"
 ---
 # <a name="handle-errors-in-aspnet-core-web-apis"></a>处理 ASP.NET Core Web API 中的错误
 
 本文介绍如何处理和自定义 ASP.NET Core Web API 的错误处理。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/web-api/handle-errors/samples) ([如何下载](xref:index#how-to-download-a-sample)) 
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/web-api/handle-errors/samples) ([如何下载](xref:index#how-to-download-a-sample)) 
 
 ## <a name="developer-exception-page"></a>开发人员异常页
 

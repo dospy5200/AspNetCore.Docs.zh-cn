@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authorization/secure-data
-ms.openlocfilehash: ebd3c0dc9baa63b30f142773d7a3d621ce4082d9
-ms.sourcegitcommit: ebc5beccba5f3f7619de20baa58ad727d2a3d18c
+ms.openlocfilehash: 662456af59c453df66ca48139a6de40d0e2cbf0d
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98689300"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589187"
 ---
 # <a name="create-an-aspnet-core-web-app-with-user-data-protected-by-authorization"></a>使用受授权保护的用户数据创建 ASP.NET Core web 应用
 
@@ -75,7 +75,7 @@ ms.locfileid: "98689300"
 * `ContactManagerAuthorizationHandler`：允许经理批准或拒绝联系人。
 * `ContactAdministratorsAuthorizationHandler`：允许管理员批准或拒绝联系人以及编辑/删除联系人。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本教程是高级教程。 你应该熟悉：
 
@@ -83,15 +83,15 @@ ms.locfileid: "98689300"
 * [身份验证](xref:security/authentication/identity)
 * [帐户确认和密码恢复](xref:security/authentication/accconfirm)
 * [授权](xref:security/authorization/introduction)
-* [实体框架核心](xref:data/ef-mvc/intro)
+* [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ## <a name="the-starter-and-completed-app"></a>入门和已完成的应用程序
 
-[下载](xref:index#how-to-download-a-sample)[已完成](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples)的应用。 [测试](#test-the-completed-app) 已完成的应用程序，使其安全功能熟悉。
+[下载](xref:index#how-to-download-a-sample)[已完成](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples)的应用。 [测试](#test-the-completed-app) 已完成的应用程序，使其安全功能熟悉。
 
 ### <a name="the-starter-app"></a>入门应用
 
-[下载](xref:index#how-to-download-a-sample)[初学者](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/)应用。
+[下载](xref:index#how-to-download-a-sample)[初学者](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples/)应用。
 
 运行应用程序，点击 " **ContactManager** " 链接，并验证是否可以创建、编辑和删除联系人。 若要创建初学者应用，请参阅 [创建初学者应用](#create-the-starter-app)。
 
@@ -114,7 +114,7 @@ dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="add-role-services-to-no-locidentity"></a>将角色服务添加到 Identity
+### <a name="add-role-services-to-identity"></a>将角色服务添加到 Identity
 
 追加 [AddRoles](/dotnet/api/microsoft.aspnetcore.identity.identitybuilder.addroles#Microsoft_AspNetCore_Identity_IdentityBuilder_AddRoles__1) 以添加角色服务：
 
@@ -128,13 +128,13 @@ dotnet ef database update
 
 [!code-csharp[](secure-data/samples/final3/Startup.cs?name=snippet&highlight=13-99)]
 
-前面突出显示的代码设置了 [后备身份验证策略](xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.FallbackPolicy)。 回退身份验证策略要求 **_所有_* _ 用户进行身份验证，但 Razor 页面、控制器或操作方法除外。 例如， Razor 使用或的页、控制器或操作方法 `[AllowAnonymous]` `[Authorize(PolicyName="MyPolicy")]` 使用应用的身份验证属性而不是后备身份验证策略。
+前面突出显示的代码设置了 [后备身份验证策略](xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.FallbackPolicy)。 回退身份验证策略要求对 ***所有*** 用户进行身份验证，但 Razor 页面、控制器或操作方法除外，具有身份验证属性。 例如， Razor 使用或的页、控制器或操作方法 `[AllowAnonymous]` `[Authorize(PolicyName="MyPolicy")]` 使用应用的身份验证属性而不是后备身份验证策略。
 
-<xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireAuthenticatedUser%2A> 添加 <xref:Microsoft.AspNetCore.Authorization.Infrastructure.DenyAnonymousAuthorizationRequirement> 到当前实例，这将强制对当前用户进行身份验证。
+<xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireAuthenticatedUser%2A> 将 <xref:Microsoft.AspNetCore.Authorization.Infrastructure.DenyAnonymousAuthorizationRequirement> 添加到当前实例，这将强制对当前用户进行身份验证。
 
 回退身份验证策略：
 
-_ 适用于所有未显式指定身份验证策略的请求。 对于终结点路由服务的请求，这将包括未指定授权属性的任何终结点。 对于在授权中间件之后由其他中间件提供服务的请求，例如 [静态文件](xref:fundamentals/static-files)，这会将该策略应用到所有请求。
+* 应用于所有未显式指定身份验证策略的请求。 对于终结点路由服务的请求，这将包括未指定授权属性的任何终结点。 对于在授权中间件之后由其他中间件提供服务的请求，例如 [静态文件](xref:fundamentals/static-files)，这会将该策略应用到所有请求。
 
 将后备身份验证策略设置为 "要求用户进行身份验证" 可保护新添加的 Razor 页面和控制器。 默认情况下，需要进行身份验证比依赖新控制器和 Razor 页面以包括属性更安全 `[Authorize]` 。
 
@@ -221,13 +221,13 @@ Entity Framework Core 使用 AddScoped 的服务必须使用[](/dotnet/api/micro
 
 [!code-csharp[](secure-data/samples/final3/Authorization/ContactOperations.cs)]
 
-### <a name="create-a-base-class-for-the-contacts-no-locrazor-pages"></a>为联系人页创建基类 Razor
+### <a name="create-a-base-class-for-the-contacts-razor-pages"></a>为联系人页创建基类 Razor
 
 创建一个包含联系人页中使用的服务的基类 Razor 。 基类将初始化代码放在一个位置：
 
 [!code-csharp[](secure-data/samples/final3/Pages/Contacts/DI_BasePageModel.cs)]
 
-前面的代码：
+上述代码：
 
 * 添加 `IAuthorizationService` 服务以访问授权处理程序。
 * 添加 Identity `UserManager` 服务。
@@ -334,7 +334,7 @@ Entity Framework Core 使用 AddScoped 的服务必须使用[](/dotnet/api/micro
 * 经理可以批准/拒绝联系人数据。 此 `Details` 视图显示 " **批准** " 和 " **拒绝** " 按钮。
 * 管理员可以批准/拒绝和编辑/删除所有数据。
 
-| 用户                | 应用程序的种子 | 选项                                  |
+| User                | 应用程序的种子 | 选项                                  |
 | ------------------- | :---------------: | ---------------------------------------- |
 | test@example.com    | 否                | 编辑/删除自己的数据。                |
 | manager@contoso.com | 是               | 批准/拒绝和编辑/删除自己的数据。 |
@@ -381,7 +381,7 @@ dotnet ef database update
 
 ### <a name="seed-the-database"></a>设定数据库种子
 
-将 [SeedData](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter3/Data/SeedData.cs) 类添加到 *Data* 文件夹：
+将 [SeedData](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples/starter3/Data/SeedData.cs) 类添加到 *Data* 文件夹：
 
 [!code-csharp[](secure-data/samples/starter3/Data/SeedData.cs)]
 
@@ -431,7 +431,7 @@ dotnet ef database update
 * `ContactManagerAuthorizationHandler`：允许经理批准或拒绝联系人。
 * `ContactAdministratorsAuthorizationHandler`：允许管理员批准或拒绝联系人以及编辑/删除联系人。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本教程是高级教程。 你应该熟悉：
 
@@ -439,15 +439,15 @@ dotnet ef database update
 * [身份验证](xref:security/authentication/identity)
 * [帐户确认和密码恢复](xref:security/authentication/accconfirm)
 * [授权](xref:security/authorization/introduction)
-* [实体框架核心](xref:data/ef-mvc/intro)
+* [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ## <a name="the-starter-and-completed-app"></a>入门和已完成的应用程序
 
-[下载](xref:index#how-to-download-a-sample)[已完成](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples)的应用。 [测试](#test-the-completed-app) 已完成的应用程序，使其安全功能熟悉。
+[下载](xref:index#how-to-download-a-sample)[已完成](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples)的应用。 [测试](#test-the-completed-app) 已完成的应用程序，使其安全功能熟悉。
 
 ### <a name="the-starter-app"></a>入门应用
 
-[下载](xref:index#how-to-download-a-sample)[初学者](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/)应用。
+[下载](xref:index#how-to-download-a-sample)[初学者](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples/)应用。
 
 运行应用程序，点击 " **ContactManager** " 链接，并验证是否可以创建、编辑和删除联系人。
 
@@ -470,7 +470,7 @@ dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="add-role-services-to-no-locidentity"></a>将角色服务添加到 Identity
+### <a name="add-role-services-to-identity"></a>将角色服务添加到 Identity
 
 追加 [AddRoles](/dotnet/api/microsoft.aspnetcore.identity.identitybuilder.addroles#Microsoft_AspNetCore_Identity_IdentityBuilder_AddRoles__1) 以添加角色服务：
 
@@ -557,13 +557,13 @@ Entity Framework Core 使用 AddScoped 的服务必须使用[](/dotnet/api/micro
 
 [!code-csharp[](secure-data/samples/final2.1/Authorization/ContactOperations.cs)]
 
-### <a name="create-a-base-class-for-the-contacts-no-locrazor-pages"></a>为联系人页创建基类 Razor
+### <a name="create-a-base-class-for-the-contacts-razor-pages"></a>为联系人页创建基类 Razor
 
 创建一个包含联系人页中使用的服务的基类 Razor 。 基类将初始化代码放在一个位置：
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/DI_BasePageModel.cs)]
 
-前面的代码：
+上述代码：
 
 * 添加 `IAuthorizationService` 服务以访问授权处理程序。
 * 添加 Identity `UserManager` 服务。
@@ -661,7 +661,7 @@ Entity Framework Core 使用 AddScoped 的服务必须使用[](/dotnet/api/micro
 * 经理可以批准/拒绝联系人数据。 此 `Details` 视图显示 " **批准** " 和 " **拒绝** " 按钮。
 * 管理员可以批准/拒绝和编辑/删除所有数据。
 
-| 用户                | 应用程序的种子 | 选项                                  |
+| User                | 应用程序的种子 | 选项                                  |
 | ------------------- | :---------------: | ---------------------------------------- |
 | test@example.com    | 否                | 编辑/删除自己的数据。                |
 | manager@contoso.com | 是               | 批准/拒绝和编辑/删除自己的数据。 |
@@ -704,7 +704,7 @@ Entity Framework Core 使用 AddScoped 的服务必须使用[](/dotnet/api/micro
 
 ### <a name="seed-the-database"></a>设定数据库种子
 
-将 [SeedData](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2.1/Data/SeedData.cs) 类添加到 *Data* 文件夹中。
+将 [SeedData](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/secure-data/samples/starter2.1/Data/SeedData.cs) 类添加到 *Data* 文件夹中。
 
 调用 `SeedData.Initialize` 自 `Main` ：
 

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: a568ad481eb09587e2ddce8e84d0ac3eff01e990
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 51e5f2f74493e7f4c18273c8589ed0424a1f2cac
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060893"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585976"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 表单中的标记帮助程序
 
@@ -85,7 +85,7 @@ MVC 运行时通过表单标记帮助程序属性 `asp-controller` 和 `asp-acti
 
 用于控制 `formaction` 值的受支持的 [AnchorTagHelper](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) 属性：
 
-|Attribute|说明|
+|属性|描述|
 |---|---|
 |[asp-controller](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-controller)|控制器的名称。|
 |[asp-action](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-action)|操作方法的名称。|
@@ -93,7 +93,7 @@ MVC 运行时通过表单标记帮助程序属性 `asp-controller` 和 `asp-acti
 |[asp-page](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-page)|页的名称 Razor 。|
 |[asp-page-handler](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-page-handler)|Razor页面处理程序的名称。|
 |[asp-route](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-route)|路由的名称。|
-|[asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-route-value)|单个 URL 路由值。 例如 `asp-route-id="1234"`。|
+|[asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-route-value)|单个 URL 路由值。 例如，`asp-route-id="1234"`。|
 |[asp-all-route-data](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-all-route-data)|所有路由值。|
 |[asp-fragment](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#asp-fragment)|URL 片段。|
 
@@ -211,15 +211,15 @@ public class HomeController : Controller
 |.NET 类型|输入类型|
 |---|---|
 |Bool|type="checkbox"|
-|String|type="text"|
+|字符串|type="text"|
 |DateTime|type=["datetime-local"](https://developer.mozilla.org/docs/Web/HTML/Element/input/datetime-local)|
 |Byte|type="number"|
-|Int|type="number"|
+|int|type="number"|
 |Single、Double|type="number"|
 
 下表显示输入标记帮助程序会映射到特定输入类型的一些常见[数据注释](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)属性（并未列出每个验证属性）：
 
-|Attribute|输入类型|
+|属性|输入类型|
 |---|---|
 |[EmailAddress]|type="email"|
 |[Url]|type="url"|
@@ -466,7 +466,7 @@ public IActionResult Edit(int id, int colorIndex)
 |--- |--- |
 |ValidationSummary.All|属性和模型级别|
 |ValidationSummary.ModelOnly|型号|
-|ValidationSummary.None|None|
+|ValidationSummary.None|无|
 
 ### <a name="sample"></a>示例
 
@@ -503,7 +503,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 * 具有 HTML 帮助程序替代项 `Html.DropDownListFor` 和 `Html.ListBoxFor`
 
-`Select Tag Helper` `asp-for` 为 [select](https://www.w3.org/wiki/HTML/Elements/select) 元素指定模型属性名称，`asp-items` 指定 [option](https://www.w3.org/wiki/HTML/Elements/option) 元素。  例如： 。
+`Select Tag Helper` `asp-for` 为 [select](https://www.w3.org/wiki/HTML/Elements/select) 元素指定模型属性名称，`asp-items` 指定 [option](https://www.w3.org/wiki/HTML/Elements/option) 元素。  例如：
 
 [!code-cshtml[](working-with-forms/sample/final/Views/Home/Index.cshtml?range=4)]
 
@@ -682,4 +682,4 @@ HTTP POST `Index` 方法显示选定内容：
 * <xref:mvc/models/model-binding>
 * <xref:mvc/models/validation>
 * [IAttributeAdapter 接口](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
-* [本文档的代码片段](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)
+* [本文档的代码片段](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/working-with-forms/sample/final)

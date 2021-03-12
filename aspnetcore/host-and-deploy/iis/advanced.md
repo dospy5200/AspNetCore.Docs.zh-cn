@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: host-and-deploy/iis/advanced
-ms.openlocfilehash: 9f14929a7d298d6f4d66abcc88665db34fc072bf
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: de3abb7b5f89e3b84da38a8eabb183f9551cc1f9
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93058606"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588914"
 ---
 # <a name="advanced-configuration-of-the-aspnet-core-module-and-iis"></a>ASP.NET Core 模块和 IIS 的高级配置
 
@@ -89,7 +89,7 @@ dotnet-hosting-{VERSION}.exe OPT_NO_SHARED_CONFIG_CHECK=1
 
   ASP.NET Core 应用使用的数据保护密钥存储在应用外部的注册表中。 要持久保存给定应用的密钥，需为应用池创建注册表项。
 
-  对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/dotnet/AspNetCore/blob/master/src/DataProtection/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
+  对于独立的非 Web 场 IIS 安装，可以对用于 ASP.NET Core 应用的每个应用池使用[数据保护 Provision-AutoGenKeys.ps1 PowerShell 脚本](https://github.com/dotnet/AspNetCore/blob/main/src/DataProtection/Provision-AutoGenKeys.ps1)。 此脚本在 HKLM 注册表中创建注册表项，仅应用的应用池工作进程帐户可对其进行访问。 通过计算机范围的密钥使用 DPAPI 对密钥静态加密。
 
   在 Web 场方案中，可以将应用配置为使用 UNC 路径存储其数据保护密钥环。 默认情况下，密钥未加密。 确保网络共享的文件权限仅限于应用在其下运行的 Windows 帐户。 可使用 X509 证书来保护静态密钥。 考虑允许用户上传证书的机制。 将证书置于用户信任的证书存储中，并确保这些证书对所有运行用户应用的计算机都可用。 有关详细信息，请参阅 <xref:security/data-protection/configuration/overview>。
 
@@ -198,7 +198,7 @@ ASP.NET Core 应用不支持 [IIS 虚拟目录](/iis/get-started/planning-your-i
 
 IIS“添加网站”对话框默认为每应用一个应用池。 提供了站点名称时，该文本会自动传输到“应用程序池”文本框 。 添加站点时，会使用该站点名称创建新的应用池。
 
-## <a name="application-pool-no-locidentity"></a>应用程序池 Identity
+## <a name="application-pool-identity"></a>应用程序池 Identity
 
 通过应用池标识帐户，可以在唯一帐户下运行应用，而无需创建和管理域或本地帐户。 在 IIS 8.0 或更高版本上，IIS 管理员工作进程 (WAS) 将使用新应用池的名称创建一个虚拟帐户，并默认在此帐户下运行应用池的工作进程。 在 IIS 管理控制台中，确保应用池“高级设置”下的“Identity”设置为使用 `ApplicationPoolIdentity` ：
 

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/controllers/filters
-ms.openlocfilehash: 416fc292d82cf841b2134e23a8e494e3e8d945ca
-ms.sourcegitcommit: f77a7467651bab61b24261da9dc5c1dd75fc1fa9
+ms.openlocfilehash: b53b017e63ada62438e352a6c5112b7584ff0b26
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563978"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589096"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core 中的筛选器
 
@@ -45,7 +45,7 @@ ms.locfileid: "100563978"
 * 该组件嵌入在页面或视图中。
 * 页面或控制器/视图使用此筛选器。
 
-[查看或下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/3.1sample)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/3.1sample)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="how-filters-work"></a>筛选器的工作原理
 
@@ -88,7 +88,7 @@ ms.locfileid: "100563978"
 
 [!code-csharp[](./filters/3.1sample/FiltersSample/Filters/MySampleActionFilter.cs?name=snippet_ActionFilter)]
 
-在上面的代码中， [MyDebug](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/controllers/filters/3.1sample/FiltersSample/Helper/MyDebug.cs) 是 [示例下载](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/controllers/filters/3.1sample/FiltersSample/Helper/MyDebug.cs)中的实用工具函数。
+在上面的代码中， [MyDebug](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/controllers/filters/3.1sample/FiltersSample/Helper/MyDebug.cs) 是 [示例下载](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/controllers/filters/3.1sample/FiltersSample/Helper/MyDebug.cs)中的实用工具函数。
 
 异步筛选器定义 `On-Stage-ExecutionAsync` 方法。 例如，<xref:Microsoft.AspNetCore.Mvc.Controller.OnActionExecutionAsync*>：
 
@@ -232,7 +232,7 @@ ASP.NET Core 包含许多可子类化和自定义的基于属性的内置筛选�
   * `MySampleActionFilter.OnActionExecuted`
 * `TestController.OnActionExecuted`
 
-控制器级别筛选器将 [Order](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/Filters/ControllerActionFilter.cs#L15-L17) 属性设置为 `int.MinValue`。 控制器级别筛选器无法设置为在将筛选器应用于方法之后运行。 在下一节对 Order 进行了介绍。
+控制器级别筛选器将 [Order](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/Filters/ControllerActionFilter.cs#L15-L17) 属性设置为 `int.MinValue`。 控制器级别筛选器无法设置为在将筛选器应用于方法之后运行。 在下一节对 Order 进行了介绍。
 
 有关 Razor 页面，请 [参阅 Razor 通过重写筛选器方法实现页面筛选器](xref:razor-pages/filter#implement-razor-page-filters-by-overriding-filter-methods)。
 
@@ -265,7 +265,7 @@ ASP.NET Core 包含许多可子类化和自定义的基于属性的内置筛选�
   * `MySampleActionFilter.OnActionExecuted`
 * `Test2Controller.OnActionExecuted`
 
-在确定筛选器的运行顺序时，`Order` 属性重写作用域。 先按顺序对筛选器排序，然后使用作用域消除并列问题。 所有内置筛选器实现 `IOrderedFilter` 并将默认 `Order` 值设为 0。 如前所述，控制器级别筛选器将 [Order](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/Filters/ControllerActionFilter.cs#L15-L17) 属性设置为 `int.MinValue`。对于内置筛选器，作用域会确定顺序，除非将 `Order` 设为非零值。
+在确定筛选器的运行顺序时，`Order` 属性重写作用域。 先按顺序对筛选器排序，然后使用作用域消除并列问题。 所有内置筛选器实现 `IOrderedFilter` 并将默认 `Order` 值设为 0。 如前所述，控制器级别筛选器将 [Order](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/Filters/ControllerActionFilter.cs#L15-L17) 属性设置为 `int.MinValue`。对于内置筛选器，作用域会确定顺序，除非将 `Order` 设为非零值。
 
 在前面的代码中，`MySampleActionFilter` 具有全局作用域，因此它在具有控制器作用域的 `MyAction2FilterAttribute` 之前运行。 若要首先运行 `MyAction2FilterAttribute`，请将顺序设置为 `int.MinValue`：
 
@@ -576,7 +576,7 @@ ASP.NET Core 运行时不保证：
 
 [!code-csharp[](./filters/3.1sample/FiltersSample/Controllers/SampleController.cs?name=snippet3&highlight=21)]
 
-通过运行[下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/3.1sample)来测试前面的代码：
+通过运行[下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/3.1sample)来测试前面的代码：
 
 * 调用 F12 开发人员工具。
 * 导航到 `https://localhost:5001/Sample/HeaderWithFactory`。
@@ -628,7 +628,7 @@ What's a non-named attribute?
 ## <a name="next-actions"></a>后续操作
 
 * 请参阅 [筛选 Razor 页面的方法](xref:razor-pages/filter)。
-* 若要尝试使用筛选器，请[下载、测试并修改 GitHub 示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/3.1sample)。
+* 若要尝试使用筛选器，请[下载、测试并修改 GitHub 示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/3.1sample)。
 
 ::: moniker-end
 
@@ -647,7 +647,7 @@ What's a non-named attribute?
 
 本文档适用于 Razor 具有视图的页面、API 控制器和控制器。
 
-[查看或下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="how-filters-work"></a>筛选器的工作原理
 
@@ -1099,7 +1099,7 @@ FiltersSample.Filters.LogConstantFilter:Information: Method 'Hi' called
 
 [!code-csharp[](./filters/sample/FiltersSample/Filters/AddHeaderWithFactoryAttribute.cs?name=snippet_IFilterFactory&highlight=1,4,5,6,7)]
 
-可以通过运行[下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)来测试前面的代码：
+可以通过运行[下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/sample)来测试前面的代码：
 
 * 调用 F12 开发人员工具。
 * 导航到 `https://localhost:5001/Sample/HeaderWithFactory`。
@@ -1151,6 +1151,6 @@ What's a non-named attribute?
 ## <a name="next-actions"></a>后续操作
 
 * 请参阅 [筛选 Razor 页面的方法](xref:razor-pages/filter)。
-* 若要尝试使用筛选器，请[下载、测试并修改 GitHub 示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/filters/sample)。
+* 若要尝试使用筛选器，请[下载、测试并修改 GitHub 示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/filters/sample)。
 
 ::: moniker-end

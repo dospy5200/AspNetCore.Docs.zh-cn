@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: performance/response-compression
-ms.openlocfilehash: 9327c98c22a4d42d31ea8ba1eb8337153040b5b5
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 239f9e84d068bfd75c84ccf16f0e74cdbbbebfb2
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93056967"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586314"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core 中的响应压缩
 
@@ -32,7 +32,7 @@ ms.locfileid: "93056967"
 
 网络带宽是一种有限的资源。 减小响应大小通常会显著提高应用程序的响应能力。 减少负载大小的一种方法是压缩应用的响应。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="when-to-use-response-compression-middleware"></a>何时使用响应压缩中间件
 
@@ -54,7 +54,7 @@ ms.locfileid: "93056967"
 
 如果客户端可以处理压缩的内容，则客户端必须通过请求发送标头来通知服务器的功能 `Accept-Encoding` 。 当服务器发送压缩的内容时，它必须在标头中包含有关 `Content-Encoding` 如何对压缩的响应进行编码的信息。 下表显示了中间件支持的内容编码称号。
 
-| `Accept-Encoding` 标头值 | 支持的中间件 | 说明 |
+| `Accept-Encoding` 标头值 | 支持的中间件 | 描述 |
 | ------------------------------- | :------------------: | ----------- |
 | `br`                            | 是（默认）        | [Brotli 压缩数据格式](https://tools.ietf.org/html/rfc7932) |
 | `deflate`                       | 否                   | [DEFLATE 压缩数据格式](https://tools.ietf.org/html/rfc1951) |
@@ -83,16 +83,16 @@ ms.locfileid: "93056967"
 | `Content-Type`     | 指定内容的 MIME 类型。 每个响应都应指定其 `Content-Type` 。 中间件会检查此值以确定是否应压缩响应。 中间件指定了一组可进行编码的 [默认 MIME 类型](#mime-types) ，但你可以替换或添加 MIME 类型。 |
 | `Vary`             | 当由服务器发送的值 `Accept-Encoding` 为 "客户端" 和 "代理服务器" 时， `Vary` 标头向客户端或代理发送应缓存 (根据 `Accept-Encoding` 请求标头的值改变) 响应。 将内容与标头一起返回的结果 `Vary: Accept-Encoding` 是：压缩的和未压缩的响应都单独进行缓存。 |
 
-浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
+浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
 
 * 使用 Gzip 和自定义压缩提供程序的应用程序响应的压缩。
 * 如何将 MIME 类型添加到 MIME 类型的默认列表以进行压缩。
 
-## <a name="package"></a>程序包
+## <a name="package"></a>包
 
 响应压缩中间件由 [AspNetCore. ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 包提供，后者隐式包含在 ASP.NET Core 应用中。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 下面的代码演示如何为默认 MIME 类型和压缩提供程序 ([Brotli](#brotli-compression-provider) 和 [Gzip](#gzip-compression-provider)) 启用响应压缩中间件：
 
@@ -148,7 +148,7 @@ public void ConfigureServices(IServiceCollection services)
 
 设置的压缩级别 <xref:Microsoft.AspNetCore.ResponseCompression.BrotliCompressionProviderOptions> 。 Brotli 压缩提供程序默认为最快的压缩级别 ([CompressionLevel](xref:System.IO.Compression.CompressionLevel)) ，这可能不会产生最有效的压缩。 如果需要最有效的压缩，请将中间件配置为最佳压缩。
 
-| Compression Level | 说明 |
+| Compression Level | 描述 |
 | ----------------- | ----------- |
 | [CompressionLevel](xref:System.IO.Compression.CompressionLevel) | 压缩应该尽快完成，即使生成的输出未以最佳方式压缩。 |
 | [CompressionLevel. NoCompression](xref:System.IO.Compression.CompressionLevel) | 不应执行压缩。 |
@@ -188,7 +188,7 @@ public void ConfigureServices(IServiceCollection services)
 
 设置的压缩级别 <xref:Microsoft.AspNetCore.ResponseCompression.GzipCompressionProviderOptions> 。 Gzip 压缩提供程序默认为最快的压缩级别 ([CompressionLevel](xref:System.IO.Compression.CompressionLevel)) ，这可能不会生成最有效的压缩。 如果需要最有效的压缩，请将中间件配置为最佳压缩。
 
-| Compression Level | 说明 |
+| Compression Level | 描述 |
 | ----------------- | ----------- |
 | [CompressionLevel](xref:System.IO.Compression.CompressionLevel) | 压缩应该尽快完成，即使生成的输出未以最佳方式压缩。 |
 | [CompressionLevel. NoCompression](xref:System.IO.Compression.CompressionLevel) | 不应执行压缩。 |
@@ -254,7 +254,7 @@ public void ConfigureServices(IServiceCollection services)
 
 如果在要为应用禁用的服务器级别上配置了活动的 IIS 动态压缩模块，请使用添加到 *web.config* 文件来禁用该模块。 有关详细信息，请参阅[禁用 IIS 模块](xref:host-and-deploy/iis/modules#disabling-iis-modules)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 使用 [Fiddler](https://www.telerik.com/fiddler)、 [Firebug](https://getfirebug.com/)或 [Postman](https://www.getpostman.com/)之类的工具，通过该工具，可以设置 `Accept-Encoding` 请求标头并研究响应标头、大小和正文。 默认情况下，响应压缩中间件会压缩满足以下条件的响应：
 
@@ -278,7 +278,7 @@ public void ConfigureServices(IServiceCollection services)
 
 网络带宽是一种有限的资源。 减小响应大小通常会显著提高应用程序的响应能力。 减少负载大小的一种方法是压缩应用的响应。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="when-to-use-response-compression-middleware"></a>何时使用响应压缩中间件
 
@@ -300,7 +300,7 @@ public void ConfigureServices(IServiceCollection services)
 
 如果客户端可以处理压缩的内容，则客户端必须通过请求发送标头来通知服务器的功能 `Accept-Encoding` 。 当服务器发送压缩的内容时，它必须在标头中包含有关 `Content-Encoding` 如何对压缩的响应进行编码的信息。 下表显示了中间件支持的内容编码称号。
 
-| `Accept-Encoding` 标头值 | 支持的中间件 | 说明 |
+| `Accept-Encoding` 标头值 | 支持的中间件 | 描述 |
 | ------------------------------- | :------------------: | ----------- |
 | `br`                            | 是（默认）        | [Brotli 压缩数据格式](https://tools.ietf.org/html/rfc7932) |
 | `deflate`                       | 否                   | [DEFLATE 压缩数据格式](https://tools.ietf.org/html/rfc1951) |
@@ -329,16 +329,16 @@ public void ConfigureServices(IServiceCollection services)
 | `Content-Type`     | 指定内容的 MIME 类型。 每个响应都应指定其 `Content-Type` 。 中间件会检查此值以确定是否应压缩响应。 中间件指定了一组可进行编码的 [默认 MIME 类型](#mime-types) ，但你可以替换或添加 MIME 类型。 |
 | `Vary`             | 当由服务器发送的值 `Accept-Encoding` 为 "客户端" 和 "代理服务器" 时， `Vary` 标头向客户端或代理发送应缓存 (根据 `Accept-Encoding` 请求标头的值改变) 响应。 将内容与标头一起返回的结果 `Vary: Accept-Encoding` 是：压缩的和未压缩的响应都单独进行缓存。 |
 
-浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
+浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
 
 * 使用 Gzip 和自定义压缩提供程序的应用程序响应的压缩。
 * 如何将 MIME 类型添加到 MIME 类型的默认列表以进行压缩。
 
-## <a name="package"></a>程序包
+## <a name="package"></a>包
 
 若要将中间件包含在项目中，请添加对 [AspNetCore 元包](xref:fundamentals/metapackage-app)的引用，其中包括 [AspNetCore. ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 包。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 下面的代码演示如何为默认 MIME 类型和压缩提供程序 ([Brotli](#brotli-compression-provider) 和 [Gzip](#gzip-compression-provider)) 启用响应压缩中间件：
 
@@ -394,7 +394,7 @@ public void ConfigureServices(IServiceCollection services)
 
 设置的压缩级别 <xref:Microsoft.AspNetCore.ResponseCompression.BrotliCompressionProviderOptions> 。 Brotli 压缩提供程序默认为最快的压缩级别 ([CompressionLevel](xref:System.IO.Compression.CompressionLevel)) ，这可能不会产生最有效的压缩。 如果需要最有效的压缩，请将中间件配置为最佳压缩。
 
-| Compression Level | 说明 |
+| Compression Level | 描述 |
 | ----------------- | ----------- |
 | [CompressionLevel](xref:System.IO.Compression.CompressionLevel) | 压缩应该尽快完成，即使生成的输出未以最佳方式压缩。 |
 | [CompressionLevel. NoCompression](xref:System.IO.Compression.CompressionLevel) | 不应执行压缩。 |
@@ -434,7 +434,7 @@ public void ConfigureServices(IServiceCollection services)
 
 设置的压缩级别 <xref:Microsoft.AspNetCore.ResponseCompression.GzipCompressionProviderOptions> 。 Gzip 压缩提供程序默认为最快的压缩级别 ([CompressionLevel](xref:System.IO.Compression.CompressionLevel)) ，这可能不会生成最有效的压缩。 如果需要最有效的压缩，请将中间件配置为最佳压缩。
 
-| Compression Level | 说明 |
+| Compression Level | 描述 |
 | ----------------- | ----------- |
 | [CompressionLevel](xref:System.IO.Compression.CompressionLevel) | 压缩应该尽快完成，即使生成的输出未以最佳方式压缩。 |
 | [CompressionLevel. NoCompression](xref:System.IO.Compression.CompressionLevel) | 不应执行压缩。 |
@@ -499,7 +499,7 @@ public void ConfigureServices(IServiceCollection services)
 
 如果在要为应用禁用的服务器级别上配置了活动的 IIS 动态压缩模块，请使用添加到 *web.config* 文件来禁用该模块。 有关详细信息，请参阅[禁用 IIS 模块](xref:host-and-deploy/iis/modules#disabling-iis-modules)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 使用 [Fiddler](https://www.telerik.com/fiddler)、 [Firebug](https://getfirebug.com/)或 [Postman](https://www.getpostman.com/)之类的工具，通过该工具，可以设置 `Accept-Encoding` 请求标头并研究响应标头、大小和正文。 默认情况下，响应压缩中间件会压缩满足以下条件的响应：
 
@@ -523,7 +523,7 @@ public void ConfigureServices(IServiceCollection services)
 
 网络带宽是一种有限的资源。 减小响应大小通常会显著提高应用程序的响应能力。 减少负载大小的一种方法是压缩应用的响应。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="when-to-use-response-compression-middleware"></a>何时使用响应压缩中间件
 
@@ -574,16 +574,16 @@ public void ConfigureServices(IServiceCollection services)
 | `Content-Type`     | 指定内容的 MIME 类型。 每个响应都应指定其 `Content-Type` 。 中间件会检查此值以确定是否应压缩响应。 中间件指定了一组可进行编码的 [默认 MIME 类型](#mime-types) ，但你可以替换或添加 MIME 类型。 |
 | `Vary`             | 当由服务器发送的值 `Accept-Encoding` 为 "客户端" 和 "代理服务器" 时， `Vary` 标头向客户端或代理发送应缓存 (根据 `Accept-Encoding` 请求标头的值改变) 响应。 将内容与标头一起返回的结果 `Vary: Accept-Encoding` 是：压缩的和未压缩的响应都单独进行缓存。 |
 
-浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
+浏览用于 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/performance/response-compression/samples)的响应压缩中间件功能。 该示例演示：
 
 * 使用 Gzip 和自定义压缩提供程序的应用程序响应的压缩。
 * 如何将 MIME 类型添加到 MIME 类型的默认列表以进行压缩。
 
-## <a name="package"></a>程序包
+## <a name="package"></a>包
 
 若要将中间件包含在项目中，请添加对 [AspNetCore 元包](xref:fundamentals/metapackage-app)的引用，其中包括 [AspNetCore. ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 包。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>配置
 
 下面的代码演示如何为默认 MIME 类型和 [Gzip 压缩提供程序](#gzip-compression-provider)启用响应压缩中间件：
 
@@ -639,7 +639,7 @@ public void ConfigureServices(IServiceCollection services)
 
 设置的压缩级别 <xref:Microsoft.AspNetCore.ResponseCompression.GzipCompressionProviderOptions> 。 Gzip 压缩提供程序默认为最快的压缩级别 ([CompressionLevel](xref:System.IO.Compression.CompressionLevel)) ，这可能不会生成最有效的压缩。 如果需要最有效的压缩，请将中间件配置为最佳压缩。
 
-| Compression Level | 说明 |
+| Compression Level | 描述 |
 | ----------------- | ----------- |
 | [CompressionLevel](xref:System.IO.Compression.CompressionLevel) | 压缩应该尽快完成，即使生成的输出未以最佳方式压缩。 |
 | [CompressionLevel. NoCompression](xref:System.IO.Compression.CompressionLevel) | 不应执行压缩。 |
@@ -704,7 +704,7 @@ public void ConfigureServices(IServiceCollection services)
 
 如果在要为应用禁用的服务器级别上配置了活动的 IIS 动态压缩模块，请使用添加到 *web.config* 文件来禁用该模块。 有关详细信息，请参阅[禁用 IIS 模块](xref:host-and-deploy/iis/modules#disabling-iis-modules)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 使用 [Fiddler](https://www.telerik.com/fiddler)、 [Firebug](https://getfirebug.com/)或 [Postman](https://www.getpostman.com/)之类的工具，通过该工具，可以设置 `Accept-Encoding` 请求标头并研究响应标头、大小和正文。 默认情况下，响应压缩中间件会压缩满足以下条件的响应：
 

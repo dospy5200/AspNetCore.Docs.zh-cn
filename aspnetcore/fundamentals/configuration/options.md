@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/configuration/options
-ms.openlocfilehash: dedc17d7d793a6fd2eac1c8017b704d98a86f1cb
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: cb78147050ebdafc7de4ad150ae2644689d6efbc
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93061088"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586210"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core 中的选项模式
 
@@ -41,7 +41,7 @@ ms.locfileid: "93061088"
 
 本主题介绍 ASP.NET Core 中的选项模式。 若要了解如何在控制台应用中使用选项模式，请参阅 [.NET 中的选项模式](/dotnet/core/extensions/options)。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 <a name="optpat"></a>
 
@@ -55,7 +55,8 @@ ms.locfileid: "93061088"
 
 <xref:Microsoft.Extensions.Options.IOptions%601>:
 
-* 不*_支持：_ 在应用启动后读取配置数据。
+* 不支持：
+  * 在应用启动后读取配置数据。
   * [命名选项](#named)
 * 注册为[单一实例](xref:fundamentals/dependency-injection#singleton)且可以注入到任何[服务生存期](xref:fundamentals/dependency-injection#service-lifetimes)。
 
@@ -291,7 +292,7 @@ public void Configure(IApplicationBuilder app,
 
 选项还提供验证配置数据的机制。 有关详细信息，请参阅[选项验证](#options-validation)部分。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -713,7 +714,7 @@ public void Configure(IApplicationBuilder app, IOptionsMonitor<MyOptions> option
 
 选项还提供验证配置数据的机制。 有关详细信息，请参阅[选项验证](#options-validation)部分。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/configuration/options/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="prerequisites"></a>先决条件
 

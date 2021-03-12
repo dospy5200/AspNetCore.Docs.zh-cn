@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: tutorials/build-a-blazor-app
-ms.openlocfilehash: d984023a1c46c5383d47a1634c54e61747b83d60
-ms.sourcegitcommit: 422e8444b9f5cedc373be5efe8032822db54fcaf
+ms.openlocfilehash: 260d921316d6fadecbd42db11048593b19a5ddee
+ms.sourcegitcommit: 1436bd4d70937d6ec3140da56d96caab33c4320b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101205"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102394429"
 ---
 # <a name="build-a-blazor-todo-list-app"></a>生成 Blazor 待办事项列表应用
 
@@ -138,7 +138,7 @@ ms.locfileid: "101101205"
    ::: moniker-end
 
    > [!NOTE]
-   > 如果使用 Visual Studio 创建 `ToDoItem.cs` 文件和 `ToDoItem` 类，请使用以下方法之一：
+   > 如果使用 Visual Studio 创建 `TodoItem.cs` 文件和 `TodoItem` 类，请使用以下方法之一：
    >
    > * 删除 Visual Studio 为类生成的命名空间。
    > * 使用前面代码块中的“复制”按钮，并替换 Visual Studio 生成的文件的全部内容。

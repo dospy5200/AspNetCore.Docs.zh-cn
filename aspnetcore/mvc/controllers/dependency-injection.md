@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 1282cd984584be423fba755e64e5d2f1afd2af89
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: f3654e008733c57b4cd4cd34a52b747af2258be1
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060607"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589070"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到控制器
 
@@ -32,7 +32,7 @@ ms.locfileid: "93060607"
 
 ASP.NET Core MVC 控制器通过构造函数显式请求依赖关系。 ASP.NET Core 内置有对[依赖关系注入 (DI)](xref:fundamentals/dependency-injection) 的支持。 DI 使应用更易于测试和维护。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="constructor-injection"></a>构造函数注入
 
@@ -64,9 +64,9 @@ ASP.NET Core MVC 控制器通过构造函数显式请求依赖关系。 ASP.NET 
 
 ## <a name="access-settings-from-a-controller"></a>从控制器访问设置
 
-从控制器中访问应用或配置设置是一种常见模式。 <xref:fundamentals/configuration/options> 中所述的选项模式是管理设置的首选方法  。 通常情况下，不直接将 <xref:Microsoft.Extensions.Configuration.IConfiguration> 注入到控制器。
+从控制器中访问应用或配置设置是一种常见模式。 <xref:fundamentals/configuration/options> 中所述的选项模式是管理设置的首选方法。 通常情况下，不直接将 <xref:Microsoft.Extensions.Configuration.IConfiguration> 注入到控制器。
 
-创建表示选项的类。 例如： 。
+创建表示选项的类。 例如：
 
 [!code-csharp[](dependency-injection/3.1sample/ControllerDI/Models/SampleWebSettings.cs?name=snippet)]
 
@@ -96,7 +96,7 @@ ASP.NET Core MVC 控制器通过构造函数显式请求依赖关系。 ASP.NET 
 
 ASP.NET Core MVC 控制器通过构造函数显式请求依赖关系。 ASP.NET Core 内置有对[依赖关系注入 (DI)](xref:fundamentals/dependency-injection) 的支持。 DI 使应用更易于测试和维护。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/controllers/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="constructor-injection"></a>构造函数注入
 
@@ -128,9 +128,9 @@ ASP.NET Core MVC 控制器通过构造函数显式请求依赖关系。 ASP.NET 
 
 ## <a name="access-settings-from-a-controller"></a>从控制器访问设置
 
-从控制器中访问应用或配置设置是一种常见模式。 <xref:fundamentals/configuration/options> 中所述的选项模式是管理设置的首选方法  。 通常情况下，不直接将 <xref:Microsoft.Extensions.Configuration.IConfiguration> 注入到控制器。
+从控制器中访问应用或配置设置是一种常见模式。 <xref:fundamentals/configuration/options> 中所述的选项模式是管理设置的首选方法。 通常情况下，不直接将 <xref:Microsoft.Extensions.Configuration.IConfiguration> 注入到控制器。
 
-创建表示选项的类。 例如： 。
+创建表示选项的类。 例如：
 
 [!code-csharp[](dependency-injection/sample/ControllerDI/Models/SampleWebSettings.cs?name=snippet)]
 

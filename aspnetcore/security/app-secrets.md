@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/app-secrets
-ms.openlocfilehash: 63032895ce45ad096612a8c39a2709628c12790f
-ms.sourcegitcommit: 6299f08aed5b7f0496001d093aae617559d73240
+ms.openlocfilehash: b309b834bc7156b901447c8697e6d2b0156a30f1
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97486195"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585807"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core 中的开发中安全存储应用机密
 
@@ -31,7 +31,7 @@ ms.locfileid: "97486195"
 
 作者： [Rick Anderson](https://twitter.com/RickAndMSFT)、 [Kirk Larkin](https://twitter.com/serpent5)、 [Daniel Roth](https://github.com/danroth27)和 [Scott Addie](https://github.com/scottaddie)
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/app-secrets/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/app-secrets/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 本文档介绍如何管理开发计算机上的 ASP.NET Core 应用程序的敏感数据。 切勿在源代码中存储密码或其他敏感数据。 生产机密不应用于开发或测试。 机密不应与应用一起部署。 相反，应通过受控的方式（如环境变量或 Azure Key Vault）访问生产机密。 可使用 [Azure Key Vault 配置提供程序](xref:security/key-vault-configuration)存储和保护 Azure 测试和生产机密。
 
@@ -57,7 +57,7 @@ ms.locfileid: "97486195"
 
 机密管理器工具隐藏了实现的详细信息，例如存储值的位置和方式。 您可以使用该工具，而无需了解这些实现细节。 这些值存储在本地计算机的用户配置文件文件夹中的 JSON 文件中：
 
-# <a name="windows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>Windows
 
 文件系统路径：
 
@@ -132,7 +132,7 @@ JSON 结构是通过或进行修改后平展的 `dotnet user-secrets remove` `do
 
 可以通过管道 JSON 将密码批设置为 `set` 命令。 在下面的示例中，将文件的内容的 *input.js* 传递给 `set` 命令。
 
-# <a name="windows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>Windows
 
 打开命令 shell，然后执行以下命令：
 
@@ -296,7 +296,7 @@ No secrets configured for this application.
 
 作者： [Rick Anderson](https://twitter.com/RickAndMSFT)、 [Daniel Roth](https://github.com/danroth27)和 [Scott Addie](https://github.com/scottaddie)
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/app-secrets/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/app-secrets/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 本文档介绍如何管理开发计算机上的 ASP.NET Core 应用程序的敏感数据。 切勿在源代码中存储密码或其他敏感数据。 生产机密不应用于开发或测试。 机密不应与应用一起部署。 相反，应通过受控的方式（如环境变量或 Azure Key Vault）访问生产机密。 可使用 [Azure Key Vault 配置提供程序](xref:security/key-vault-configuration)存储和保护 Azure 测试和生产机密。
 
@@ -322,7 +322,7 @@ No secrets configured for this application.
 
 机密管理器工具隐藏了实现的详细信息，例如存储值的位置和方式。 您可以使用该工具，而无需了解这些实现细节。 这些值存储在本地计算机的用户配置文件文件夹中的 JSON 文件中：
 
-# <a name="windows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>Windows
 
 文件系统路径：
 
@@ -392,7 +392,7 @@ JSON 结构是通过或进行修改后平展的 `dotnet user-secrets remove` `do
 
 可以通过管道 JSON 将密码批设置为 `set` 命令。 在下面的示例中，将文件的内容的 *input.js* 传递给 `set` 命令。
 
-# <a name="windows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>Windows
 
 打开命令 shell，然后执行以下命令：
 

@@ -20,12 +20,12 @@ no-loc:
 - SignalR
 uid: blazor/fundamentals/dependency-injection
 zone_pivot_groups: blazor-hosting-models
-ms.openlocfilehash: 30edffedf1faf96ed54d5380762c8558e478966c
-ms.sourcegitcommit: 04ad9cd26fcaa8bd11e261d3661f375f5f343cdc
+ms.openlocfilehash: aefeac2f3a68a669b7c84cbeee2f6a4ec0621f6f
+ms.sourcegitcommit: a1db01b4d3bd8c57d7a9c94ce122a6db68002d66
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100106916"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102109671"
 ---
 # <a name="aspnet-core-blazor-dependency-injection"></a>ASP.NET Core Blazor 依赖关系注入
 
@@ -54,15 +54,65 @@ ms.locfileid: "100106916"
 
 在 `Program.cs` 的 `Program.Main` 方法中配置应用服务集合的服务。 在下例中，为 `IMyDependency` 注册了 `MyDependency` 实现：
 
-[!code-csharp[](dependency-injection/samples_snapshot/Program1.cs?highlight=7)]
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        ...
+        builder.Services.AddSingleton<IMyDependency, MyDependency>();
+        ...
+
+        await builder.Build().RunAsync();
+    }
+}
+```
 
 生成主机后，可在呈现任何组件之前从根 DI 范围使用服务。 这对于在呈现内容之前运行初始化逻辑而言很有用：
 
-[!code-csharp[](dependency-injection/samples_snapshot/Program2.cs?highlight=7,12-13)]
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        ...
+        builder.Services.AddSingleton<WeatherService>();
+        ...
+
+        var host = builder.Build();
+
+        var weatherService = host.Services.GetRequiredService<WeatherService>();
+        await weatherService.InitializeWeatherAsync();
+
+        await host.RunAsync();
+    }
+}
+```
 
 主机会为应用提供中心配置实例。 在上述示例的基础上，天气服务的 URL 将从默认配置源（例如 `appsettings.json`）传递到 `InitializeWeatherAsync`：
 
-[!code-csharp[](dependency-injection/samples_snapshot/Program3.cs?highlight=13-14)]
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        ...
+        builder.Services.AddSingleton<WeatherService>();
+        ...
+
+        var host = builder.Build();
+
+        var weatherService = host.Services.GetRequiredService<WeatherService>();
+        await weatherService.InitializeWeatherAsync(
+            host.Configuration["WeatherServiceUrl"]);
+
+        await host.RunAsync();
+    }
+}
+```
 
 ::: zone-end
 
@@ -117,7 +167,17 @@ DI 系统基于 ASP.NET Core 中的 DI 系统。 有关详细信息，请参阅 
 
 下面的示例展示了如何使用 [`@inject`](xref:mvc/views/razor#inject)。 将实现 `Services.IDataAccess` 的服务注入组件的 `DataRepository` 属性中。 请注意代码是如何仅使用 `IDataAccess` 抽象的：
 
-[!code-razor[](dependency-injection/samples_snapshot/CustomerList.razor?highlight=2-3,20)]
+::: moniker range=">= aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/5.x/BlazorSample_Server/Pages/dependency-injection/CustomerList.razor?name=snippet&highlight=2,19)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-5.0"
+
+[!code-razor[](~/blazor/common/samples/3.x/BlazorSample_Server/Pages/dependency-injection/CustomerList.razor?name=snippet&highlight=2,19)]
+
+::: moniker-end
 
 在内部，生成的属性 (`DataRepository`) 使用 [`[Inject]` 特性](xref:Microsoft.AspNetCore.Components.InjectAttribute)。 通常，不直接使用此特性。 如果组件需要基类，并且基类也需要注入的属性，请手动添加 [`[Inject]` 特性](xref:Microsoft.AspNetCore.Components.InjectAttribute)：
 
@@ -182,11 +242,34 @@ public class DataAccess : IDataAccess
 
   使用 [`@inject`](xref:mvc/views/razor#inject) 或 [`[Inject]` 特性](xref:Microsoft.AspNetCore.Components.InjectAttribute)注入到组件中的 DI 服务不在组件的范围内创建。 要使用组件的范围，必须使用 <xref:Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService%2A> 或 <xref:System.IServiceProvider.GetService%2A> 解析服务。 任何使用 <xref:Microsoft.AspNetCore.Components.OwningComponentBase.ScopedServices> 提供程序进行解析的服务都具有从同一范围提供的依赖关系。
 
-  [!code-razor[](dependency-injection/samples_snapshot/Preferences.razor?highlight=3,20-21)]
+  ::: moniker range=">= aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/Pages/dependency-injection/Preferences.razor?name=snippet&highlight=3,20-21)]
+
+  ::: moniker-end
+
+  ::: moniker range="< aspnetcore-5.0"
+
+  [!code-razor[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/Pages/dependency-injection/Preferences.razor?name=snippet&highlight=3,20-21)]
+
+  ::: moniker-end
 
 * <xref:Microsoft.AspNetCore.Components.OwningComponentBase%601> 派生自 <xref:Microsoft.AspNetCore.Components.OwningComponentBase>，并添加从范围内 DI 提供程序返回 `T` 实例的 <xref:Microsoft.AspNetCore.Components.OwningComponentBase%601.Service%2A> 属性。 当存在一项应用需要从使用组件范围的 DI 容器中获取的主服务时，不必使用 <xref:System.IServiceProvider> 的实例即可通过此类型便捷地访问 Scoped 服务。 <xref:Microsoft.AspNetCore.Components.OwningComponentBase.ScopedServices> 属性可用，因此应用可获取其他类型的服务（如有必要）。
 
-  [!code-razor[](dependency-injection/samples_snapshot/Users.razor?highlight=3,5,8)]
+  ```razor
+  @page "/users"
+  @attribute [Authorize]
+  @inherits OwningComponentBase<AppDbContext>
+
+  <h1>Users (@Service.Users.Count())</h1>
+
+  <ul>
+      @foreach (var user in Service.Users)
+      {
+          <li>@user.UserName</li>
+      }
+  </ul>
+  ```
 
 ## <a name="use-of-an-entity-framework-core-ef-core-dbcontext-from-di"></a>使用来自 DI 的 Entity Framework Core (EF Core) DbContext
 
@@ -200,19 +283,81 @@ public class DataAccess : IDataAccess
 
 `DetectIncorrectUsagesOfTransientDisposables.cs`:
 
-[!code-csharp[](dependency-injection/samples_snapshot/3.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-wasm.cs)]
+::: moniker range=">= aspnetcore-5.0"
+
+[!code-csharp[](~/blazor/common/samples/5.x/BlazorSample_WebAssembly/dependency-injection/DetectIncorrectUsagesOfTransientDisposables.cs)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-5.0"
+
+[!code-csharp[](~/blazor/common/samples/3.x/BlazorSample_WebAssembly/dependency-injection/DetectIncorrectUsagesOfTransientDisposables.cs)]
+
+::: moniker-end
 
 在以下示例中检测到 `TransientDisposable` (`Program.cs`)：
 
 ::: moniker range=">= aspnetcore-5.0"
 
-[!code-csharp[](dependency-injection/samples_snapshot/5.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-wasm-program.cs?highlight=6,9,17,22-25)]
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.DetectIncorrectUsageOfTransients();
+        builder.RootComponents.Add<App>("#app");
 
-::: moniker-end 
+        builder.Services.AddTransient<TransientDisposable>();
+        builder.Services.AddScoped(sp =>
+            new HttpClient
+            {
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+            });
+
+        var host = builder.Build();
+        host.EnableTransientDisposableDetection();
+        await host.RunAsync();
+    }
+}
+
+public class TransientDisposable : IDisposable
+{
+    public void Dispose() => throw new NotImplementedException();
+}
+```
+
+::: moniker-end
 
 ::: moniker range="< aspnetcore-5.0"
 
-[!code-csharp[](dependency-injection/samples_snapshot/3.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-wasm-program.cs?highlight=6,9,17,22-25)]
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.DetectIncorrectUsageOfTransients();
+        builder.RootComponents.Add<App>("app");
+
+        builder.Services.AddTransient<TransientDisposable>();
+        builder.Services.AddScoped(sp =>
+            new HttpClient
+            {
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+            });
+
+        var host = builder.Build();
+        host.EnableTransientDisposableDetection();
+        await host.RunAsync();
+    }
+}
+
+public class TransientDisposable : IDisposable
+{
+    public void Dispose() => throw new NotImplementedException();
+}
+```
 
 ::: moniker-end
 
@@ -222,7 +367,17 @@ public class DataAccess : IDataAccess
 
 `DetectIncorrectUsagesOfTransientDisposables.cs`:
 
-[!code-csharp[](dependency-injection/samples_snapshot/3.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-server.cs)]
+::: moniker range=">= aspnetcore-5.0"
+
+[!code-csharp[](~/blazor/common/samples/5.x/BlazorSample_Server/dependency-injection/DetectIncorrectUsagesOfTransientDisposables.cs)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-5.0"
+
+[!code-csharp[](~/blazor/common/samples/3.x/BlazorSample_Server/dependency-injection/DetectIncorrectUsagesOfTransientDisposables.cs)]
+
+::: moniker-end
 
 向 `Program.cs` 添加 <xref:Microsoft.Extensions.DependencyInjection?displayProperty=fullName> 的命名空间：
 
@@ -232,11 +387,52 @@ using Microsoft.Extensions.DependencyInjection;
 
 在 `Program.cs` 的 `Program.CreateHostBuilder` 中：
 
-[!code-csharp[](dependency-injection/samples_snapshot/3.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-server-program.cs?highlight=3)]
+```csharp
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .DetectIncorrectUsageOfTransients()
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        });
+```
 
 在以下示例中检测到 `TransientDependency` (`Startup.cs`)：
 
-[!code-csharp[](dependency-injection/samples_snapshot/3.x/transient-disposables/DetectIncorrectUsagesOfTransientDisposables-server-startup.cs?highlight=6-8,11-32)]
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddRazorPages();
+    services.AddServerSideBlazor();
+    services.AddSingleton<WeatherForecastService>();
+    services.AddTransient<TransientDependency>();
+    services.AddTransient<ITransitiveTransientDisposableDependency, 
+        TransitiveTransientDisposableDependency>();
+}
+
+public class TransitiveTransientDisposableDependency 
+    : ITransitiveTransientDisposableDependency, IDisposable
+{
+    public void Dispose() { }
+}
+
+public interface ITransitiveTransientDisposableDependency
+{
+}
+
+public class TransientDependency
+{
+    private readonly ITransitiveTransientDisposableDependency 
+        _transitiveTransientDisposableDependency;
+
+    public TransientDependency(ITransitiveTransientDisposableDependency 
+        transitiveTransientDisposableDependency)
+    {
+        _transitiveTransientDisposableDependency = 
+            transitiveTransientDisposableDependency;
+    }
+}
+```
 
 ::: zone-end
 

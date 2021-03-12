@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 91148c67d5dc0bf97e2f926f50dcff5dd0708f4b
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: f71ae5e619b875c03401fa78320582c406875401
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93052313"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586106"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>ASP.NET Core 中的帐户确认和密码恢复
 
@@ -38,7 +38,7 @@ ms.locfileid: "93052313"
 
 ::: moniker range=">= aspnetcore-3.0"
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [.NET Core 3.0 SDK 或更高版本](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
@@ -57,7 +57,7 @@ dotnet run
 * 选择 `Click here to confirm your account` 链接。
 * 选择 " **登录** " 链接，并以相同的凭据登录。
 * 选择将 `Hello YourEmail@provider.com!` 您重定向到页面的链接 `/Identity/Account/Manage/PersonalData` 。
-* 选择左侧的 " **个人数据** " 选项卡，然后选择 " **删除** "。
+* 选择左侧的 " **个人数据** " 选项卡，然后选择 " **删除**"。
 
 ### <a name="configure-an-email-provider"></a>配置电子邮件提供程序
 
@@ -65,13 +65,13 @@ dotnet run
 
 SendGrid 帐户可能需要 [添加发送方](https://sendgrid.com/docs/ui/sending-email/senders/)。
 
-创建一个类以获取安全电子邮件密钥。 对于本示例，请创建 *服务/AuthMessageSenderOptions* ：
+创建一个类以获取安全电子邮件密钥。 对于本示例，请创建 *服务/AuthMessageSenderOptions*：
 
 [!code-csharp[](accconfirm/sample/WebPWrecover30/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
 #### <a name="configure-sendgrid-user-secrets"></a>配置 SendGrid 用户机密
 
-`SendGridUser` `SendGridKey` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如： 。
+`SendGridUser` `SendGridKey` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如：
 
 ```dotnetcli
 dotnet user-secrets set SendGridUser RickAndMSFT
@@ -139,7 +139,7 @@ dotnet add package SendGrid
 按照[基架 Identity ](xref:security/authentication/scaffold-identity)和基架的说明进行操作 `RegisterConfirmation` 。
 
 <!-- .NET 5 fixes this, see
-https://github.com/dotnet/aspnetcore/blob/master/src/Identity/UI/src/Areas/Identity/Pages/V4/Account/RegisterConfirmation.cshtml.cs#L74-L77
+https://github.com/dotnet/aspnetcore/blob/main/src/Identity/UI/src/Areas/Identity/Pages/V4/Account/RegisterConfirmation.cshtml.cs#L74-L77
 -->
 
 [!INCLUDE[](~/includes/disableVer.md)]
@@ -156,7 +156,7 @@ https://github.com/dotnet/aspnetcore/blob/master/src/Identity/UI/src/Areas/Ident
 
 ### <a name="test-password-reset"></a>测试密码重置
 
-* 如果已登录，请选择 " **注销** "。
+* 如果已登录，请选择 " **注销**"。
 * 选择 " **登录** " 链接，然后选择 " **忘记了密码？"** 链接。
 * 输入用于注册该帐户的电子邮件。
 * 发送了一封电子邮件，其中包含用于重置密码的链接。 检查你的电子邮件，然后单击链接以重置你的密码。 密码重置成功后，可以用电子邮件和新密码登录。
@@ -165,7 +165,7 @@ https://github.com/dotnet/aspnetcore/blob/master/src/Identity/UI/src/Areas/Ident
 
 ## <a name="resend-email-confirmation"></a>重新发送电子邮件确认
 
-在 ASP.NET Core 5.0 及更高版本中，选择 " **登录** " 页上的 " **重新发送电子邮件** " 链接。
+在 ASP.NET Core 5.0 及更高版本中，选择 "**登录**" 页上的 "**重新发送电子邮件**" 链接。
 
 ### <a name="change-email-and-activity-timeout"></a>更改电子邮件和活动超时
 
@@ -237,11 +237,11 @@ https://github.com/dotnet/aspnetcore/blob/master/src/Identity/UI/src/Areas/Ident
 
 ::: moniker range="< aspnetcore-3.0"
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [.NET Core 2.2 SDK 或更高版本](https://dotnet.microsoft.com/download/dotnet-core)
 
-## <a name="create-a-web--app-and-scaffold-no-locidentity"></a>创建 web 应用和基架 Identity
+## <a name="create-a-web--app-and-scaffold-identity"></a>创建 web 应用和基架 Identity
 
 运行以下命令，创建具有身份验证的 web 应用。
 
@@ -267,7 +267,7 @@ dotnet run
 
 请注意，表的 `EmailConfirmed` 字段为 `False` 。
 
-当应用发送确认电子邮件时，可能需要在下一步中再次使用此电子邮件。 右键单击该行，然后选择 " **删除** "。 删除电子邮件别名可以简化以下步骤。
+当应用发送确认电子邮件时，可能需要在下一步中再次使用此电子邮件。 右键单击该行，然后选择 " **删除**"。 删除电子邮件别名可以简化以下步骤。
 
 <a name="prevent-login-at-registration"></a>
 
@@ -287,13 +287,13 @@ dotnet run
 
 在本教程中，使用 [SendGrid](https://sendgrid.com) 发送电子邮件。 需要使用 SendGrid 帐户和密钥来发送电子邮件。 您可以使用其他电子邮件提供程序。 ASP.NET Core 1.x 包括 `System.Net.Mail` ，这允许你从应用发送电子邮件。 建议使用 SendGrid 或其他电子邮件服务发送电子邮件。 SMTP 难于保护和正确设置。
 
-创建一个类以获取安全电子邮件密钥。 对于本示例，请创建 *服务/AuthMessageSenderOptions* ：
+创建一个类以获取安全电子邮件密钥。 对于本示例，请创建 *服务/AuthMessageSenderOptions*：
 
 [!code-csharp[](accconfirm/sample/WebPWrecover22/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
 #### <a name="configure-sendgrid-user-secrets"></a>配置 SendGrid 用户机密
 
-`SendGridUser` `SendGridKey` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如： 。
+`SendGridUser` `SendGridKey` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如：
 
 ```console
 C:/WebAppl>dotnet user-secrets set SendGridUser RickAndMSFT
@@ -386,7 +386,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 ### <a name="test-password-reset"></a>测试密码重置
 
-* 如果已登录，请选择 " **注销** "。
+* 如果已登录，请选择 " **注销**"。
 * 选择 " **登录** " 链接，然后选择 " **忘记了密码？"** 链接。
 * 输入用于注册该帐户的电子邮件。
 * 发送了一封电子邮件，其中包含用于重置密码的链接。 检查你的电子邮件，然后单击链接以重置你的密码。 密码重置成功后，可以用电子邮件和新密码登录。

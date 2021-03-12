@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: client-side/libman/libman-vs
-ms.openlocfilehash: 1c97f5d7fbf64c5043e6d2277091b9a477833bf1
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: ae2bc34edaea2df6f329e47b00c7c02cc59d03bd
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93054705"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102589265"
 ---
 # <a name="use-libman-with-aspnet-core-in-visual-studio"></a>在 Visual Studio 中将 LibMan 与 ASP.NET Core 配合使用
 
@@ -36,7 +36,7 @@ Visual Studio 对 ASP.NET Core 项目中的 [LibMan](xref:client-side/libman/ind
 * 用于查找库并将文件添加到项目的搜索对话框。
 * 编辑对 libman.json（LibMan 清单文件）的支持。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/client-side/libman/samples/)[（如何下载）](xref:index#how-to-download-a-sample)
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/client-side/libman/samples/)[（如何下载）](xref:index#how-to-download-a-sample)
 
 ## <a name="prerequisites"></a>先决条件
 

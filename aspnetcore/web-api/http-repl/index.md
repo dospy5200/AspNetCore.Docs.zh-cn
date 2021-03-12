@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: web-api/http-repl
-ms.openlocfilehash: 1027887738740d50c30e24e800c0402b1ce4ad02
-ms.sourcegitcommit: 04a404a9655c59ad1ea02aff5d399ae1b833ad6a
+ms.openlocfilehash: aeff3fd06719095660d1b3bb794ef74a8549f761
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854660"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102585755"
 ---
 # <a name="test-web-apis-with-the-httprepl"></a>使用 HttpRepl 测试 Web API
 
@@ -46,7 +46,7 @@ HTTP 读取–求值–打印循环 (REPL)：
 * [POST](#test-http-post-requests)
 * [PUT](#test-http-put-requests)
 
-若要继续操作，请[查看或下载示例 ASP.NET Core Web API](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/web-api/http-repl/samples)（[下载方式](xref:index#how-to-download-a-sample)）。
+若要继续操作，请[查看或下载示例 ASP.NET Core Web API](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/web-api/http-repl/samples)（[下载方式](xref:index#how-to-download-a-sample)）。
 
 ## <a name="prerequisites"></a>先决条件
 

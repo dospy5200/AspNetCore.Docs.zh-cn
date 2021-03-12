@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 581a31bad4069523699fbbac63862c9dff12034d
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 299e00b223d287c4e2ece3d1e250581e2a7565e5
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93054211"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586366"
 ---
 # <a name="tutorial-implement-inheritance---aspnet-mvc-with-ef-core"></a>教程：实现继承 - ASP.NET MVC 和 EF Core
 
@@ -165,7 +165,7 @@ dotnet ef database update
 
 ## <a name="get-the-code"></a>获取代码
 
-[下载或查看已完成的应用程序。](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
+[下载或查看已完成的应用程序。](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
 ## <a name="additional-resources"></a>其他资源
 
