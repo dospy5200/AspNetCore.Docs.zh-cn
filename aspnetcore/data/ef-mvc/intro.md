@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: data/ef-mvc/intro
-ms.openlocfilehash: c0623de3c8031b6dbb518a6d25623b55a6500af5
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 5bb1a05f5e81730d0785c1d6a69a8cafb68f85ab
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "94703730"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586678"
 ---
 # <a name="tutorial-get-started-with-ef-core-in-an-aspnet-mvc-web-app"></a>教程：在 ASP.NET MVC Web 应用中使用 EF Core 入门
 
@@ -56,7 +56,7 @@ If you choose to use SQLite, download and install a third-party tool for managin
 
 ## <a name="solve-problems-and-troubleshoot"></a>解决问题和进行故障排除
 
-如果遇到无法解决的问题，可以通过与 [已完成的项目](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples)对比代码来查找解决方案。 常见错误以及对应的解决方案，请参阅 [最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案，可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 版块。
+如果遇到无法解决的问题，可以通过与 [已完成的项目](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/ef-mvc/intro/samples)对比代码来查找解决方案。 常见错误以及对应的解决方案，请参阅 [最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案，可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 版块。
 
 > [!TIP]
 > 这是一系列一共有十个教程，其中每个都是在前面教程已完成的基础上继续。 请考虑在完成每一个教程后保存项目的副本。 之后如果遇到问题，你可以从保存的副本中开始寻找问题，而不是从头开始。
@@ -411,7 +411,7 @@ Contoso University 示例 Web 应用程序演示如何使用 Entity Framework (E
 
 ## <a name="troubleshooting"></a>疑难解答
 
-如果遇到无法解决的问题，可以通过与 [已完成的项目](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples)对比代码来查找解决方案。 常见错误以及对应的解决方案，请参阅 [最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案，可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 版块。
+如果遇到无法解决的问题，可以通过与 [已完成的项目](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/ef-mvc/intro/samples)对比代码来查找解决方案。 常见错误以及对应的解决方案，请参阅 [最新教程中的故障排除](advanced.md#common-errors)。 如果没有找到遇到的问题的解决方案，可以将问题发布到StackOverflow.com 的 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 或 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core) 版块。
 
 > [!TIP]
 > 这是一系列一共有十个教程，其中每个都是在前面教程已完成的基础上继续。 请考虑在完成每一个教程后保存项目的副本。 之后如果遇到问题，你可以从保存的副本中开始寻找问题，而不是从头开始。

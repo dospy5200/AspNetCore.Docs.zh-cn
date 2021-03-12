@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/file-providers
-ms.openlocfilehash: 16e5ead9898125c804da4d60322510474201d897
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: c66c35e93991333229e367e9f371b125d8067131
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93059437"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588212"
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 中的文件提供程序
 
@@ -39,7 +39,7 @@ ASP.NET Core 通过文件提供程序来抽象化文件系统访问。 在 ASP.N
 * [Razor](xref:mvc/views/razor) 使用文件提供程序来查找页面和视图。
 * .NET Core 工具使用文件提供程序和 glob 模式来指定应该发布哪些文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/file-providers/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/file-providers/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="file-provider-interfaces"></a>文件提供程序接口
 
@@ -190,7 +190,7 @@ ASP.NET Core 通过文件提供程序来抽象化文件系统访问。 在 ASP.N
 * [Razor](xref:mvc/views/razor) 使用文件提供程序来查找页面和视图。
 * .NET Core 工具使用文件提供程序和 glob 模式来指定应该发布哪些文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/file-providers/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/file-providers/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="file-provider-interfaces"></a>文件提供程序接口
 

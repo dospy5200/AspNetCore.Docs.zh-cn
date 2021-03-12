@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authorization/simple
-ms.openlocfilehash: 1678f1b4af2c65e3b10c66f7ccdbecf19156a834
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: eaf36822edc47f7238c356e167b05ac44f93175d
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97865559"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587562"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>ASP.NET Core 中的简单授权
 
@@ -90,20 +90,21 @@ public class AccountController : Controller
 
 <a name="aarp"></a>
 
-## <a name="authorize-attribute-and-no-locrazor-pages"></a>授权属性和 Razor Pages
+## <a name="authorize-attribute-and-razor-pages"></a>授权属性和 Razor Pages
 
-<xref:Microsoft.AspNetCore.Authorization.AuthorizeAttribute>Can ***not** _ 适用于 Razor 页处理程序。 例如， `[Authorize]` 不能应用于 `OnGet` 、 `OnPost` 或任何其他页处理程序。 请考虑对具有不同处理程序的不同授权要求的页面使用 ASP.NET Core MVC 控制器。
+<xref:Microsoft.AspNetCore.Authorization.AuthorizeAttribute>***不*** 能应用于 Razor 页面处理程序。 例如， `[Authorize]` 不能应用于 `OnGet` 、 `OnPost` 或任何其他页处理程序。 请考虑对具有不同处理程序的不同授权要求的页面使用 ASP.NET Core MVC 控制器。
 
 以下两种方法可用于将授权应用于 Razor 页面处理程序方法：
 
-_ 对于需要不同授权的页面处理程序，请使用单独的页面。 将共享内容移动到一个或多个 [分部视图](xref:mvc/views/partial)中。 如果可能，建议使用这种方法。
-* 对于必须共享公共页面的内容，请编写一个作为 [IAsyncPageFilter](xref:Microsoft.AspNetCore.Mvc.Filters.IAsyncPageFilter.OnPageHandlerSelectionAsync%2A)的一部分执行授权的筛选器。 [PageHandlerAuth](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth) GitHub 项目演示了这种方法：
-  * [AuthorizeIndexPageHandlerFilter](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth/AuthorizeIndexPageHandlerFilter.cs)实现授权筛选器：[!code-csharp[](~/security/authorization/simple/samples/3.1/PageHandlerAuth/Pages/Index.cshtml.cs?name=snippet)]
+* 对于需要不同授权的页面处理程序，请使用单独的页面。 将共享内容移动到一个或多个 [分部视图](xref:mvc/views/partial)中。 如果可能，建议使用这种方法。
+* 对于必须共享公共页面的内容，请编写一个作为 [IAsyncPageFilter](xref:Microsoft.AspNetCore.Mvc.Filters.IAsyncPageFilter.OnPageHandlerSelectionAsync%2A)的一部分执行授权的筛选器。 [PageHandlerAuth](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth) GitHub 项目演示了这种方法：
+  * [AuthorizeIndexPageHandlerFilter](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth/AuthorizeIndexPageHandlerFilter.cs)实现授权筛选器：[!code-csharp[](~/security/authorization/simple/samples/3.1/PageHandlerAuth/Pages/Index.cshtml.cs?name=snippet)]
 
-  * [[AuthorizePageHandler]](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth/Pages/Index.cshtml.cs#L16)属性应用于 `OnGet` 页面处理程序：[!code-csharp[](~/security/authorization/simple/samples/3.1/PageHandlerAuth/AuthorizeIndexPageHandlerFilter.cs?name=snippet)]
+  * [[AuthorizePageHandler]](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authorization/simple/samples/3.1/PageHandlerAuth/Pages/Index.cshtml.cs#L16)属性应用于 `OnGet` 页面处理程序：[!code-csharp[](~/security/authorization/simple/samples/3.1/PageHandlerAuth/AuthorizeIndexPageHandlerFilter.cs?name=snippet)]
 
 > [!WARNING]
-> [PageHandlerAuth](https://github.com/pranavkm/PageHandlerAuth)示例方法对应用于页面、页面模型或全局的授权属性进行 ***not** _： _ 撰写。 如果将一个或多个实例应用于页面，则组合授权属性会导致身份验证和授权多次执行 `AuthorizeAttribute` `AuthorizeFilter` 。
+> [PageHandlerAuth](https://github.com/pranavkm/PageHandlerAuth)示例 ***方法不执行以下操作***：
+> * 结合应用于页面、页面模型或全局的授权属性进行撰写。 如果将一个或多个实例应用于页面，则组合授权属性会导致身份验证和授权多次执行 `AuthorizeAttribute` `AuthorizeFilter` 。
 > * 与其他 ASP.NET Core 身份验证和授权系统一起工作。 你必须验证此方法是否适用于你的应用程序。
 
 没有计划支持 `AuthorizeAttribute` Razor 页处理程序。 

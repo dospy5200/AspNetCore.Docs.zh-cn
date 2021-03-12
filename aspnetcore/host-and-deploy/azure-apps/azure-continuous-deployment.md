@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 1485e1a97e51bb4d12d0d74ca1550e5cf18258d8
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 561f41dd9d50df0651c060fac4f75d9d59244029
+ms.sourcegitcommit: acfe51c35497a204f75c2a61125c9408c04493e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93053782"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102605641"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>使用 Visual Studio 和 Git 将 ASP.NET Core 持续部署到 Azure
 
@@ -172,7 +172,7 @@ Git 是一个分布式版本控制系统，可用来部署 Azure App Service Web
 
 1. 在命令窗口中输入以下命令：
 
-   `git push -u Azure-SampleApp master`
+   `git push -u Azure-SampleApp main`
 
 1. 输入之前在 Azure 中创建的 Azure“部署凭据”密码。
 
@@ -183,8 +183,8 @@ Git 是一个分布式版本控制系统，可用来部署 Azure App Service Web
    remote: Running post deployment command(s)...
    remote: Deployment successful.
    To https://username@samplewebappdemo01.scm.azurewebsites.net:443/SampleWebAppDemo01.git
-   * [new branch]      master -> master
-   Branch master set up to track remote branch master from Azure-SampleApp.
+   * [new branch]      main -> main
+   Branch main set up to track remote branch main from Azure-SampleApp.
    ```
 
    > [!NOTE]
@@ -232,7 +232,7 @@ Git 是一个分布式版本控制系统，可用来部署 Azure App Service Web
 > [!NOTE]
 > 作为替代方法，可以通过打开“命令窗口”、更改为项目目录并输入 git 命令从“命令窗口”推送更改。  示例：
 > 
-> `git push -u Azure-SampleApp master`
+> `git push -u Azure-SampleApp main`
 
 ## <a name="view-the-updated-web-app-in-azure"></a>在 Azure 中查看更新的 Web 应用
 

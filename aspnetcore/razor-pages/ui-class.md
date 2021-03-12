@@ -18,14 +18,14 @@ no-loc:
 - Razor
 - SignalR
 uid: razor-pages/ui-class
-ms.openlocfilehash: a878a3485ecee0782b21ac69c5ec6ff832b9f06c
-ms.sourcegitcommit: cb984e0d7dc23a88c3a4121f23acfaea0acbfe1e
+ms.openlocfilehash: 88b3bae5d52e334dea7ffcfe245f49d2816047c3
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98571017"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588173"
 ---
-# <a name="create-reusable-ui-using-the-no-locrazor-class-library-project-in-aspnet-core"></a>使用 ASP.NET Core 中的 Razor 类库项目创建可重用 UI
+# <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>使用 ASP.NET Core 中的 Razor 类库项目创建可重用 UI
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -33,9 +33,9 @@ ms.locfileid: "98571017"
 
 Razor 视图、页面、控制器、页面模型、[Razor组件](xref:blazor/components/class-libraries)、[视图组件](xref:mvc/views/view-components)和数据模型可以构建到 Razor 类库 (RCL) 中。 RCL 可以打包并重复使用。 应用程序可以包括 RCL，并重写其中包含的视图和页面。 如果在 Web 应用和 RCL 中都能找到视图、分部视图或 Razor 页面，则 Web 应用中的 Razor 标记（.cshtml 文件）优先。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/ui-class/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/ui-class/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="create-a-class-library-containing-no-locrazor-ui"></a>创建一个包含 Razor UI 的类库
+## <a name="create-a-class-library-containing-razor-ui"></a>创建一个包含 Razor UI 的类库
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -208,9 +208,9 @@ public class Program
 
 Razor 视图、页面、控制器、页面模型、[Razor组件](xref:blazor/components/class-libraries)、[视图组件](xref:mvc/views/view-components)和数据模型可以构建到 Razor 类库 (RCL) 中。 RCL 可以打包并重复使用。 应用程序可以包括 RCL，并重写其中包含的视图和页面。 如果在 Web 应用和 RCL 中都能找到视图、分部视图或 Razor 页面，则 Web 应用中的 Razor 标记（.cshtml 文件）优先。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/ui-class/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/ui-class/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="create-a-class-library-containing-no-locrazor-ui"></a>创建一个包含 Razor UI 的类库
+## <a name="create-a-class-library-containing-razor-ui"></a>创建一个包含 Razor UI 的类库
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -247,9 +247,9 @@ ASP.NET Core 模板假定 RCL 内容位于 *Areas* 文件夹中。 请参阅 [RC
 * NuGet 包。 请参阅[创建 NuGet 包](/nuget/create-packages/creating-a-package)、[dotnet 添加包](/dotnet/core/tools/dotnet-add-package)和[创建和发布 NuGet 包](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)。
 * {ProjectName}.csproj。 请查看 [dotnet-add 引用](/dotnet/core/tools/dotnet-add-reference)。
 
-## <a name="walkthrough-create-an-rcl-project-and-use-from-a-no-locrazor-pages-project"></a>演练：创建 RCL 项目并通过 Razor 页面项目使用
+## <a name="walkthrough-create-an-rcl-project-and-use-from-a-razor-pages-project"></a>演练：创建 RCL 项目并通过 Razor 页面项目使用
 
-可以下载并测试[完整项目](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/razor-pages/ui-class/samples)，无需创建项目。 示例下载包含附加代码和链接，以方便测试项目。 可以在[此 GitHub 问题](https://github.com/dotnet/AspNetCore.Docs/issues/6098)中留下反馈，评论下载示例和分步说明的对比。
+可以下载并测试[完整项目](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/razor-pages/ui-class/samples)，无需创建项目。 示例下载包含附加代码和链接，以方便测试项目。 可以在[此 GitHub 问题](https://github.com/dotnet/AspNetCore.Docs/issues/6098)中留下反馈，评论下载示例和分步说明的对比。
 
 ### <a name="test-the-download-app"></a>测试下载应用
 
@@ -312,7 +312,7 @@ dotnet new viewstart -o RazorUIClassLib/Areas/MyFeature/Pages
 
 ---
 
-### <a name="add-no-locrazor-files-and-folders-to-the-project"></a>将 Razor 文件和文件夹添加到项目
+### <a name="add-razor-files-and-folders-to-the-project"></a>将 Razor 文件和文件夹添加到项目
 
 * 使用以下代码替换 RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml 中的标记：
 
@@ -338,7 +338,7 @@ dotnet new viewstart -o RazorUIClassLib/Areas/MyFeature/Pages
 
 生成输出内容包含 RazorUIClassLib.dll 和 RazorUIClassLib.Views.dll 。 RazorUIClassLib.Views.dll 包含已编译的 Razor 内容。
 
-### <a name="use-the-no-locrazor-ui-library-from-a-no-locrazor-pages-project"></a>从 Razor 页面项目使用 Razor UI 库
+### <a name="use-the-razor-ui-library-from-a-razor-pages-project"></a>从 Razor 页面项目使用 Razor UI 库
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 

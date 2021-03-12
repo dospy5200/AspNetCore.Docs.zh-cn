@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: a596d05e3d1d73d4faa2f84d97a40e4a2c1234e4
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 9d4920a7b572163b048bfb06029d913cee3f9e5a
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93059281"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587246"
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>在 ASP.NET Core 中将依赖项注入到视图
 
@@ -30,7 +30,7 @@ ms.locfileid: "93059281"
 
 ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injection)到视图。 这对于视图特定服务很有用，例如仅为填充视图元素所需的本地化或数据。 应尽量在控制器和视图之间保持[问题分离](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns)。 视图显示的大部分数据应该从控制器传入。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/dependency-injection/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="configuration-injection"></a>配置注入
 
@@ -67,7 +67,7 @@ ASP.NET Core 支持将[依赖关系注入](xref:fundamentals/dependency-injectio
 
 [!code-cshtml[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/ToDo/Index.cshtml?highlight=4,5,15,16,17)]
 
-此视图显示 `ToDoItem` 实例的列表，以及显示总体统计信息的摘要。 摘要从已注入的 `StatisticsService` 中填充。 在 Startup.cs 的 `ConfigureServices` 中为依赖关系注入注册此服务  ：
+此视图显示 `ToDoItem` 实例的列表，以及显示总体统计信息的摘要。 摘要从已注入的 `StatisticsService` 中填充。 在 Startup.cs 的 `ConfigureServices` 中为依赖关系注入注册此服务：
 
 [!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Startup.cs?highlight=6,7&range=15-22)]
 

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/app-state
-ms.openlocfilehash: c11b748f9d79235b14c9541019da6e1fb3428af6
-ms.sourcegitcommit: c1839f2992b003c92cd958244a2e0771ae928786
+ms.openlocfilehash: ab09867a1b1aa73e423babbe295036e292fc733f
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "93051403"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586574"
 ---
 # <a name="session-and-state-management-in-aspnet-core"></a>ASP.NET Core 中的会话和状态管理
 
@@ -33,7 +33,7 @@ ms.locfileid: "93051403"
 
 HTTP 是无状态的协议。 默认情况下，HTTP 请求是不保留用户值的独立消息。 本文介绍了几种保留请求间用户数据的方法。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/app-state/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/app-state/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="state-management"></a>状态管理
 
@@ -303,7 +303,7 @@ SignalR 应用不应使用会话状态来存储信息。 SignalR 应用可以将
 
 HTTP 是无状态的协议。 不采取其他步骤的情况下，HTTP 请求是不保留用户值或应用状态的独立消息。 本文介绍了几种保留请求间用户数据和应用状态的方法。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/app-state/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/app-state/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="state-management"></a>状态管理
 

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/tag-helpers/th-components
-ms.openlocfilehash: 15bddd8ce18546bef7ee7e6ec2e32e369d0858a3
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: fb0bda0cf8d225df4c58ae43f81ed0dce10c1adc
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060555"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587146"
 ---
 # <a name="tag-helper-components-in-aspnet-core"></a>ASP.NET Core 中的标记帮助程序组件
 
@@ -33,7 +33,7 @@ ms.locfileid: "93060555"
 
 ASP.NET Core 包括两个内置标记帮助程序组件：`head` 和 `body`。 它们位于 <xref:Microsoft.AspNetCore.Mvc.Razor.TagHelpers> 命名空间中，并且可在 MVC 和页面中使用 Razor 。 标记帮助程序组件不需要在 *_ViewImports.cshtml* 中注册应用。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/tag-helpers/th-components/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/tag-helpers/th-components/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="use-cases"></a>用例
 
@@ -84,7 +84,7 @@ ASP.NET Core 包括两个内置标记帮助程序组件：`head` 和 `body`。 �
 
 [!code-csharp[](th-components/samples/RazorPagesSample/Startup.cs?name=snippet_ConfigureServices&highlight=12-15)]
 
-### <a name="registration-via-no-locrazor-file"></a>通过 Razor 文件注册
+### <a name="registration-via-razor-file"></a>通过 Razor 文件注册
 
 如果标记帮助程序组件未使用 DI 注册，则可以从 Razor 页面页或 MVC 视图注册。 此方法用于控制来自文件的注入标记和组件执行顺序 Razor 。
 
@@ -124,7 +124,7 @@ ASP.NET Core 包括两个内置标记帮助程序组件：`head` 和 `body`。 �
 
 * 创建派生自 <xref:Microsoft.AspNetCore.Mvc.Razor.TagHelpers.TagHelperComponentTagHelper> 的公共类。
 * 将特性应用于 [`[HtmlTargetElement]`](xref:Microsoft.AspNetCore.Razor.TagHelpers.HtmlTargetElementAttribute) 类。 指定目标 HTML 元素的名称。
-* *可选* ：将特性应用于 [`[EditorBrowsable(EditorBrowsableState.Never)]`](xref:System.ComponentModel.EditorBrowsableAttribute) 类，以在 IntelliSense 中取消显示该类型的显示内容。
+* *可选*：将特性应用于 [`[EditorBrowsable(EditorBrowsableState.Never)]`](xref:System.ComponentModel.EditorBrowsableAttribute) 类，以在 IntelliSense 中取消显示该类型的显示内容。
 
 以下代码可创建面向 `<address>` HTML 元素的自定义标记帮助程序组件：
 

@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/models/validation
-ms.openlocfilehash: d6fa7e4524a8afdc23d4ad46354d9d8b395656a3
-ms.sourcegitcommit: e311cfb77f26a0a23681019bd334929d1aaeda20
+ms.openlocfilehash: 412f95e67fa35e952a907db328395183f1698b9e
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99530185"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587211"
 ---
 # <a name="model-validation-in-aspnet-core-mvc-and-razor-pages"></a>ASP.NET Core MVC 和页面中的模型验证 Razor
 
@@ -33,7 +33,7 @@ ms.locfileid: "99530185"
 
 本文介绍如何在 ASP.NET Core MVC 或页面应用中验证用户输入 Razor 。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/validation/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/validation/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="model-state"></a>模型状态
 
@@ -94,7 +94,7 @@ ms.locfileid: "99530185"
 
 ## <a name="non-nullable-reference-types-and-required-attribute"></a>不可以为 null 的引用类型和 [必需] 特性
 
-验证系统将不可以为 null 的参数或绑定属性视为具有 `[Required]` 属性。 通过 [启用 `Nullable` 上下文](/dotnet/csharp/nullable-references#nullable-contexts)，MVC 隐式开始验证不可为 null 的属性或参数，就好像它们已使用属性进行属性化一样 `[Required]` 。 请考虑以下代码：
+验证系统将不可以为 null 的参数或绑定属性视为具有 `[Required]` 属性。 通过 [启用 `Nullable` 上下文](/dotnet/csharp/nullable-references#nullable-contexts)，MVC 隐式开始验证不可为 null 的属性或参数，就好像它们已使用属性进行属性化一样 `[Required]` 。 考虑下列代码：
 
 ```csharp
 public class Person
@@ -289,7 +289,7 @@ JQuery 非介入式 [验证](https://github.com/aspnet/jquery-validation-unobtru
 </div>
 ```
 
-请注意，HTML 输出中的 `data-` 特性与 `Movie.ReleaseDate` 属性的验证特性相对应。 `data-val-required` 特性包含在用户未填写上映日期字段时将显示的错误消息。 jQuery 非介入式验证将此值传递给 [所需的 JQuery 验证 ( # B1](https://jqueryvalidation.org/required-method/) 方法，然后在随附的元素中显示该消息 **\<span>** 。
+请注意，HTML 输出中的 `data-` 特性与 `Movie.ReleaseDate` 属性的验证特性相对应。 `data-val-required` 特性包含在用户未填写上映日期字段时将显示的错误消息。 jQuery 非介入式验证将此值传递到 [ () 方法所需](https://jqueryvalidation.org/required-method/) 的 jQuery 验证，后者随后会在附带的元素中显示该消息 **\<span>** 。
 
 如果 `[DataType]` 特性未替代属性的 .NET 类型，则数据类型验证基于该类型。 浏览器具有自己的默认错误消息，但是 jQuery 验证非介入式验证包可以替代这些消息。 通过 `[DataType]` 特性和 `[EmailAddress]` 等子类可以指定错误消息。
 
@@ -419,7 +419,7 @@ $.get({
 
 本文介绍如何在 ASP.NET Core MVC 或页面应用中验证用户输入 Razor 。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/validation/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/validation/sample)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="model-state"></a>模型状态
 
@@ -439,7 +439,7 @@ $.get({
 
 ## <a name="validation-attributes"></a>验证特性
 
-通过验证特性可以为模型属性指定验证规则。 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/validation/sample)的以下示例显示使用验证特性进行注释的模型类。 `[ClassicMovie]` 特性为自定义的验证特性，其他特性为内置的验证特性。 `[ClassicMovie2]` 未显示，它表示实现自定义特性的另一种方法。
+通过验证特性可以为模型属性指定验证规则。 [示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/validation/sample)的以下示例显示使用验证特性进行注释的模型类。 `[ClassicMovie]` 特性为自定义的验证特性，其他特性为内置的验证特性。 `[ClassicMovie2]` 未显示，它表示实现自定义特性的另一种方法。
 
 [!code-csharp[](validation/samples/2.x/ValidationSample/Models/Movie.cs?name=snippet_ModelClass)]
 
@@ -664,7 +664,7 @@ public string MiddleName { get; set; }
 </form>
 ```
 
-请注意，HTML 输出中的 `data-` 特性与 `ReleaseDate` 属性的验证特性相对应。 `data-val-required` 特性包含在用户未填写上映日期字段时将显示的错误消息。 jQuery 非介入式验证将此值传递给 [所需的 JQuery 验证 ( # B1](https://jqueryvalidation.org/required-method/) 方法，然后在随附的元素中显示该消息 **\<span>** 。
+请注意，HTML 输出中的 `data-` 特性与 `ReleaseDate` 属性的验证特性相对应。 `data-val-required` 特性包含在用户未填写上映日期字段时将显示的错误消息。 jQuery 非介入式验证将此值传递给 jQuery Validate [ ()](https://jqueryvalidation.org/required-method/) 方法，然后在随附的元素中显示该消息 **\<span>** 。
 
 如果 `[DataType]` 特性未替代属性的 .NET 类型，则数据类型验证基于该类型。 浏览器具有自己的默认错误消息，但是 jQuery 验证非介入式验证包可以替代这些消息。 通过 `[DataType]` 特性和 `[EmailAddress]` 等子类可以指定错误消息。
 

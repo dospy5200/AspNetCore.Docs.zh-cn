@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/ip-safelist
-ms.openlocfilehash: dfc134b97bb0976bc682a53d536cd27785550c7d
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: f89191cff1faa5b55ee9031a6a6d0749a74e43c0
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93059658"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587536"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>ASP.NET Core 的客户端 IP 安全安全
 
@@ -43,7 +43,7 @@ ms.locfileid: "93059658"
 
 如果数组包含 IP 地址，则允许访问。 否则，将返回 HTTP 403 禁止的状态代码。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/ip-safelist/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/ip-safelist/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="ip-address-safelist"></a>IP 地址安全安全
 
@@ -68,7 +68,7 @@ ms.locfileid: "93059658"
 
 ## <a name="action-filter"></a>操作筛选器
 
-如果需要针对特定 MVC 控制器或操作方法的安全安全访问控制，请使用操作筛选器。 例如： 。
+如果需要针对特定 MVC 控制器或操作方法的安全安全访问控制，请使用操作筛选器。 例如：
 
 [!code-csharp[](ip-safelist/samples/Shared/ClientIpSafelistComponents/Filters/ClientIpCheckActionFilter.cs?name=snippet_ClassOnly)]
 
@@ -103,9 +103,9 @@ ms.locfileid: "93059658"
 
 * 除 GET 之外的 HTTP 请求谓词将 `AdminSafeListMiddleware` 验证客户端 IP 地址。
 
-## <a name="no-locrazor-pages-filter"></a>Razor 页面筛选器
+## <a name="razor-pages-filter"></a>Razor 页面筛选器
 
-如果需要针对页面应用的安全筛选器驱动访问控制 Razor ，请使用 Razor 页面筛选器。 例如： 。
+如果需要针对页面应用的安全筛选器驱动访问控制 Razor ，请使用 Razor 页面筛选器。 例如：
 
 [!code-csharp[](ip-safelist/samples/Shared/ClientIpSafelistComponents/Filters/ClientIpCheckPageFilter.cs?name=snippet_ClassOnly)]
 

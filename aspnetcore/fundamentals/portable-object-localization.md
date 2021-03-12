@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 175614c426c564ce91068e18035ce05311432698
-ms.sourcegitcommit: ebc5beccba5f3f7619de20baa58ad727d2a3d18c
+ms.openlocfilehash: ed41657b364c7f845491b3e452db8a4d5c5aa389
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98689235"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587172"
 ---
 # <a name="configure-portable-object-localization-in-aspnet-core"></a>在 ASP.NET Core 中配置可移植对象本地化
 
@@ -34,7 +34,7 @@ ms.locfileid: "98689235"
 
 **注意：** Orchard Core 不是 Microsoft 产品。 因此，Microsoft 不提供针对此功能的支持。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/localization/sample/3.x/POLocalization)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/localization/sample/3.x/POLocalization)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="what-is-a-po-file"></a>什么是 PO 文件？
 
@@ -249,7 +249,7 @@ services.AddPortableObjectLocalization(options => options.ResourcesPath = "Local
 
 **注意：** Orchard Core 不是 Microsoft 产品。 因此，Microsoft 不提供针对此功能的支持。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/fundamentals/localization/sample/2.x/POLocalization)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/localization/sample/2.x/POLocalization)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="what-is-a-po-file"></a>什么是 PO 文件？
 

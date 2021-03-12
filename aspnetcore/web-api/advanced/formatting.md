@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: web-api/advanced/formatting
-ms.openlocfilehash: 5fa7bc15bac2609c89fea54f8a788aaf9f5ad055
-ms.sourcegitcommit: 3982ff9dabb5b12aeb0a61cde2686b5253364f5d
+ms.openlocfilehash: e3e176072032494f94f120efabb95d6c127fb5e6
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102119027"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587809"
 ---
 # <a name="format-response-data-in-aspnet-core-web-api"></a>设置 ASP.NET Core Web API 中响应数据的格式
 
@@ -31,7 +31,7 @@ ms.locfileid: "102119027"
 
 ASP.NET Core MVC 支持设置响应数据的格式。 可以使用特定格式或响应客户端请求的格式，来设置响应数据的格式。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/web-api/advanced/formatting)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/web-api/advanced/formatting)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="format-specific-action-results"></a>特定于格式的操作结果
 
@@ -188,7 +188,7 @@ ASP.NET Core 3.0 之前的版本中，默认设置使用通过 `Newtonsoft.Json`
 
 某些功能可能不适用于基于 `System.Text.Json` 的格式化程序，而需要引用基于 `Newtonsoft.Json` 的格式化程序。 若应用符合以下情况，请继续使用基于 `Newtonsoft.Json` 的格式化程序：
 
-* 使用 `Newtonsoft.Json` 属性。  例如 `[JsonProperty]` 或 `[JsonIgnore]`。
+* 使用 `Newtonsoft.Json` 属性。 例如 `[JsonProperty]` 或 `[JsonIgnore]`。
 * 自定义序列化设置。
 * 依赖 `Newtonsoft.Json` 提供的功能。
 * 配置 `Microsoft.AspNetCore.Mvc.JsonResult.SerializerSettings`。 ASP.NET Core 3.0 之前的版本中，`JsonResult.SerializerSettings` 接受特定于 `Newtonsoft.Json` 的 `JsonSerializerSettings` 的实例。

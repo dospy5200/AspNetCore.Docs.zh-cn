@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/key-vault-configuration
-ms.openlocfilehash: 4b035fe59b8576eb387ddce67943386ccab55492
-ms.sourcegitcommit: 8dfcd2b4be936950c228b4d98430622a04254cd7
+ms.openlocfilehash: ab3a462a3e09113e96c6bdd0c034bff3e0bebdfa
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/26/2020
-ms.locfileid: "97792080"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588290"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core 中的 Azure Key Vault 配置提供程序
 
@@ -37,7 +37,7 @@ ms.locfileid: "97792080"
 * 控制对敏感配置数据的访问。
 * 满足 FIPS 140-2 第2级验证的硬件安全模块在存储配置数据时 (HSM) 的要求。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/key-vault-configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/key-vault-configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="packages"></a>包
 
@@ -228,7 +228,7 @@ config.AddAzureKeyVault(new SecretClient(new URI("Your Key Vault Endpoint"), new
     });
 ```
 
-| 属性         | 说明 |
+| Property         | 描述 |
 | ---------------- | ----------- |
 | `Manager`        | `Azure.Extensions.AspNetCore.Configuration.Secrets` 用于控制机密加载的实例。 |
 | `ReloadInterval` | `Timespan` 如果为，则在轮询密钥保管库以进行更改之间等待。 默认值为 `null` (不) 重新加载配置。 |
@@ -331,7 +331,7 @@ Azure Key Vault 密钥不能使用冒号作为分隔符。 本主题中所述的
 
 前面的 JSON 文件中所示的配置将存储在 Azure Key Vault 中，使用双划线 (`--`) 表示法和数值段：
 
-| 密钥 | 值 |
+| Key | 值 |
 | --- | ----- |
 | `Serilog--WriteTo--0--Name` | `AzureTableStorage` |
 | `Serilog--WriteTo--0--Args--storageTableName` | `logs` |
@@ -384,7 +384,7 @@ Configuration.Reload();
 * 控制对敏感配置数据的访问。
 * 满足 FIPS 140-2 第2级验证的硬件安全模块在存储配置数据时 (HSM) 的要求。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/key-vault-configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/key-vault-configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="packages"></a>包
 
@@ -658,7 +658,7 @@ Azure Key Vault 密钥不能使用冒号作为分隔符。 本主题中所述的
 
 前面的 JSON 文件中所示的配置将存储在 Azure Key Vault 中，使用双划线 (`--`) 表示法和数值段：
 
-| 密钥 | 值 |
+| Key | 值 |
 | --- | ----- |
 | `Serilog--WriteTo--0--Name` | `AzureTableStorage` |
 | `Serilog--WriteTo--0--Args--storageTableName` | `logs` |

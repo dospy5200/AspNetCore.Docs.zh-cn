@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: security/authentication/2fa
-ms.openlocfilehash: 1ee9e656c2e631c9b5588149e0a75e07108baff1
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 1f77f3f4b7e9dd558e9869992e2f1f4d185e5b10
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93051260"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586847"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>在 ASP.NET Core 中通过 SMS 进行双因素身份验证
 
@@ -35,7 +35,7 @@ ms.locfileid: "93051260"
 
 本教程演示如何使用短信 (2FA) 设置双因素身份验证。 说明适用于 [twilio](https://www.twilio.com/) 和 [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/)，但你可以使用任何其他 SMS 提供程序。 建议你在开始学习本教程之前完成 [帐户确认和密码恢复](xref:security/authentication/accconfirm) 。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/security/authentication/2fa/sample/Web2FA)。 [如何下载](xref:index#how-to-download-a-sample)。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/security/authentication/2fa/sample/Web2FA)。 [如何下载](xref:index#how-to-download-a-sample)。
 
 ## <a name="create-a-new-aspnet-core-project"></a>创建新的 ASP.NET Core 项目
 
@@ -49,7 +49,7 @@ ms.locfileid: "93051260"
 
 **Twilio**
 
-在 Twilio 帐户的 "仪表板" 选项卡中，复制 " **帐户 SID** " 和 " **身份验证令牌** "。
+在 Twilio 帐户的 "仪表板" 选项卡中，复制 " **帐户 SID** " 和 " **身份验证令牌**"。
 
 **ASPSMS:**
 
@@ -59,7 +59,7 @@ ms.locfileid: "93051260"
 
 #### <a name="specifying-senderid--originator"></a>指定 SenderID/发起方
 
-**Twilio：** 从 "数字" 选项卡中，复制 Twilio 的 **电话号码** 。
+**Twilio：** 从 "数字" 选项卡中，复制 Twilio 的 **电话号码**。
 
 **ASPSMS：** 在 "解锁始发者" 菜单中，解锁一个或多个发信方，或者选择 "所有网络) 不支持 (的字母数字发信方"。
 
@@ -73,7 +73,7 @@ ms.locfileid: "93051260"
 
 [!code-csharp[](2fa/sample/Web2FA/Services/SMSoptions.cs)]
 
-`SMSAccountIdentification` `SMSAccountPassword` `SMSAccountFrom` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如： 。
+`SMSAccountIdentification` `SMSAccountPassword` `SMSAccountFrom` 用[机密管理器工具](xref:security/app-secrets)设置和。 例如：
 
 ```none
 C:/Web2FA/src/WebApp1>dotnet user-secrets set SMSAccountIdentification 12345
@@ -100,7 +100,7 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 ### <a name="configure-startup-to-use-smsoptions"></a>配置要使用的启动 `SMSoptions`
 
-将添加到 Startup.cs 中的方法中的 `SMSoptions` 服务容器 `ConfigureServices` ： *Startup.cs*
+将添加到 Startup.cs 中的方法中的 `SMSoptions` 服务容器 `ConfigureServices` ： 
 
 [!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet1&highlight=4)]
 
@@ -118,11 +118,11 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 ![管理视图-点击 "添加" 链接](2fa/_static/login2fa2.png)
 
-* 添加将接收验证码的电话号码，然后点击 " **发送验证码** "。
+* 添加将接收验证码的电话号码，然后点击 " **发送验证码**"。
 
 ![添加电话号码页面](2fa/_static/login2fa3.png)
 
-* 你将收到一条包含验证码的短信。 输入它，然后点击 " **提交** "
+* 你将收到一条包含验证码的短信。 输入它，然后点击 "**提交**"
 
 ![验证电话号码页面](2fa/_static/login2fa4.png)
 
@@ -142,13 +142,13 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 登录。
 
-* 用户帐户已启用双因素身份验证，因此你必须提供第二个身份验证因素。 在本教程中，你已启用电话验证。 内置模板还允许您将电子邮件设置为第二个因素。 你可以设置其他第二种身份验证因素，例如 QR 码。 点击 " **提交** "。
+* 用户帐户已启用双因素身份验证，因此你必须提供第二个身份验证因素。 在本教程中，你已启用电话验证。 内置模板还允许您将电子邮件设置为第二个因素。 你可以设置其他第二种身份验证因素，例如 QR 码。 点击 " **提交**"。
 
 ![发送验证代码视图](2fa/_static/login2fa7.png)
 
 * 输入在 SMS 消息中获取的代码。
 
-* 单击 " **记住此浏览器** " 复选框会使你不需要使用2FA 在使用同一设备和浏览器时进行登录。 如果启用2FA 并单击 "记住"， **此浏览器** 将为你提供强大的2FA 防护，防止恶意用户尝试访问你的帐户，只要他们无权访问你的设备。 你可以在你经常使用的任何专用设备上执行此操作。 通过设置  **记住此浏览器** ，你可以从不经常使用的设备中获得2FA 的增强的安全性，并且你无需在自己的设备上通过2FA。
+* 单击 " **记住此浏览器** " 复选框会使你不需要使用2FA 在使用同一设备和浏览器时进行登录。 如果启用2FA 并单击 "记住"， **此浏览器** 将为你提供强大的2FA 防护，防止恶意用户尝试访问你的帐户，只要他们无权访问你的设备。 你可以在你经常使用的任何专用设备上执行此操作。 通过设置  **记住此浏览器**，你可以从不经常使用的设备中获得2FA 的增强的安全性，并且你无需在自己的设备上通过2FA。
 
 ![验证视图](2fa/_static/login2fa8.png)
 

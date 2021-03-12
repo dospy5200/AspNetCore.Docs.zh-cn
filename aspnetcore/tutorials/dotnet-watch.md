@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 27420fe00ba6375e15b67fb359be06df055eff1f
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 84cae3b3babe28c2ebf6dba50023b020112d1bb3
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93060035"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587575"
 ---
 # <a name="develop-aspnet-core-apps-using-a-file-watcher"></a>使用文件观察程序开发 ASP.NET Core 应用
 
@@ -32,7 +32,7 @@ ms.locfileid: "93060035"
 
 本教程使用一个现有 Web API 和两个终结点：分别返回两个数的总和以及乘积。 乘积的方法有一个 bug，本教程将会对其进行修复。
 
-下载[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/dotnet-watch/sample)。 它包含两个项目：WebApp (ASP.NET Core Web API) 和 WebAppTests（用于 Web API 的单元测试）。
+下载[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/dotnet-watch/sample)。 它包含两个项目：WebApp (ASP.NET Core Web API) 和 WebAppTests（用于 Web API 的单元测试）。
 
 在命令行界面中，导航到 WebApp 文件夹。 运行下面的命令：
 
@@ -219,7 +219,3 @@ dotnet watch msbuild /t:Test
 | `DOTNET_WATCH_SUPPRESS_MSBUILD_INCREMENTALISM`   | 默认情况下，`dotnet watch` 通过避免某些操作（如在每次文件更改时运行还原或重新评估监视的文件集）来优化生成。 如果设置为“1”或“true”，则禁用这些优化。 |
 | `DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER`   | `dotnet watch run` 尝试为在 launchSettings.json 中配置了 `launchBrowser` 的 Web 应用启动浏览器。 如果设置为“1”或“true”，则抑制此行为。 |
 | `DOTNET_WATCH_SUPPRESS_BROWSER_REFRESH`   | `dotnet watch run` 检测到文件更改时尝试刷新浏览器。 如果设置为“1”或“true”，则抑制此行为。 如果设置了 `DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER`，则也会抑制此行为。 |
-
-## <a name="dotnet-watch-in-github"></a>GitHub 中的 `dotnet-watch`
-
-`dotnet-watch` 是 GitHub [dotnet/AspNetCore 存储库](https://github.com/dotnet/AspNetCore/tree/master/src/Tools/dotnet-watch)的一部分。

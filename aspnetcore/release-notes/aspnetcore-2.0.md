@@ -18,18 +18,18 @@ no-loc:
 - Razor
 - SignalR
 uid: aspnetcore-2.0
-ms.openlocfilehash: f9fad5a63c76a3b21341a12fd40baafcdf2c9dac
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: b7515bcd8b15199770a4245469d00d10da5566f8
+ms.sourcegitcommit: acfe51c35497a204f75c2a61125c9408c04493e6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93059723"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102605680"
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0 中的新增功能
 
 本文重点介绍 ASP.NET Core 2.0 中最重要的更改，并提供相关文档的链接。
 
-## <a name="no-locrazor-pages"></a>Razor Pages
+## <a name="razor-pages"></a>Razor Pages
 
 Razor Pages 是 ASP.NET Core MVC 的一个新功能，它可以使基于页面的编码方式更简单高效。
 
@@ -76,7 +76,7 @@ ASP.NET Core 2.0 包面向 NET Standard 2.0。 这些包可以由其他 .NET Sta
 
 有关已规划文档的状态的信息，请参阅 [GitHub 问题](https://github.com/dotnet/AspNetCore.Docs/issues/3054)。
 
-## <a name="no-locidentity-update"></a>Identity 更新
+## <a name="identity-update"></a>Identity 更新
 
 在 ASP.NET Core 2.0 中，我们简化了使用 Identity 生成安全的 Web API 的过程。 可以使用 [Microsoft 身份验证库 (MSAL)](https://www.nuget.org/packages/Microsoft.Identity.Client)获取用于访问 Web API 的访问令牌。
 
@@ -140,7 +140,7 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 有关详细信息，请参阅 [ASP.NET Core 中的 Razor 视图编译和预编译](xref:mvc/views/view-compilation)。
 
-## <a name="no-locrazor-support-for-c-71"></a>Razor 支持 C# 7.1
+## <a name="razor-support-for-c-71"></a>Razor 支持 C# 7.1
 
 Razor 视图引擎已更新为可使用新的 Roslyn 编译器。 其中包含对 C# 7.1 功能的支持，例如默认表达式、推断元组名称和泛型模式匹配。 若要在项目中使用 C# 7.1，请在项目文件中添加以下属性，然后重新加载解决方案：
 
@@ -148,7 +148,7 @@ Razor 视图引擎已更新为可使用新的 Roslyn 编译器。 其中包含�
 <LangVersion>latest</LangVersion>
 ```
 
-有关 C# 7.1 功能的状态的信息，请参阅 [Roslyn GitHub 存储库](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md)。
+有关 C# 7.1 功能的状态的信息，请参阅 [Roslyn GitHub 存储库](https://github.com/dotnet/roslyn/blob/main/docs/Language%20Feature%20Status.md)。
 
 ## <a name="other-documentation-updates-for-20"></a>2\.0 的其他文档更新
 

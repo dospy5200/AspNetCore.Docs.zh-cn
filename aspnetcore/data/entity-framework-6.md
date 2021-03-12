@@ -16,12 +16,12 @@ no-loc:
 - Razor
 - SignalR
 uid: data/entity-framework-6
-ms.openlocfilehash: 086418c161677f585b08ed360555c93d8575e701
-ms.sourcegitcommit: 3593c4efa707edeaaceffbfa544f99f41fc62535
+ms.openlocfilehash: 44211ac7fa2acc7a7a9471ef362cff02f94fa2b6
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "93059450"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588264"
 ---
 # <a name="aspnet-core-and-entity-framework-6"></a>ASP.NET Core 和 Entity Framework 6
 ::: moniker range=">= aspnetcore-3.0"
@@ -30,7 +30,7 @@ ms.locfileid: "93059450"
 
 ## <a name="using-entity-framework-6-with-aspnet-core"></a>将 Entity Framework 6 与 ASP.NET Core 结合使用
 
-应在新开发中使用 [Entity Framework Core](/ef/)。 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/entity-framework-6/3.xsample)使用 [Entity Framework 6 (EF6)](/ef/ef6)，其可用于将现有应用迁移到 ASP.NET Core。
+应在新开发中使用 [Entity Framework Core](/ef/)。 [下载示例](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/entity-framework-6/3.xsample)使用 [Entity Framework 6 (EF6)](/ef/ef6)，其可用于将现有应用迁移到 ASP.NET Core。
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -48,7 +48,7 @@ ms.locfileid: "93059450"
 
 若要使用 Entity Framework 6，则项目必须面向 .NET Framework 进行编译，因为 Entity Framework 6 不支持 .NET Core。 如果需要跨平台功能，需升级到 [Entity Framework Core](/ef/)。  
 
-在 ASP.NET Core 应用程序中使用 Entity Framework 6 的推荐方法是：将 EF6 上下文和模型类放入面向 .NET Framework 的类库项目中。 添加对 ASP.NET Core 项目中的类库的引用。 请参阅示例[针对 EF6 和 ASP.NET Core 项目的 Visual Studio 解决方案](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/entity-framework-6/sample/)。  
+在 ASP.NET Core 应用程序中使用 Entity Framework 6 的推荐方法是：将 EF6 上下文和模型类放入面向 .NET Framework 的类库项目中。 添加对 ASP.NET Core 项目中的类库的引用。 请参阅示例[针对 EF6 和 ASP.NET Core 项目的 Visual Studio 解决方案](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/entity-framework-6/sample/)。    
 
 不能将 EF6 上下文放入 ASP.NET Core 项目，因为 .NET Core 项目不支持 EF6 命令（如 Enable-Migrations）所需的的各项功能。    
 
@@ -86,7 +86,7 @@ ASP.NET Core 项目需要面向 .NET Framework 和引用 EF6。 例如，ASP.NET
 
 ## <a name="sample-application"></a>示例应用程序   
 
-若要获取有效的示例应用程序，请参阅本文随附的[示例 Visual Studio 解决方案](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/data/entity-framework-6/sample/)。  
+若要获取有效的示例应用程序，请参阅本文随附的[示例 Visual Studio 解决方案](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/data/entity-framework-6/sample/)。    
 
 可在 Visual Studio 中按照以下步骤从头创建此示例：    
 

@@ -19,20 +19,20 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 0e220d72fe9ef4ada402b449ef20e31324f7bcd2
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 9a3102e4451bbc5cd9ff15e88bebd4e4f2c115f4
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060113"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588095"
 ---
-# <a name="authentication-and-authorization-in-aspnet-core-no-locsignalr"></a>ASP.NET Core 中的身份验证和授权 SignalR
+# <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>ASP.NET Core 中的身份验证和授权 SignalR
 
 作者： [Andrew Stanton](https://twitter.com/anurse)
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/authn-and-authz/sample/)[（如何下载）](xref:index#how-to-download-a-sample)
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/authn-and-authz/sample/)[（如何下载）](xref:index#how-to-download-a-sample)
 
-## <a name="authenticate-users-connecting-to-a-no-locsignalr-hub"></a>对连接到集线器的用户进行身份验证 SignalR
+## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>对连接到集线器的用户进行身份验证 SignalR
 
 SignalR 可以与 [ASP.NET Core authentication](xref:security/authentication/identity) 一起使用，以将用户与每个连接相关联。 在中心中，可以从 [HubConnectionContext](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) 属性访问身份验证数据。 身份验证允许中心对与用户关联的所有连接调用方法。 有关详细信息，请参阅中的 "[管理 SignalR 用户和组" ](xref:signalr/groups)。 单个用户可以关联多个连接。
 
@@ -90,7 +90,7 @@ public void Configure(IApplicationBuilder app)
 
 ::: moniker-end
 
-### <a name="no-loccookie-authentication"></a>Cookie身份验证
+### <a name="cookie-authentication"></a>Cookie身份验证
 
 在基于浏览器的应用程序中， cookie 身份验证允许现有用户凭据自动流动到 SignalR 连接。 使用浏览器客户端时，无需进行其他配置。 如果用户已登录到你的应用，则 SignalR 连接将自动继承此身份验证。
 
@@ -131,7 +131,7 @@ var connection = new HubConnectionBuilder()
 > [!NOTE]
 > 由于浏览器 API 限制，连接到 Websocket 和 Server-Sent 事件时，将在浏览器上使用查询字符串。 使用 HTTPS 时，查询字符串值受 TLS 连接保护。 但是，许多服务器都记录查询字符串值。 有关详细信息，请参阅[ASP.NET Core SignalR 中的安全注意事项](xref:signalr/security)。 SignalR 使用标头在支持 (如 .NET 和 Java 客户端) 的环境中传输标记。
 
-#### <a name="no-locidentity-server-jwt-authentication"></a>Identity 服务器 JWT 身份验证
+#### <a name="identity-server-jwt-authentication"></a>Identity 服务器 JWT 身份验证
 
 使用 Identity 服务器时，将 <xref:Microsoft.Extensions.Options.PostConfigureOptions%601> 服务添加到项目：
 
@@ -173,7 +173,7 @@ services.TryAddEnumerable(
         ConfigureJwtBearerOptions>());
 ```
 
-### <a name="no-loccookies-vs-bearer-tokens"></a>Cookie和持有者令牌 
+### <a name="cookies-vs-bearer-tokens"></a>Cookie和持有者令牌 
 
 Cookie是特定于浏览器的。 与发送持有者令牌相比，从其他类型的客户端发送这些客户端增加了复杂性。 因此， cookie 除非应用只需从浏览器客户端对用户进行身份验证，否则不建议进行身份验证。 当使用浏览器客户端之外的客户端时，建议使用持有者令牌身份验证。
 

@@ -19,14 +19,14 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/java-client
-ms.openlocfilehash: 92941d21820de90eb2ae8fb76c21c588ed9f1ffb
-ms.sourcegitcommit: 8b0e9a72c1599ce21830c843558a661ba908ce32
+ms.openlocfilehash: bdfaf50895612e739eb5ca068a76755f97cf24c2
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98024751"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588069"
 ---
-# <a name="aspnet-core-no-locsignalr-java-client"></a>ASP.NET Core SignalR Java 客户端
+# <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 客户端
 
 作者：[Mikael Mengistu](https://twitter.com/MikaelM_12)
 
@@ -34,9 +34,9 @@ Java 客户端允许 SignalR 从 java 代码（包括 Android 应用）连接到
 
 本文中引用的示例 Java 控制台应用使用 SignalR java 客户端。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/java-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/java-client/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="install-the-no-locsignalr-java-client-package"></a>安装 SignalR Java 客户端包
+## <a name="install-the-signalr-java-client-package"></a>安装 SignalR Java 客户端包
 
 *Signalr-1.0.0* JAR 文件允许客户端连接到 SignalR 中心。 若要查找最新的 JAR 文件版本号，请参阅 [Maven 搜索结果](https://search.maven.org/search?q=g:com.microsoft.signalr%20AND%20a:signalr)。
 

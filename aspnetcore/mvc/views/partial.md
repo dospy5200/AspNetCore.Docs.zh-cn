@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/partial
-ms.openlocfilehash: 3a7b054adc50be57028dfa0364f80ae8733b02f7
-ms.sourcegitcommit: 063a06b644d3ade3c15ce00e72a758ec1187dd06
+ms.openlocfilehash: 0a8e4a4fdecd657840c6c02424ffffa64d4ab473
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98252703"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586873"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core 中的分部视图
 
@@ -37,7 +37,7 @@ ms.locfileid: "98252703"
 
 ::: moniker-end
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/partial/sample)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/partial/sample)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="when-to-use-partial-views"></a>何时使用分部视图
 
@@ -84,7 +84,7 @@ ms.locfileid: "98252703"
 
 ::: moniker range=">= aspnetcore-2.0"
 
-### <a name="use-a-partial-view-in-a-no-locrazor-pages-pagemodel"></a>在页面中使用分部视图 Razor PageModel
+### <a name="use-a-partial-view-in-a-razor-pages-pagemodel"></a>在页面中使用分部视图 Razor PageModel
 
 在 ASP.NET Core 2.0 或2.1 中，以下处理程序方法将 *\_ AuthorPartialRP* 分部视图呈现给响应：
 
@@ -353,7 +353,7 @@ Views/Articles/_ArticleSection.cshtml 是 Read.cshtml 标记文件引用的第�
 
 ::: moniker range=">= aspnetcore-2.1"
 
-* [Razor ASP.NET Core 的语法参考](xref:mvc/views/razor)
+* [ASP.NET Core 的 Razor 语法参考](xref:mvc/views/razor)
 * <xref:mvc/views/tag-helpers/intro>
 * <xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper>
 * <xref:mvc/views/view-components>
@@ -363,7 +363,7 @@ Views/Articles/_ArticleSection.cshtml 是 Read.cshtml 标记文件引用的第�
 
 ::: moniker range="< aspnetcore-2.1"
 
-* [Razor ASP.NET Core 的语法参考](xref:mvc/views/razor)
+* [ASP.NET Core 的 Razor 语法参考](xref:mvc/views/razor)
 * <xref:mvc/views/view-components>
 * <xref:mvc/controllers/areas>
 

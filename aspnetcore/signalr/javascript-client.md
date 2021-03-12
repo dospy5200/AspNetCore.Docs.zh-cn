@@ -19,14 +19,14 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/javascript-client
-ms.openlocfilehash: b4b1bc6131a6676710adbf2503efe3f304d89a58
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 1b5c89c1beaf36912766b3e08b9f16c4d33945f8
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93050844"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588056"
 ---
-# <a name="aspnet-core-no-locsignalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 客户端
+# <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 客户端
 
 ::: moniker range=">= aspnetcore-3.0"
 
@@ -34,9 +34,9 @@ ms.locfileid: "93050844"
 
 ASP.NET Core SignalR JavaScript 客户端库使开发人员能够调用服务器端集线器代码。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/javascript-client/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/javascript-client/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="install-the-no-locsignalr-client-package"></a>安装 SignalR 客户端包
+## <a name="install-the-signalr-client-package"></a>安装 SignalR 客户端包
 
 SignalRJavaScript 客户端库以[npm](https://www.npmjs.com/)包的形式提供。 以下部分概述了安装客户端库的不同方式。
 
@@ -51,7 +51,7 @@ npm install @microsoft/signalr
 
 npm 将包内容安装到 *node_modules \\ @microsoft\signalr\dist\browser* 文件夹中。 在 *wwwroot \\ lib* 文件夹下创建名为 *signalr* 的新文件夹。 将 *signalr.js* 文件复制到 *wwwroot\lib\signalr* 文件夹。
 
-SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如： 。
+SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如：
 
 ```html
 <script src="~/lib/signalr/signalr.js"></script>
@@ -59,7 +59,7 @@ SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如： 。
 
 ### <a name="use-a-content-delivery-network-cdn"></a>使用内容交付网络 (CDN) 
 
-若要在不使用 npm 先决条件的情况下使用客户端库，请引用 CDN 托管的客户端库副本。 例如： 。
+若要在不使用 npm 先决条件的情况下使用客户端库，请引用 CDN 托管的客户端库副本。 例如：
 
 [!code-html[](javascript-client/samples/3.x/SignalRChat/Pages/Index.cshtml?name=snippet_CDN)]
 
@@ -302,9 +302,9 @@ const connection = new signalR.HubConnectionBuilder()
 
 ASP.NET Core SignalR JavaScript 客户端库使开发人员能够调用服务器端集线器代码。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/signalr/javascript-client/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/signalr/javascript-client/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-## <a name="install-the-no-locsignalr-client-package"></a>安装 SignalR 客户端包
+## <a name="install-the-signalr-client-package"></a>安装 SignalR 客户端包
 
 SignalRJavaScript 客户端库以[npm](https://www.npmjs.com/)包的形式提供。 以下部分概述了安装客户端库的不同方式。
 
@@ -319,7 +319,7 @@ npm install @aspnet/signalr
 
 npm 将包内容安装到 *node_modules \\ @aspnet\signalr\dist\browser* 文件夹中。 在 *wwwroot \\ lib* 文件夹下创建名为 *signalr* 的新文件夹。 将 *signalr.js* 文件复制到 *wwwroot\lib\signalr* 文件夹。
 
-SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如： 。
+SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如：
 
 ```html
 <script src="~/lib/signalr/signalr.js"></script>
@@ -327,7 +327,7 @@ SignalR在元素中引用 JavaScript 客户端 `<script>` 。 例如： 。
 
 ### <a name="use-a-content-delivery-network-cdn"></a>使用内容交付网络 (CDN) 
 
-若要在不使用 npm 先决条件的情况下使用客户端库，请引用 CDN 托管的客户端库副本。 例如： 。
+若要在不使用 npm 先决条件的情况下使用客户端库，请引用 CDN 托管的客户端库副本。 例如：
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.3/signalr.min.js"></script>

@@ -17,14 +17,14 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/razor
-ms.openlocfilehash: cb9ffab19062bf726dd519c782d502f76e372073
-ms.sourcegitcommit: 97243663fd46c721660e77ef652fe2190a461f81
+ms.openlocfilehash: 60471232b3373039404b27c4afd1a1725d4d21eb
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98058280"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586860"
 ---
-# <a name="no-locrazor-syntax-reference-for-aspnet-core"></a>Razor ASP.NET Core 的语法参考
+# <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core 的 Razor 语法参考
 
 作者： [Rick Anderson](https://twitter.com/RickAndMSFT)、 [Taylor Mullen](https://twitter.com/ntaylormullen)和 [Dan Vicarel](https://github.com/Rabadash8820)
 
@@ -34,7 +34,7 @@ Razor 是一个用于将基于服务器的代码嵌入到网页中的标记语�
 
 默认 Razor 语言为 HTML。 从标记呈现 HTML 与 Razor 从 html 文件呈现 html 没有什么不同。 在中， *cshtml* 文件中的 HTML 标记 Razor 不变。
 
-## <a name="no-locrazor-syntax"></a>Razor 语法
+## <a name="razor-syntax"></a>Razor 语法
 
 Razor 支持 c #，并使用 `@` 符号从 HTML 转换为 c #。 Razor 计算 c # 表达式并在 HTML 输出中呈现。
 
@@ -58,7 +58,7 @@ Razor 支持 c #，并使用 `@` 符号从 HTML 转换为 c #。 Razor 计算 c 
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
 ```
 
-## <a name="implicit-no-locrazor-expressions"></a>隐式 Razor 表达式
+## <a name="implicit-razor-expressions"></a>隐式 Razor 表达式
 
 隐式 Razor 表达式以开头， `@` 后跟 c # 代码：
 
@@ -86,7 +86,7 @@ Razor 支持 c #，并使用 `@` 符号从 HTML 转换为 c #。 Razor 计算 c 
 
 泛型方法调用必须在[显式 Razor 表达式](#explicit-razor-expressions)或[ Razor 代码块](#razor-code-blocks)中进行包装。
 
-## <a name="explicit-no-locrazor-expressions"></a>显式 Razor 表达式
+## <a name="explicit-razor-expressions"></a>显式 Razor 表达式
 
 显式 Razor 表达式由 `@` 带对称括号的符号组成。 若要呈现上周的时间，请 Razor 使用以下标记：
 
@@ -157,7 +157,7 @@ HTML 在浏览器中显示为纯文本：
 <span>Hello World</span>
 ```
 
-## <a name="no-locrazor-code-blocks"></a>Razor 代码块
+## <a name="razor-code-blocks"></a>Razor 代码块
 
 Razor 代码块以开头 `@` ，并由括起来 `{}` 。 代码块内的 C# 代码不会呈现，这点与表达式不同。 一个视图中的代码块和表达式共享相同的作用域并按顺序进行定义：
 
@@ -399,7 +399,7 @@ Razor 能够用 lock 语句保护关键部分：
 }
 ```
 
-### <a name="comments"></a>说明
+### <a name="comments"></a>注释
 
 Razor 支持 c # 和 HTML 注释：
 
@@ -789,11 +789,11 @@ Razor 为组件提供事件处理功能。 有关详细信息，请参阅 <xref:
 
 *此方案仅适用于 Razor ( razor) 的组件。*
 
-`@typeparam` 指令声明生成的组件类的泛型类型参数。 有关详细信息，请参阅 <xref:blazor/components/templated-components#generic-typed-components>。
+`@typeparam` 指令声明生成的组件类的泛型类型参数。 有关详细信息，请参阅 <xref:blazor/components/templated-components>。
 
 ::: moniker-end
 
-## <a name="templated-no-locrazor-delegates"></a>模板化 Razor 委托
+## <a name="templated-razor-delegates"></a>模板化 Razor 委托
 
 Razor 模板允许使用以下格式定义 UI 代码段：
 
@@ -904,9 +904,9 @@ public class Pet
 | [`@removeTagHelper`](xref:mvc/views/tag-helpers/intro#remove-razor-directives-label) | 从视图中删除以前添加的标记帮助程序。 |
 | [`@tagHelperPrefix`](xref:mvc/views/tag-helpers/intro#prefix-razor-directives-label) | 指定标记前缀，以启用标记帮助程序支持并阐明标记帮助程序的用法。 |
 
-## <a name="no-locrazor-reserved-keywords"></a>Razor 保留关键字
+## <a name="razor-reserved-keywords"></a>Razor 保留关键字
 
-### <a name="no-locrazor-keywords"></a>Razor 字
+### <a name="razor-keywords"></a>Razor 字
 
 * `page` (要求 ASP.NET Core 2.1 或更高版本) 
 * `namespace`
@@ -918,7 +918,7 @@ public class Pet
 
 Razor 关键字通过 `@(Razor Keyword)` (进行转义，例如 `@(functions)`) 。
 
-### <a name="c-no-locrazor-keywords"></a>C # Razor 关键字
+### <a name="c-razor-keywords"></a>C # Razor 关键字
 
 * `case`
 * `do`
@@ -937,11 +937,11 @@ Razor 关键字通过 `@(Razor Keyword)` (进行转义，例如 `@(functions)`) 
 
 C # Razor 关键字必须用 `@(@C# Razor Keyword)` (进行双转义，例如 `@(@case)`) 。 第一个 `@` 转义 Razor 分析器。 第二个 `@` 对 C# 分析器转义。
 
-### <a name="reserved-keywords-not-used-by-no-locrazor"></a>不使用的保留关键字 Razor
+### <a name="reserved-keywords-not-used-by-razor"></a>不使用的保留关键字 Razor
 
 * `class`
 
-## <a name="inspect-the-no-locrazor-c-class-generated-for-a-view"></a>检查 Razor 为视图生成的 c # 类
+## <a name="inspect-the-razor-c-class-generated-for-a-view"></a>检查 Razor 为视图生成的 c # 类
 
 ::: moniker range=">= aspnetcore-2.1"
 

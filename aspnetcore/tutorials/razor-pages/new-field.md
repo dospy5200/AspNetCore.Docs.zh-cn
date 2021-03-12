@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 852c26f89b229d89797d9ce6fce2983319defe9c
-ms.sourcegitcommit: 422e8444b9f5cedc373be5efe8032822db54fcaf
+ms.openlocfilehash: cd637507e19735f020b4c28e6f22de0e7e772040
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101141"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588316"
 ---
 # <a name="part-7-add-a-new-field-to-a-razor-page-in-aspnet-core"></a>第 7 部分，将新字段添加到 ASP.NET Core 中的 Razor 页面
 
@@ -32,7 +32,7 @@ ms.locfileid: "101101141"
 
 ::: moniker range=">= aspnetcore-5.0"
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 在此部分中，[Entity Framework](/ef/core/get-started/aspnetcore/new-db) Code First 迁移用于：
 
@@ -62,7 +62,7 @@ ms.locfileid: "101101141"
 
 1. 更新以下页面：
    1. 将 `Rating` 字段添加到“删除”和“详细信息”页面。
-   1. 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Pages/Movies/Create.cshtml)。
+   1. 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Pages/Movies/Create.cshtml)。
    1. 将 `Rating` 字段添加到“编辑”页面。
 
 在数据库更新为包括新字段之前，应用将不会正常工作。 在不更新数据库的情况下运行应用会引发 `SqlException`：
@@ -85,7 +85,7 @@ ms.locfileid: "101101141"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie50/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
-请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Models/SeedDataRating.cs)。
+请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Models/SeedDataRating.cs)。
 
 生成解决方案。
 
@@ -121,7 +121,7 @@ ms.locfileid: "101101141"
 1. 在 SSOX 中选择数据库。
 1. 右键单击数据库，并选择“删除”。
 1. 检查“关闭现有连接”。
-1. 选择“确定”  。
+1. 选择“确定”。
 1. 在 [PMC](xref:tutorials/razor-pages/new-field#pmc) 中更新数据库：
 
    ```powershell
@@ -173,7 +173,7 @@ ms.locfileid: "101101141"
 
 ::: moniker range="< aspnetcore-5.0 >= aspnetcore-3.0"
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie30)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie30)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 在此部分中，[Entity Framework](/ef/core/get-started/aspnetcore/new-db) Code First 迁移用于：
 
@@ -203,7 +203,7 @@ ms.locfileid: "101101141"
 
 1. 更新以下页面：
    1. 将 `Rating` 字段添加到“删除”和“详细信息”页面。
-   1. 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie30/Pages/Movies/Create.cshtml)。
+   1. 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie30/Pages/Movies/Create.cshtml)。
    1. 将 `Rating` 字段添加到“编辑”页面。
 
 在数据库更新为包括新字段之前，应用将不会正常工作。 在不更新数据库的情况下运行应用会引发 `SqlException`：
@@ -226,7 +226,7 @@ ms.locfileid: "101101141"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie30/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
-请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Models/SeedDataRating.cs)。
+请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie50/Models/SeedDataRating.cs)。
 
 生成解决方案。
 
@@ -262,7 +262,7 @@ ms.locfileid: "101101141"
 * 在 SSOX 中选择数据库。
 * 右键单击数据库，并选择“删除”。
 * 检查“关闭现有连接”。
-* 选择“确定”  。
+* 选择“确定”。
 * 在 [PMC](xref:tutorials/razor-pages/new-field#pmc) 中更新数据库：
 
   ```powershell
@@ -314,7 +314,7 @@ ms.locfileid: "101101141"
 
 ::: moniker range="< aspnetcore-3.0"
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 在此部分中，[Entity Framework](/ef/core/get-started/aspnetcore/new-db) Code First 迁移用于：
 
@@ -343,7 +343,7 @@ ms.locfileid: "101101141"
 更新以下页面：
 
 * 将 `Rating` 字段添加到“删除”和“详细信息”页面。
-* 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Pages/Movies/Create.cshtml)。
+* 使用 `Rating` 字段更新 [Create.cshtml](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Pages/Movies/Create.cshtml)。
 * 将 `Rating` 字段添加到“编辑”页面。
 
 在数据库更新为包括新字段之前，应用将不会正常工作。 如果应用立即运行，应用会引发 `SqlException`：
@@ -366,7 +366,7 @@ ms.locfileid: "101101141"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie22/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
-请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Models/SeedDataRating.cs)。
+请参阅[已完成的 SeedData.cs 文件](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie22/Models/SeedDataRating.cs)。
 
 生成解决方案。
 
@@ -402,7 +402,7 @@ Update-Database
 * 在 SSOX 中选择数据库。
 * 右键单击数据库，并选择“删除”。
 * 检查“关闭现有连接”。
-* 选择“确定”  。
+* 选择“确定”。
 * 在 [PMC](xref:tutorials/razor-pages/new-field#pmc) 中更新数据库：
 
   ```powershell

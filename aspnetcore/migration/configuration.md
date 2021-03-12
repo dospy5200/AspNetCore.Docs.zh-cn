@@ -17,12 +17,12 @@ no-loc:
 - Razor
 - SignalR
 uid: migration/configuration
-ms.openlocfilehash: d84204c8c791bfaf36432462cde3a42c294c7966
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: c3957bf45dddcead24f7bb0f2702bf1a08950bdd
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93059788"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587938"
 ---
 # <a name="migrate-configuration-to-aspnet-core"></a>将配置迁移到 ASP.NET Core
 
@@ -30,7 +30,7 @@ ms.locfileid: "93059788"
 
 在前面的文章中，我们开始将 [ASP.NET mvc 项目迁移到 ASP.NET CORE mvc](xref:migration/mvc)。 本文将迁移配置。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/migration/configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/migration/configuration/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="setup-configuration"></a>设置配置
 
@@ -60,6 +60,6 @@ using Microsoft.Extensions.Configuration;
 
 在上面所示的突出显示的行中，将数据库的名称从 **_CHANGE_ME** 更改为数据库的名称。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 ASP.NET Core 将应用程序的所有启动逻辑放在一个文件中，可以在其中定义和配置所需的服务和依赖项。 它将 *web.config* 文件替换为灵活的配置功能，该功能可利用各种文件格式（如 JSON）以及环境变量。

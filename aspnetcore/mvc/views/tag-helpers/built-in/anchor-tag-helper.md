@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: d39db59b0fc273fe4193a4864f302ecd3f4ad348
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 2e49c545b0d343475ce44a636a6ae66324f9d3bf
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93060906"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587198"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>ASP.NET Core 中的定位点标记帮助程序
 
@@ -33,9 +33,9 @@ ms.locfileid: "93060906"
 
 有关标记帮助程序的概述，请参阅 <xref:mvc/views/tag-helpers/intro>。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/tag-helpers/built-in/samples)（[如何下载](xref:index#how-to-download-a-sample)）
 
-本文档中的示例均使用 SpeakerController  ：
+本文档中的示例均使用 SpeakerController：
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "93060906"
 <a href="/Speaker">All Speakers</a>
 ```
 
-如果指定了 `asp-controller` 属性，而未指定 `asp-action` 属性，则默认的 `asp-action` 值为与当前正在执行的视图关联的控制器操作。 如果前面的标记中省略了 `asp-action`，并在 HomeController 的索引视图 (/Home) 中使用了定位点标记帮助程序，则生成的 HTML 为  ：
+如果指定了 `asp-controller` 属性，而未指定 `asp-action` 属性，则默认的 `asp-action` 值为与当前正在执行的视图关联的控制器操作。 如果前面的标记中省略了 `asp-action`，并在 HomeController 的索引视图 (/Home) 中使用了定位点标记帮助程序，则生成的 HTML 为：
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -83,7 +83,7 @@ ms.locfileid: "93060906"
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
 
-在 Startup.Configure 中定义默认路由模板  ：
+在 Startup.Configure 中定义默认路由模板：
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
 
@@ -139,7 +139,7 @@ MVC 视图使用操作提供的模型，如下所示：
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspRoute)]
 
-定位点标记帮助程序使用 URL /Speaker/Evaluations 生成直接指向该控制器操作的路由  。 生成的 HTML：
+定位点标记帮助程序使用 URL /Speaker/Evaluations 生成直接指向该控制器操作的路由。 生成的 HTML：
 
 ```html
 <a href="/Speaker/Evaluations">Speaker Evaluations</a>
@@ -185,7 +185,7 @@ MVC 视图使用操作提供的模型，如下所示：
 
 [asp-area](xref:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Area*) 属性可设置用来设置相应路由的区域名称。 以下示例展示了 `asp-area` 属性如何导致重新映射路由。
 
-#### <a name="usage-in-no-locrazor-pages"></a>页面使用量 Razor
+#### <a name="usage-in-razor-pages"></a>页面使用量 Razor
 
 Razor ASP.NET Core 2.1 或更高版本中支持页区域。
 
@@ -226,17 +226,17 @@ Razor ASP.NET Core 2.1 或更高版本中支持页区域。
 * **{项目名称}**
   * **wwwroot**
   * **Areas**
-    * **博客**
+    * **Blogs**
       * **Controllers**
-        * HomeController.cs 
-      * **Views**
+        * HomeController.cs
+      * **视图**
         * **主页**
           * *AboutBlog.cshtml*
           * *Index.cshtml*
         * *\_Viewstart.cshtml*
   * **Controllers**
 
-如果将 `asp-area` 设置为 “Blogs”，则会为此定位点标记的关联控制器和视图的路由添加目录 Areas/Blogs 作为前缀  。 用于引用 AboutBlog 视图的标记是  ：
+如果将 `asp-area` 设置为 “Blogs”，则会为此定位点标记的关联控制器和视图的路由添加目录 Areas/Blogs 作为前缀。 用于引用 AboutBlog 视图的标记是：
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspArea)]
 
@@ -253,7 +253,7 @@ Razor ASP.NET Core 2.1 或更高版本中支持页区域。
 
 ### <a name="asp-protocol"></a>asp-protocol
 
-[asp-protocol](xref:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Protocol*) 属性用于在 URL 中指定协议（比如 `https`）。 例如： 。
+[asp-protocol](xref:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Protocol*) 属性用于在 URL 中指定协议（比如 `https`）。 例如：
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspProtocol)]
 
@@ -267,7 +267,7 @@ Razor ASP.NET Core 2.1 或更高版本中支持页区域。
 
 ### <a name="asp-host"></a>asp-host
 
-[asp-host](xref:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Host*) 属性用于在 URL 中指定主机名。 例如： 。
+[asp-host](xref:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Host*) 属性用于在 URL 中指定主机名。 例如：
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspHost)]
 

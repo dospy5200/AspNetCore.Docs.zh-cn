@@ -18,12 +18,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/models/model-binding
-ms.openlocfilehash: 4de34a75da932b41190caa8434ac5be8cc0710fd
-ms.sourcegitcommit: 8363e44f630fcc6433ccd2a85f7aa9567cd274ed
+ms.openlocfilehash: 5eaedf6dbe5df59848b9cf8a5bda67add48db2a6
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94981929"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102586938"
 ---
 # <a name="model-binding-in-aspnet-core"></a>ASP.NET Core 中的模型绑定
 
@@ -31,7 +31,7 @@ ms.locfileid: "94981929"
 
 本文解释了模型绑定的定义、模型绑定的工作原理，以及如何自定义模型绑定的行为。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="what-is-model-binding"></a>什么是模型绑定
 
@@ -165,7 +165,7 @@ public class Pet
 * 创建用于实现 `IValueProviderFactory` 的类。
 * 在 `Startup.ConfigureServices` 中注册工厂类。
 
-该示例应用包含一个 [值提供程序](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/models/model-binding/samples/3.x/ModelBindingSample/CookieValueProvider.cs) 和一个 [工厂](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/models/model-binding/samples/3.x/ModelBindingSample/CookieValueProviderFactory.cs) 示例，可从 s 中获取值 cookie 。 以下是 `Startup.ConfigureServices` 中的注册代码：
+该示例应用包含一个 [值提供程序](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/models/model-binding/samples/3.x/ModelBindingSample/CookieValueProvider.cs) 和一个 [工厂](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/models/model-binding/samples/3.x/ModelBindingSample/CookieValueProviderFactory.cs) 示例，可从 s 中获取值 cookie 。 以下是 `Startup.ConfigureServices` 中的注册代码：
 
 [!code-csharp[](model-binding/samples/3.x/ModelBindingSample/Startup.cs?name=snippet_ValueProvider&highlight=4)]
 
@@ -209,7 +209,7 @@ public class Pet
 * [Char](xref:System.ComponentModel.CharConverter)
 * [DateTime](xref:System.ComponentModel.DateTimeConverter)
 * [DateTimeOffset](xref:System.ComponentModel.DateTimeOffsetConverter)
-* [小数](xref:System.ComponentModel.DecimalConverter)
+* 十进制 
 * [双精度](xref:System.ComponentModel.DoubleConverter)
 * [Enum](xref:System.ComponentModel.EnumConverter)
 * [Guid.empty](xref:System.ComponentModel.GuidConverter)
@@ -218,7 +218,7 @@ public class Pet
 * [TimeSpan](xref:System.ComponentModel.TimeSpanConverter)
 * [UInt16](xref:System.ComponentModel.UInt16Converter)、[UInt32](xref:System.ComponentModel.UInt32Converter)、[UInt64](xref:System.ComponentModel.UInt64Converter)
 * [Uri](xref:System.UriTypeConverter)
-* [版本](xref:System.ComponentModel.VersionConverter)
+* [Version](xref:System.ComponentModel.VersionConverter)
 
 ## <a name="complex-types"></a>复杂类型
 
@@ -280,11 +280,11 @@ public IActionResult OnPost(
 * `[BindNever]`
 
 > [!WARNING]
-> 如果发布的表单数据是值的源，则这些属性会影响模型绑定。 它们 **不会** 影响输入格式化程序，后者处理已发布的 JSON 和 XML 请求正文。 输入格式化程序的解释位于[本文后面部分](#input-formatters)。
+> 如果发布的表单数据是值的源，则这些属性会影响模型绑定。 它们 ***不*** 影响输入格式化程序，后者处理已发布的 JSON 和 XML 请求正文。 输入格式化程序的解释位于[本文后面部分](#input-formatters)。
 
 ### <a name="bind-attribute"></a>[Bind] 属性
 
-可应用于类或方法参数。 指定模型绑定中应包含的模型属性。 `[Bind]` 不 _*_影响输入_*_ 格式化程序。
+可应用于类或方法参数。 指定模型绑定中应包含的模型属性。 `[Bind]` 不 ***影响输入*** 格式化程序。
 
 在下面的示例中，当调用任意处理程序或操作方法时，只绑定 `Instructor` 模型的指定属性：
 
@@ -300,7 +300,7 @@ public class Instructor
 public IActionResult OnPost([Bind("LastName,FirstMidName,HireDate")] Instructor instructor)
 ```
 
-`[Bind]`特性可用于防范 _create * 方案中的过多发布。 由于排除的属性设置为 NULL 或默认值，而不是保持不变，因此它在编辑方案中无法很好地工作。 为防止过多发布，建议使用视图模型，而不是使用 `[Bind]` 属性。 有关详细信息，请参阅[有关过多发布的安全性说明](xref:data/ef-mvc/crud#security-note-about-overposting)。
+`[Bind]` 属性可用于防止“创建”方案中的过多发布情况。 由于排除的属性设置为 NULL 或默认值，而不是保持不变，因此它在编辑方案中无法很好地工作。 为防止过多发布，建议使用视图模型，而不是使用 `[Bind]` 属性。 有关详细信息，请参阅[有关过多发布的安全性说明](xref:data/ef-mvc/crud#security-note-about-overposting)。
 
 ### <a name="modelbinder-attribute"></a>[ModelBinder] 属性
 
@@ -325,7 +325,7 @@ public class Instructor
 
 ### <a name="bindrequired-attribute"></a>[BindRequired] 属性
 
-只能应用于模型属性，不能应用于方法参数。 如果无法对模型属性进行绑定，则会导致模型绑定添加模型状态错误。 下面是一个示例：
+只能应用于模型属性，不能应用于方法参数。 如果无法对模型属性进行绑定，则会导致模型绑定添加模型状态错误。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/3.x/ModelBindingSample/Models/InstructorWithCollection.cs?name=snippet_BindRequired&highlight=8-9)]
 
@@ -333,7 +333,7 @@ public class Instructor
 
 ### <a name="bindnever-attribute"></a>[BindNever] 属性
 
-只能应用于模型属性，不能应用于方法参数。 防止模型绑定设置模型的属性。 下面是一个示例：
+只能应用于模型属性，不能应用于方法参数。 防止模型绑定设置模型的属性。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/3.x/ModelBindingSample/Models/InstructorWithDictionary.cs?name=snippet_BindNever&highlight=3-4)]
 
@@ -471,7 +471,7 @@ ASP.NET Core 路由值提供程序和查询字符串值提供程序：
 使 ASP.NET Core 路由值提供程序和查询字符串值提供程序进行区分区域性的转换：
 
 * 继承自 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory>
-* 从 [QueryStringValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs) 或 [RouteValueValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/ModelBinding/RouteValueProviderFactory.cs) 复制代码
+* 从 [QueryStringValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs) 或 [RouteValueValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/ModelBinding/RouteValueProviderFactory.cs) 复制代码
 * 使用 [CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) 替换传递给值提供程序构造函数的[区域性值](https://github.com/dotnet/AspNetCore/blob/e625fe29b049c60242e8048b4ea743cca65aa7b5/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs#L30)
 * 将 MVC 选项中的默认值提供程序工厂替换为新的工厂：
 
@@ -554,7 +554,7 @@ ASP.NET Core 基于 [Consumes](xref:Microsoft.AspNetCore.Mvc.ConsumesAttribute) 
 
 ## <a name="manual-model-binding"></a>手动模型绑定 
 
-可以使用 <xref:Microsoft.AspNetCore.Mvc.ControllerBase.TryUpdateModelAsync*> 方法手动调用模型绑定。 `ControllerBase` 和 `PageModel` 类上均定义了此方法。 方法重载允许指定要使用的前缀和值提供程序。 如果模型绑定失败，该方法返回 `false`。 下面是一个示例：
+可以使用 <xref:Microsoft.AspNetCore.Mvc.ControllerBase.TryUpdateModelAsync*> 方法手动调用模型绑定。 `ControllerBase` 和 `PageModel` 类上均定义了此方法。 方法重载允许指定要使用的前缀和值提供程序。 如果模型绑定失败，该方法返回 `false`。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/3.x/ModelBindingSample/Pages/InstructorsWithCollection/Create.cshtml.cs?name=snippet_TryUpdate&highlight=1-4)]
 
@@ -580,7 +580,7 @@ ASP.NET Core 基于 [Consumes](xref:Microsoft.AspNetCore.Mvc.ConsumesAttribute) 
 
 本文解释了模型绑定的定义、模型绑定的工作原理，以及如何自定义模型绑定的行为。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/model-binding/samples)（[如何下载](xref:index#how-to-download-a-sample)）。
 
 ## <a name="what-is-model-binding"></a>什么是模型绑定
 
@@ -714,7 +714,7 @@ public class Pet
 * 创建用于实现 `IValueProviderFactory` 的类。
 * 在 `Startup.ConfigureServices` 中注册工厂类。
 
-该示例应用包含一个 [值提供程序](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/models/model-binding/samples/2.x/ModelBindingSample/CookieValueProvider.cs) 和一个 [工厂](https://github.com/dotnet/AspNetCore.Docs/blob/master/aspnetcore/mvc/models/model-binding/samples/2.x/ModelBindingSample/CookieValueProviderFactory.cs) 示例，可从 s 中获取值 cookie 。 以下是 `Startup.ConfigureServices` 中的注册代码：
+该示例应用包含一个 [值提供程序](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/models/model-binding/samples/2.x/ModelBindingSample/CookieValueProvider.cs) 和一个 [工厂](https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/mvc/models/model-binding/samples/2.x/ModelBindingSample/CookieValueProviderFactory.cs) 示例，可从 s 中获取值 cookie 。 以下是 `Startup.ConfigureServices` 中的注册代码：
 
 [!code-csharp[](model-binding/samples/2.x/ModelBindingSample/Startup.cs?name=snippet_ValueProvider&highlight=3)]
 
@@ -758,7 +758,7 @@ public class Pet
 * [Char](xref:System.ComponentModel.CharConverter)
 * [DateTime](xref:System.ComponentModel.DateTimeConverter)
 * [DateTimeOffset](xref:System.ComponentModel.DateTimeOffsetConverter)
-* [小数](xref:System.ComponentModel.DecimalConverter)
+* 十进制 
 * [双精度](xref:System.ComponentModel.DoubleConverter)
 * [Enum](xref:System.ComponentModel.EnumConverter)
 * [Guid.empty](xref:System.ComponentModel.GuidConverter)
@@ -767,7 +767,7 @@ public class Pet
 * [TimeSpan](xref:System.ComponentModel.TimeSpanConverter)
 * [UInt16](xref:System.ComponentModel.UInt16Converter)、[UInt32](xref:System.ComponentModel.UInt32Converter)、[UInt64](xref:System.ComponentModel.UInt64Converter)
 * [Uri](xref:System.UriTypeConverter)
-* [版本](xref:System.ComponentModel.VersionConverter)
+* [Version](xref:System.ComponentModel.VersionConverter)
 
 ## <a name="complex-types"></a>复杂类型
 
@@ -835,13 +835,13 @@ public IActionResult OnPost(
 
 ### <a name="bindrequired-attribute"></a>[BindRequired] 属性
 
-只能应用于模型属性，不能应用于方法参数。 如果无法对模型属性进行绑定，则会导致模型绑定添加模型状态错误。 下面是一个示例：
+只能应用于模型属性，不能应用于方法参数。 如果无法对模型属性进行绑定，则会导致模型绑定添加模型状态错误。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/2.x/ModelBindingSample/Models/InstructorWithCollection.cs?name=snippet_BindRequired&highlight=8-9)]
 
 ### <a name="bindnever-attribute"></a>[BindNever] 属性
 
-只能应用于模型属性，不能应用于方法参数。 防止模型绑定设置模型的属性。 下面是一个示例：
+只能应用于模型属性，不能应用于方法参数。 防止模型绑定设置模型的属性。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/2.x/ModelBindingSample/Models/InstructorWithDictionary.cs?name=snippet_BindNever&highlight=3-4)]
 
@@ -958,7 +958,7 @@ ASP.NET Core 路由值提供程序和查询字符串值提供程序：
 使 ASP.NET Core 路由值提供程序和查询字符串值提供程序进行区分区域性的转换：
 
 * 继承自 <xref:Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory>
-* 从 [QueryStringValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs) 或 [RouteValueValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/master/src/Mvc/Mvc.Core/src/ModelBinding/RouteValueProviderFactory.cs) 复制代码
+* 从 [QueryStringValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs) 或 [RouteValueValueProviderFactory](https://github.com/dotnet/AspNetCore/blob/main/src/Mvc/Mvc.Core/src/ModelBinding/RouteValueProviderFactory.cs) 复制代码
 * 使用 [CultureInfo.CurrentCulture](xref:System.Globalization.CultureInfo.CurrentCulture) 替换传递给值提供程序构造函数的[区域性值](https://github.com/dotnet/AspNetCore/blob/e625fe29b049c60242e8048b4ea743cca65aa7b5/src/Mvc/Mvc.Core/src/ModelBinding/QueryStringValueProviderFactory.cs#L30)
 * 将 MVC 选项中的默认值提供程序工厂替换为新的工厂：
 
@@ -1023,7 +1023,7 @@ ASP.NET Core 基于 [Consumes](xref:Microsoft.AspNetCore.Mvc.ConsumesAttribute) 
 
 ## <a name="manual-model-binding"></a>手动模型绑定
 
-可以使用 <xref:Microsoft.AspNetCore.Mvc.ControllerBase.TryUpdateModelAsync*> 方法手动调用模型绑定。 `ControllerBase` 和 `PageModel` 类上均定义了此方法。 方法重载允许指定要使用的前缀和值提供程序。 如果模型绑定失败，该方法返回 `false`。 下面是一个示例：
+可以使用 <xref:Microsoft.AspNetCore.Mvc.ControllerBase.TryUpdateModelAsync*> 方法手动调用模型绑定。 `ControllerBase` 和 `PageModel` 类上均定义了此方法。 方法重载允许指定要使用的前缀和值提供程序。 如果模型绑定失败，该方法返回 `false`。 以下是一个示例：
 
 [!code-csharp[](model-binding/samples/2.x/ModelBindingSample/Pages/InstructorsWithCollection/Create.cshtml.cs?name=snippet_TryUpdate&highlight=1-4)]
 

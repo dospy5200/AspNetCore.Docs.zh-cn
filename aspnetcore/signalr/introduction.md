@@ -19,16 +19,16 @@ no-loc:
 - Razor
 - SignalR
 uid: signalr/introduction
-ms.openlocfilehash: 1810fef903362addcef4a6c9ec53264604f58d2b
-ms.sourcegitcommit: ca34c1ac578e7d3daa0febf1810ba5fc74f60bbf
+ms.openlocfilehash: 5e3a96d38424b895fa8f34897a4f0a1d818ff479
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93051468"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102588082"
 ---
-# <a name="introduction-to-aspnet-core-no-locsignalr"></a>ASP.NET Core SignalR 简介
+# <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 简介
 
-## <a name="what-is-no-locsignalr"></a>什么是 SignalR？
+## <a name="what-is-signalr"></a>什么是 SignalR？
 
 ASP.NET Core SignalR 是一种开放源代码库，可简化将实时 web 功能添加到应用程序的功能。 实时 web 功能使服务器端代码可以立即将内容推送到客户端。
 
@@ -48,7 +48,7 @@ SignalR 提供一个 API，用于创建 (RPC) 的服务器到客户端 [远程�
 * 向特定客户端或客户端组发送消息。
 * 可缩放以处理不断增加的流量。
 
-源托管在[ SignalR GitHub 上的存储库](https://github.com/dotnet/AspNetCore/tree/master/src/SignalR)中。
+源托管在[ SignalR GitHub 上的存储库](https://github.com/dotnet/AspNetCore/tree/main/src/SignalR)中。
 
 ## <a name="transports"></a>传输
 

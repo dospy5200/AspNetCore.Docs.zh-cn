@@ -19,12 +19,12 @@ no-loc:
 - Razor
 - SignalR
 uid: mvc/models/file-uploads
-ms.openlocfilehash: c32d20d4616650db004c78fb4d8ea9a4d5a3beab
-ms.sourcegitcommit: 063a06b644d3ade3c15ce00e72a758ec1187dd06
+ms.openlocfilehash: 90bde63ac94ba3fd29a067962989cf773ec613db
+ms.sourcegitcommit: 54fe1ae5e7d068e27376d562183ef9ddc7afc432
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98252794"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102587225"
 ---
 # <a name="upload-files-in-aspnet-core"></a>在 ASP.NET Core 中上传文件
 
@@ -34,7 +34,7 @@ ms.locfileid: "98252794"
 
 ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓冲的流式传输（针对较大文件）上传一个或多个文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="security-considerations"></a>安全注意事项
 
@@ -195,7 +195,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 若要使用 JavaScript 为[不支持 Fetch API](https://caniuse.com/#feat=fetch) 的客户端执行窗体发布，请使用以下方法之一：
 
 * 使用 Fetch Polyfill（例如，[window.fetch polyfill (github/fetch)](https://github.com/github/fetch)）。
-* 请使用 `XMLHttpRequest`。 例如：
+* 使用 `XMLHttpRequest`。 例如：
 
   ```javascript
   <script>
@@ -238,7 +238,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > string untrustedFileName = Path.GetFileName(pathName);
 > ```
 >
-> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
@@ -254,7 +254,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > [!NOTE]
 > 绑定根据名称匹配窗体文件。 例如，`<input type="file" name="formFile">` 中的 HTML `name` 值必须与 C# 参数/属性绑定 (`FormFile`) 匹配。 有关详细信息，请参阅[使名称属性值与 POST 方法的参数名匹配](#match-name-attribute-value-to-parameter-name-of-post-method)部分。
 
-下面的示例：
+如下示例中：
 
 * 循环访问一个或多个上传的文件。
 * 使用 [Path.GetTempFileName](xref:System.IO.Path.GetTempFileName*) 返回文件的完整路径，包括文件名称。 
@@ -409,7 +409,7 @@ public async Task<IActionResult> OnPostUploadAsync()
 >
 > 切勿依赖或信任未经验证的 <xref:Microsoft.AspNetCore.Http.IFormFile> 的 `FileName` 属性。 只应将 `FileName` 属性用于显示用途，并且只应在进行 HTML 编码后使用它。
 >
-> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
@@ -758,7 +758,7 @@ The request filtering module is configured to deny a request that exceeds the re
 
 ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓冲的流式传输（针对较大文件）上传一个或多个文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="security-considerations"></a>安全注意事项
 
@@ -919,7 +919,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 若要使用 JavaScript 为[不支持 Fetch API](https://caniuse.com/#feat=fetch) 的客户端执行窗体发布，请使用以下方法之一：
 
 * 使用 Fetch Polyfill（例如，[window.fetch polyfill (github/fetch)](https://github.com/github/fetch)）。
-* 请使用 `XMLHttpRequest`。 例如：
+* 使用 `XMLHttpRequest`。 例如：
 
   ```javascript
   <script>
@@ -962,7 +962,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > string untrustedFileName = Path.GetFileName(pathName);
 > ```
 >
-> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
@@ -978,7 +978,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > [!NOTE]
 > 绑定根据名称匹配窗体文件。 例如，`<input type="file" name="formFile">` 中的 HTML `name` 值必须与 C# 参数/属性绑定 (`FormFile`) 匹配。 有关详细信息，请参阅[使名称属性值与 POST 方法的参数名匹配](#match-name-attribute-value-to-parameter-name-of-post-method)部分。
 
-下面的示例：
+如下示例中：
 
 * 循环访问一个或多个上传的文件。
 * 使用 [Path.GetTempFileName](xref:System.IO.Path.GetTempFileName*) 返回文件的完整路径，包括文件名称。 
@@ -1133,7 +1133,7 @@ public async Task<IActionResult> OnPostUploadAsync()
 >
 > 切勿依赖或信任未经验证的 <xref:Microsoft.AspNetCore.Http.IFormFile> 的 `FileName` 属性。 只应将 `FileName` 属性用于显示用途，并且只应在进行 HTML 编码后使用它。
 >
-> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
@@ -1493,7 +1493,7 @@ The request filtering module is configured to deny a request that exceeds the re
 
 ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓冲的流式传输（针对较大文件）上传一个或多个文件。
 
-[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)（[如何下载](xref:index#how-to-download-a-sample)）
 
 ## <a name="security-considerations"></a>安全注意事项
 
@@ -1654,7 +1654,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 若要使用 JavaScript 为[不支持 Fetch API](https://caniuse.com/#feat=fetch) 的客户端执行窗体发布，请使用以下方法之一：
 
 * 使用 Fetch Polyfill（例如，[window.fetch polyfill (github/fetch)](https://github.com/github/fetch)）。
-* 请使用 `XMLHttpRequest`。 例如：
+* 使用 `XMLHttpRequest`。 例如：
 
   ```javascript
   <script>
@@ -1697,7 +1697,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > string untrustedFileName = Path.GetFileName(pathName);
 > ```
 >
-> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 目前提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
@@ -1713,7 +1713,7 @@ ASP.NET Core 支持使用缓冲的模型绑定（针对较小文件）和无缓�
 > [!NOTE]
 > 绑定根据名称匹配窗体文件。 例如，`<input type="file" name="formFile">` 中的 HTML `name` 值必须与 C# 参数/属性绑定 (`FormFile`) 匹配。 有关详细信息，请参阅[使名称属性值与 POST 方法的参数名匹配](#match-name-attribute-value-to-parameter-name-of-post-method)部分。
 
-下面的示例：
+如下示例中：
 
 * 循环访问一个或多个上传的文件。
 * 使用 [Path.GetTempFileName](xref:System.IO.Path.GetTempFileName*) 返回文件的完整路径，包括文件名称。 
@@ -1868,7 +1868,7 @@ public async Task<IActionResult> OnPostUploadAsync()
 >
 > 切勿依赖或信任未经验证的 <xref:Microsoft.AspNetCore.Http.IFormFile> 的 `FileName` 属性。 只应将 `FileName` 属性用于显示用途，并且只应在进行 HTML 编码后使用它。
 >
-> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
+> 提供的示例未考虑安全注意事项。 以下各节及[示例应用](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/models/file-uploads/samples/)提供了其他信息：
 >
 > * [安全注意事项](#security-considerations)
 > * [验证](#validation)
