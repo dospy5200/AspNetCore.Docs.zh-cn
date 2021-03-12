@@ -148,7 +148,7 @@ ASP.NET Core 终结点是：
 
 * 可执行：具有 <xref:Microsoft.AspNetCore.Http.Endpoint.RequestDelegate>。
 * 可扩展：具有[元数据](xref:Microsoft.AspNetCore.Http.Endpoint.Metadata*)集合。
-* Selectable:可选择性包含[路由信息](xref:Microsoft.AspNetCore.Routing.RouteEndpoint.RoutePattern*)。
+* 可选择：可选择性包含[路由信息](xref:Microsoft.AspNetCore.Routing.RouteEndpoint.RoutePattern*)。
 * 可枚举：可通过从 [DI](xref:fundamentals/dependency-injection) 中检索 <xref:Microsoft.AspNetCore.Routing.EndpointDataSource> 来列出终结点集合。
 
 以下代码显示了如何检索和检查与当前请求匹配的终结点：
