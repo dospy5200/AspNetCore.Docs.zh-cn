@@ -6,12 +6,12 @@ metadata:
   description: 了解 ASP.NET Core 文档中的新内容和更新内容。
   ms.topic: landing-page
   ms.date: 03/04/2021
-  ms.openlocfilehash: a4ef3edbf260c6f2ee34ac739884bd9a605bd396
-  ms.sourcegitcommit: 3982ff9dabb5b12aeb0a61cde2686b5253364f5d
+  ms.openlocfilehash: 5982d49321739b637e8a7352145da18c69705c88
+  ms.sourcegitcommit: acfe51c35497a204f75c2a61125c9408c04493e6
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/04/2021
-  ms.locfileid: "102119001"
+  ms.lasthandoff: 03/10/2021
+  ms.locfileid: "102605654"
 landingContent:
 - title: 查找 ASP.NET Core 文档更新
   linkLists:
@@ -34,17 +34,17 @@ landingContent:
   - linkListType: overview
     links:
     - text: ASP.NET Core 文档存储库
-      url: https://github.com/dotnet/AspNetCore.Docs/blob/master/README.md
+      url: https://github.com/dotnet/AspNetCore.Docs/blob/main/README.md
     - text: 问题和拉取请求的项目结构和标签
-      url: https://github.com/dotnet/docs/blob/master/styleguide/labels-projects.md
+      url: https://github.com/dotnet/docs/blob/main/styleguide/labels-projects.md
   - linkListType: concept
     links:
     - text: Microsoft 文档参与者指南
       url: /contribute
     - text: ASP.NET Core 文档参与者指南
-      url: https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md
+      url: https://github.com/dotnet/AspNetCore.Docs/blob/main/CONTRIBUTING.md
     - text: ASP.NET Core API 参考文档参与者指南
-      url: https://github.com/dotnet/AspNetApiDocs/blob/master/CONTRIBUTING.md
+      url: https://github.com/dotnet/AspNetApiDocs/blob/main/CONTRIBUTING.md
 - title: 社区
   linkLists:
   - linkListType: whats-new
@@ -58,11 +58,11 @@ landingContent:
     - text: Xamarin 文档更新
       url: /xamarin/whats-new/
     - text: .NET Core 发行说明
-      url: https://github.com/dotnet/core/blob/master/release-notes/README.md
+      url: https://github.com/dotnet/core/blob/main/release-notes/README.md
     - text: ASP.NET Core 发行说明
       url: ../release-notes/aspnetcore-3.1.md
     - text: C# 编译器 (Roslyn) 发行说明
-      url: https://github.com/dotnet/roslyn/tree/master/docs/ide
+      url: https://github.com/dotnet/roslyn/tree/main/docs/ide
     - text: Visual Studio 发行说明
       url: /visualstudio/releases/2019/release-notes
     - text: Visual Studio for Mac 发行说明
